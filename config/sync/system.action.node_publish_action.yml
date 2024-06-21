@@ -1,0 +1,13 @@
+uuid: 5e68ce11-dd30-4eee-ae9b-2d37abcb3e8a
+langcode: vi
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 2B9uF8NL5gutNKSdPRAhhAsDWFZZG1PJOBmx0aBGd_0
+id: node_publish_action
+label: 'Đăng nội dung'
+type: node
+plugin: 'entity:publish_action:node'
+configuration: {  }

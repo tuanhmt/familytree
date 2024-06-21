@@ -1,0 +1,22 @@
+uuid: dc18b9df-d308-4a84-a7db-8b48f5d5a855
+langcode: en
+status: false
+dependencies:
+  theme:
+    - familytree
+_core:
+  default_config_hash: ydSxdq7R66I8UMC460rOzlfzvlUL4VRbdwc6z9DWaUI
+id: familytree_secondary_local_tasks
+theme: familytree
+region: navigation
+weight: -6
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

@@ -1,0 +1,12 @@
+uuid: a3783214-d716-4273-a0b3-afb04e23be46
+langcode: en
+status: true
+dependencies: {  }
+label: 'Small Thumb'
+id: small_thumb
+description: ''
+aspect_ratio: '100:70'
+soft_limit_width: 100
+soft_limit_height: 70
+hard_limit_width: null
+hard_limit_height: null

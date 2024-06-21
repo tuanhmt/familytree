@@ -1,0 +1,17 @@
+uuid: 237b27e7-1c67-46ed-90ca-53bcd003c1c8
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: media_thumbnail_370x220
+label: 'Media Thumbnail (370x220)'
+effects:
+  5bf12e40-3bc1-4959-8a88-71bff547b52c:
+    uuid: 5bf12e40-3bc1-4959-8a88-71bff547b52c
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 370
+      height: 220
+      crop_type: focal_point

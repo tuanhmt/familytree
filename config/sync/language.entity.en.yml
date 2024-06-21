@@ -1,0 +1,11 @@
+uuid: 7a5cbd49-6fa5-4b24-96ee-f23e57300b13
+langcode: vi
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: lBXDpdDPXQtrfTJQhr6MjRJJEEyYSoRJ0acdvHLsWeA
+id: en
+label: English
+direction: ltr
+weight: 0
+locked: false

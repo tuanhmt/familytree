@@ -1,0 +1,11 @@
+uuid: bea92b77-3491-4131-b4e5-7c30edf7c2bc
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.media_video_just_video
+label: 'Media Video Just Video'
+description: ''
+targetEntityType: media
+cache: true

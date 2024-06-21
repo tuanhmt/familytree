@@ -1,0 +1,13 @@
+uuid: cd3b155c-bcc9-429e-8304-802073c298aa
+langcode: en
+status: true
+dependencies: {  }
+id: album
+label: Album
+description: ''
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_images
+field_map: {  }

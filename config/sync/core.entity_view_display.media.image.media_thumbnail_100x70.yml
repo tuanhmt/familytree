@@ -1,0 +1,35 @@
+uuid: 8d8cfc8d-5105-4973-b924-3fd718deb7ea
+langcode: vi
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_thumbnail_100x70
+    - field.field.media.image.field_media_image
+    - image.style.small_thumb
+    - media.type.image
+  module:
+    - image
+_core:
+  default_config_hash: jOwnt_yq6AKAfqU6f0xKnxEkFQ2eTPJWxrk3WMLbL68
+id: media.image.media_thumbnail_100x70
+targetEntityType: media
+bundle: image
+mode: media_thumbnail_100x70
+content:
+  field_media_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: small_thumb
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  field_media_image_caption: true
+  field_media_tags: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

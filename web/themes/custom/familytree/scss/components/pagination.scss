@@ -1,0 +1,131 @@
+/* PAGENATION */
+ul.pagination {
+	width: 100%;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	padding: 5px 0px;
+	margin: 15px 0px 20px 0px;
+	li {
+		display: inline-block;
+		*display: inline;
+		*zoom: 1;
+		float: none;
+		border: none;
+		width: initial;
+		padding: 0;
+		margin: 0px 5px;
+	}
+}
+.pagination {
+	>li {
+		>a {
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			border-radius: 50%;
+			color: #acacac;
+			border: 2px solid #acacac;
+			font-size: 11px;
+			font-weight: bold;
+			padding: 10px 15px;
+			&:hover {
+				color: #fff;
+				background-color: #006599;
+				border: 2px solid #006599;
+			}
+			&:focus {
+				color: #fff;
+				background-color: #006599;
+				border: 2px solid #006599;
+			}
+		}
+		>span {
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			border-radius: 50%;
+			color: #acacac;
+			border: 2px solid #acacac;
+			font-size: 11px;
+			font-weight: bold;
+			padding: 10px 15px;
+			&:hover {
+				color: #fff;
+				background-color: #006599;
+				border: 2px solid #006599;
+			}
+			&:focus {
+				color: #fff;
+				background-color: #006599;
+				border: 2px solid #006599;
+			}
+		}
+		&:first-child {
+			>a {
+				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				border-radius: 50%;
+			}
+			>span {
+				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				border-radius: 50%;
+			}
+		}
+		&:last-child {
+			>a {
+				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				border-radius: 50%;
+			}
+			>span {
+				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				border-radius: 50%;
+			}
+		}
+	}
+	>.active {
+		>a {
+			z-index: 2;
+			color: #fff;
+			background-color: #006599;
+			cursor: default;
+			border: 2px solid #006599;
+			&:hover {
+				z-index: 2;
+				color: #fff;
+				background-color: #006599;
+				cursor: default;
+				border: 2px solid #006599;
+			}
+			&:focus {
+				z-index: 2;
+				color: #fff;
+				background-color: #006599;
+				cursor: default;
+				border: 2px solid #006599;
+			}
+		}
+		>span {
+			z-index: 2;
+			color: #fff;
+			background-color: #006599;
+			cursor: default;
+			border: 2px solid #006599;
+			&:hover {
+				z-index: 2;
+				color: #fff;
+				background-color: #006599;
+				cursor: default;
+				border: 2px solid #006599;
+			}
+			&:focus {
+				z-index: 2;
+				color: #fff;
+				background-color: #006599;
+				cursor: default;
+				border: 2px solid #006599;
+			}
+		}
+	}
+}

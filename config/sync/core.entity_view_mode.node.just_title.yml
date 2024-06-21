@@ -1,0 +1,11 @@
+uuid: 1190e509-84e9-4d70-9df0-882f3de922e6
+langcode: vi
+status: true
+dependencies:
+  module:
+    - node
+id: node.just_title
+label: 'Just Title'
+description: ''
+targetEntityType: node
+cache: true

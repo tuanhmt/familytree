@@ -1,0 +1,15 @@
+uuid: 86221641-9c35-465a-9f9c-28161503d2aa
+langcode: vi
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: RQ75tMARZvKiI0hge9SKZpZFi-dOzZyq0nlouHHBeLM
+id: audio
+label: Audio
+description: 'A locally hosted audio file.'
+source: audio_file
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_audio_file
+field_map: {  }

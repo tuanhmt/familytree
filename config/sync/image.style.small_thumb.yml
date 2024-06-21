@@ -1,0 +1,17 @@
+uuid: 10b306ca-70c5-4261-904c-82d3de0d14d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: small_thumb
+label: 'Church - Small Thumb'
+effects:
+  04654605-7f02-4ea3-89be-62d1ac321e08:
+    uuid: 04654605-7f02-4ea3-89be-62d1ac321e08
+    id: focal_point_scale_and_crop
+    weight: 2
+    data:
+      width: 100
+      height: 70
+      crop_type: focal_point

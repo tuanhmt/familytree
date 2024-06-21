@@ -1,0 +1,8 @@
+uuid: 1fea2005-f8c0-419a-b75b-ab1f74891b8c
+langcode: vi
+status: true
+dependencies: {  }
+name: 'Hiển thị ở trang chủ'
+vid: front_display
+description: 'Phân loại cách hiển thị nội dung ở trang chủ.'
+weight: 0

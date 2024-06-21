@@ -1,0 +1,17 @@
+uuid: 04d0c5f7-5cfc-474c-b73e-db030099acf4
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: medium_thumb
+label: 'Church - Medium Thumb'
+effects:
+  2f9ed6ef-2bd0-49db-b961-3304e7549f62:
+    uuid: 2f9ed6ef-2bd0-49db-b961-3304e7549f62
+    id: focal_point_scale_and_crop
+    weight: 2
+    data:
+      width: 180
+      height: 105
+      crop_type: focal_point

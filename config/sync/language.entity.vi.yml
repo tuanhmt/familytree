@@ -1,0 +1,9 @@
+uuid: e483947a-4db6-438c-becc-955cdf85bbf8
+langcode: vi
+status: true
+dependencies: {  }
+id: vi
+label: Vietnamese
+direction: ltr
+weight: 1
+locked: false

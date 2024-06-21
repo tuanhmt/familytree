@@ -1,0 +1,22 @@
+uuid: 377b0736-d34c-4f8c-a5b5-adff7e9e574f
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - familytree
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: familytree_breadcrumbs
+theme: familytree
+region: navigation
+weight: -5
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

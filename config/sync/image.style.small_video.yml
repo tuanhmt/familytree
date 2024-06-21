@@ -1,0 +1,15 @@
+uuid: fe18e9a1-9260-4731-8582-721a46a1e5d3
+langcode: vi
+status: true
+dependencies: {  }
+name: small_video
+label: 'Church -  Small Video'
+effects:
+  ecd3ebf4-dc58-4a2c-838c-c82b0b663141:
+    uuid: ecd3ebf4-dc58-4a2c-838c-c82b0b663141
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 170
+      height: 140
+      anchor: center-center

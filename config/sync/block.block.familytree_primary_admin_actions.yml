@@ -1,0 +1,20 @@
+uuid: 9b3b3837-411c-400a-a035-121a11c5b867
+langcode: en
+status: true
+dependencies:
+  theme:
+    - familytree
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: familytree_primary_admin_actions
+theme: familytree
+region: content
+weight: -2
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

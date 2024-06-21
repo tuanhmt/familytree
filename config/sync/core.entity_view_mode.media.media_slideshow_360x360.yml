@@ -1,0 +1,11 @@
+uuid: e22ef0e9-9471-4d38-ba06-3ef3ecc46a7f
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.media_slideshow_360x360
+label: 'Media Slideshow (360x360)'
+description: ''
+targetEntityType: media
+cache: true

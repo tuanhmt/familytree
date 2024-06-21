@@ -1,0 +1,11 @@
+uuid: 7316426b-d2af-447f-bbc6-841ff4dd54a4
+langcode: vi
+status: true
+dependencies:
+  module:
+    - node
+id: node.just_body
+label: 'Just Body'
+description: ''
+targetEntityType: node
+cache: true

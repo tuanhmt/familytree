@@ -1,0 +1,12 @@
+uuid: 19c525ef-cbc6-4046-95c1-e734ac8f5f5f
+langcode: en
+status: true
+dependencies: {  }
+label: 'Medium Thumb'
+id: medium_thumb
+description: ''
+aspect_ratio: '180:105'
+soft_limit_width: 180
+soft_limit_height: 105
+hard_limit_width: 180
+hard_limit_height: 105

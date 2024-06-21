@@ -1,0 +1,20 @@
+uuid: b72e703b-b67c-48a9-8c1c-ac54fbc47a7d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_front_display
+field_name: field_front_display
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

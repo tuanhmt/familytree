@@ -1,0 +1,11 @@
+uuid: e6e392ca-a5b2-408e-a9a1-4a160b07ef4f
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.album
+label: Album
+description: ''
+targetEntityType: media
+cache: true

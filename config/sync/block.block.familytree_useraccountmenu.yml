@@ -1,0 +1,25 @@
+uuid: f39c7383-c723-48ea-bcd0-2efa1e616e99
+langcode: vi
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - familytree
+id: familytree_useraccountmenu
+theme: familytree
+region: top_header_right
+weight: -6
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

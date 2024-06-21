@@ -1,0 +1,7 @@
+church_homepage.homepage:
+  path: '/home'
+  defaults:
+    _title: 'Home page'
+    _controller: '\Drupal\church_homepage\Controller\HomepageController:main'
+  requirements:
+    _permission: 'access content'

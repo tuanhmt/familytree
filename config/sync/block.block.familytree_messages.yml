@@ -1,0 +1,22 @@
+uuid: f9d6d1af-4578-43a3-b21e-6209d8073818
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - familytree
+_core:
+  default_config_hash: BZ5tpW7H8X4PVGRm3MImTIHd2tN0eF7zOtp4SpRYUA0
+id: familytree_messages
+theme: familytree
+region: header
+weight: -6
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

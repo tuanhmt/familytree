@@ -1,0 +1,28 @@
+uuid: 8cbdf59d-df39-43d5-a381-5de302d8b573
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_front_display
+    - node.type.article
+    - taxonomy.vocabulary.front_display
+id: node.article.field_front_display
+field_name: field_front_display
+entity_type: node
+bundle: article
+label: 'Hiển thị ở trang chủ'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      front_display: front_display
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

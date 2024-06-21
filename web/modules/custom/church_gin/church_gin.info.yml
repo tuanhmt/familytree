@@ -1,0 +1,5 @@
+name: 'Church - Gin'
+type: module
+description: 'Provide custom style for gin admin'
+package: church
+core_version_requirement: ^10 || ^11

@@ -1,0 +1,8 @@
+uuid: 177716f9-2a3d-46cf-bf57-d62143299dc3
+langcode: vi
+status: true
+dependencies: {  }
+name: 'Danh mục'
+vid: category
+description: 'Phân loại nội dung vào các danh mục này.'
+weight: 0

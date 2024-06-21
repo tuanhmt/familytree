@@ -1,0 +1,21 @@
+uuid: a169afde-4df4-4c47-b441-f2edeae01552
+langcode: vi
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_media_image_visibility
+    - node.type.article
+id: node.article.field_media_image_visibility
+field_name: field_media_image_visibility
+entity_type: node
+bundle: article
+label: 'Hiện ảnh đại diện'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Bật
+  off_label: Tắt
+field_type: boolean

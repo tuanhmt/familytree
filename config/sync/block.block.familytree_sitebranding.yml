@@ -1,0 +1,23 @@
+uuid: 390804e8-81a4-439a-b708-7319a61505ba
+langcode: vi
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - familytree
+id: familytree_sitebranding
+theme: familytree
+region: header
+weight: -7
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

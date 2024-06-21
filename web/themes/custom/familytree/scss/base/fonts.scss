@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: ChurchMenu;
+  src: url(/themes/custom/familytree/css/fonts/church_menu_gdi.woff);
+}
+
+@font-face {
+  font-family: Church;
+  src: url(/themes/custom/familytree/css/fonts/church_gdi.woff);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Church;
+  src: url(/themes/custom/familytree/css/fonts/church_semibold_gdi.woff);
+  font-weight: bold;
+}

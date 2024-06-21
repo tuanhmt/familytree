@@ -1,0 +1,11 @@
+uuid: 41571208-d402-42a0-8688-6dc6101ffc3c
+langcode: vi
+status: false
+dependencies:
+  module:
+    - node
+id: node.forward
+label: Forward
+description: ''
+targetEntityType: node
+cache: true

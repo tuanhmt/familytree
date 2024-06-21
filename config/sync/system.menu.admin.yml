@@ -1,0 +1,10 @@
+uuid: b0138d6c-1b0a-438b-8876-276ae41843b1
+langcode: vi
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sapEi2YDGoI9yQIT_WgIV2vUdQ6DScH0V3fAyTadAL0
+id: admin
+label: 'Quản lý'
+description: 'Administrative task links'
+locked: true

@@ -1,0 +1,33 @@
+uuid: 9913a2f7-d2f4-43ed-97df-88dbac5f463c
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - taxonomy
+id: en_basic_author
+label: 'EN - Basic Author'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'author/[term:name]'
+selection_criteria:
+  33391e00-5651-4425-92cc-616414ed9bef:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 33391e00-5651-4425-92cc-616414ed9bef
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      external_author: external_author
+  03ed1a4b-5378-4ecc-81a6-19b7586f1a2b:
+    id: language
+    negate: false
+    uuid: 03ed1a4b-5378-4ecc-81a6-19b7586f1a2b
+    context_mapping:
+      language: 'taxonomy_term:langcode:language'
+    langcodes:
+      en: en
+selection_logic: and
+weight: -10
+relationships:
+  'taxonomy_term:langcode:language':
+    label: Language

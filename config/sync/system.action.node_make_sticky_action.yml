@@ -1,0 +1,13 @@
+uuid: ac81f236-9b1a-4ccc-b0b7-5ada83ddf15f
+langcode: vi
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: sOb26JSy3fGpWkvR0WYN6_hMqj_6d1rvbvrkzp1yya0
+id: node_make_sticky_action
+label: 'Stick nội dung lên'
+type: node
+plugin: node_make_sticky_action
+configuration: {  }

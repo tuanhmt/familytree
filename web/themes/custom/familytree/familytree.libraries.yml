@@ -1,0 +1,89 @@
+# Main theme library.
+global:
+  js:
+    js/familytree.js: {}
+  css:
+    base:
+      css/base/reset.min.css: {}
+      css/base/fonts.min.css: {}
+      css/style.min.css: {}
+      css/responsive.min.css: {}
+    layout:
+      css/layouts/layout.css: {}
+    theme:
+      css/theme/print.css: { media: print }
+  dependencies:
+    - core/jquery
+    - core/once
+    - core/drupalSettings
+    - familytree/bootstrap
+    - familytree/font-awesome
+    - familytree/tabs
+    - familytree/gin
+
+bootstrap:
+  css:
+    base:
+      css/bootstrap.min.css: {}
+  dependencies:
+    - core/jquery
+
+header:
+  css:
+    component:
+      css/components/header.min.css: {}
+
+menu:
+  css:
+    component:
+      css/components/menu.min.css: {}
+
+form:
+  css:
+    component:
+      css/components/form.min.css: {}
+
+buttons:
+  css:
+    component:
+      css/components/buttons.min.css: {}
+
+font-awesome:
+  css:
+    theme:
+      https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css: { type: external, minified: true }
+
+breaking:
+  css:
+    component:
+      css/components/breaking.min.css: {}
+
+node:
+  css:
+    component:
+      css/components/node.min.css: {}
+
+tabs:
+  css:
+    component:
+      css/components/tabs.min.css: {}
+
+alerts:
+  css:
+    component:
+      css/components/alerts.min.css: {}
+
+block:
+  css:
+    component:
+      css/components/block.min.css: {}
+
+gin:
+  css:
+    component:
+      css/components/gin.min.css: {}
+
+jquery.ticker:
+  js:
+    https://cdn.jsdelivr.net/npm/jquery-ticker/jquery.ticker.min.js: { type: external }
+

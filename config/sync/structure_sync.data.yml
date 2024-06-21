@@ -1,0 +1,1756 @@
+menus:
+  -
+    menu_name: quan-ly-noi-dung
+    title: 'Quản lý bài viết'
+    parent: null
+    uri: 'internal:/admin/content'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: vi
+    uuid: 74662f98-2642-4990-9032-cc09041e66d7
+  -
+    menu_name: quan-ly-noi-dung
+    title: 'Quản lý bình luận'
+    parent: null
+    uri: 'internal:/admin/content/comment'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: vi
+    uuid: 4391041a-e5cf-4473-8163-9c080dd1bf4c
+  -
+    menu_name: quan-ly-noi-dung
+    title: 'Quản lý media'
+    parent: null
+    uri: 'internal:/admin/content/media'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: vi
+    uuid: dd327177-b6d7-4376-af4c-2e7af1174d84
+  -
+    menu_name: cong-cu-dang-bai-nguoi-dung
+    title: 'Đăng Cầu nguyện'
+    parent: null
+    uri: 'internal:/node/add/praying'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: vi
+    uuid: 84984fea-a984-44eb-ae2a-c78dd4da2ac6
+  -
+    menu_name: cong-cu-dang-bai-admin
+    title: 'Thêm Bài viết'
+    parent: null
+    uri: 'internal:/node/add/article'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: vi
+    uuid: 62d0f592-5418-4567-a64e-4365a8a84140
+  -
+    menu_name: cong-cu-dang-bai-admin
+    title: 'Thêm Lời Chúa'
+    parent: null
+    uri: 'internal:/node/add/words_of_god'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: vi
+    uuid: bd97dd55-7809-4a98-9136-3a30b2cd3184
+  -
+    menu_name: cong-cu-dang-bai-admin
+    title: 'Thêm Lời nguyện hằng ngày'
+    parent: null
+    uri: 'internal:/node/add/the_living'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: vi
+    uuid: 28c25af1-2993-427c-b681-9f3ce4036368
+  -
+    menu_name: cong-cu-dang-bai-admin
+    title: 'Thêm Phòng cầu nguyện'
+    parent: null
+    uri: 'internal:/node/add/praying_room'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: vi
+    uuid: 3c869ca6-b0ca-4614-bc26-0cd008227fcc
+  -
+    menu_name: cong-cu-dang-bai-admin
+    title: 'Thêm Trang sách'
+    parent: null
+    uri: 'internal:/node/add/book'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: vi
+    uuid: b6a22a61-ad1b-4a75-85ec-354bd6ecbcff
+  -
+    menu_name: top
+    title: 'Giới thiệu'
+    parent: null
+    uri: 'internal:/gioi-thieu'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: en
+    uuid: 7e0b3094-ee3b-49f9-96a5-e87cdc3af5d4
+  -
+    menu_name: top
+    title: 'Tác giả'
+    parent: null
+    uri: 'internal:#'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: en
+    uuid: b2da3e3f-3acc-4d6f-a90e-c54a1830e4d0
+  -
+    menu_name: top
+    title: 'Diễn Đàn Online'
+    parent: null
+    uri: 'internal:#'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: vi
+    uuid: 703f6d50-a0be-4c96-9bd2-bf3521842873
+  -
+    menu_name: top
+    title: 'Gửi thiệp'
+    parent: null
+    uri: 'internal:#'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -47
+    langcode: vi
+    uuid: 053c9629-a509-4544-9303-d5aecc84d8fb
+  -
+    menu_name: top
+    title: 'Liên lạc'
+    parent: null
+    uri: 'internal:/lien-lac'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -46
+    langcode: vi
+    uuid: 69682e7f-f6b3-49b9-a915-3bfee47bb298
+taxonomies:
+  article_groups:
+    -
+      vid: article_groups
+      tid: '175'
+      langcode: vi
+      name: 'Chủ đề video mẫu'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: dea88555-0179-4a9f-aca9-05e13a5676a4
+    -
+      vid: article_groups
+      tid: '173'
+      langcode: vi
+      name: 'Nhóm 1'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 79444a0b-cf83-4050-98f8-95b6d137a403
+  category:
+    -
+      vid: category
+      tid: '159'
+      langcode: vi
+      name: 'Album hình ảnh'
+      description__value: null
+      description__format: null
+      weight: '13'
+      parent: '158'
+      uuid: 937d576c-e440-40d3-a061-c01f103a1ead
+    -
+      vid: category
+      tid: '150'
+      langcode: vi
+      name: Audio
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3db04b99-faf7-44fb-84bc-7fe0b857eb25
+    -
+      vid: category
+      tid: '32'
+      langcode: vi
+      name: 'Bài giảng Lễ LTX Chúa'
+      description__value: null
+      description__format: null
+      weight: '9'
+      parent: '26'
+      uuid: e0879ab4-df5c-4b1b-a0ff-a549d8748415
+    -
+      vid: category
+      tid: '35'
+      langcode: vi
+      name: 'Bài viết hay'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '29'
+      uuid: 958132d4-991b-46f2-8ece-a3a21c61cd73
+    -
+      vid: category
+      tid: '90'
+      langcode: vi
+      name: 'Bài viết về Mẹ'
+      description__value: null
+      description__format: null
+      weight: '6'
+      parent: '88'
+      uuid: 29dc07b7-c520-403a-b5cf-481f2549948f
+    -
+      vid: category
+      tid: '109'
+      langcode: vi
+      name: 'Bài đặc biệt'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '103'
+      uuid: 50942b88-9085-4c8f-8b13-d4a22fb774dc
+    -
+      vid: category
+      tid: '105'
+      langcode: vi
+      name: 'Bài Đọc Thánh Lễ Powerpoint'
+      description__value: null
+      description__format: null
+      weight: '10'
+      parent: '103'
+      uuid: bb72cd90-5d4b-4bfe-a1da-813390bc093b
+    -
+      vid: category
+      tid: '28'
+      langcode: vi
+      name: 'Bên Lòng Chúa Xót Thương'
+      description__value: null
+      description__format: null
+      weight: '12'
+      parent: '26'
+      uuid: d765ed3d-ea93-47a0-ba94-e57ab1be75a9
+    -
+      vid: category
+      tid: '27'
+      langcode: vi
+      name: 'Các Bài Đọc Lễ Riêng'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '24'
+      uuid: 8fecef46-8fdd-4ac2-a6db-60f8155db35b
+    -
+      vid: category
+      tid: '54'
+      langcode: vi
+      name: 'Các Bài Đọc Mùa Phục Sinh'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '24'
+      uuid: cdd6c1e6-7770-49f4-8aae-31e86ef54e6d
+    -
+      vid: category
+      tid: '49'
+      langcode: vi
+      name: 'Các Bài Đọc năm A'
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '24'
+      uuid: 568626db-5416-46aa-92fb-aef70ade2a9e
+    -
+      vid: category
+      tid: '50'
+      langcode: vi
+      name: 'Các Bài Đọc năm B'
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '24'
+      uuid: 32dade30-a478-4b89-9f16-dc98b0840662
+    -
+      vid: category
+      tid: '51'
+      langcode: vi
+      name: 'Các Bài Đọc năm C'
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '24'
+      uuid: 2aac5e9c-8188-4ae0-ae71-690aa126db0f
+    -
+      vid: category
+      tid: '52'
+      langcode: vi
+      name: 'Các Bài Đọc Thường Niên I'
+      description__value: null
+      description__format: null
+      weight: '5'
+      parent: '24'
+      uuid: be3121c7-cc39-400f-90bd-7622139e06bb
+    -
+      vid: category
+      tid: '53'
+      langcode: vi
+      name: 'Các Bài Đọc Thường Niên II'
+      description__value: null
+      description__format: null
+      weight: '9'
+      parent: '24'
+      uuid: 355a57cb-0e25-4cb0-b193-d13b0c986f90
+    -
+      vid: category
+      tid: '47'
+      langcode: vi
+      name: 'Các Bộ Lộc Thánh'
+      description__value: null
+      description__format: null
+      weight: '8'
+      parent: '24'
+      uuid: 252081dc-1c0b-4464-b002-f3f8e573d694
+    -
+      vid: category
+      tid: '87'
+      langcode: vi
+      name: 'Các Mùa Phụng Vụ'
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '82'
+      uuid: cd24021c-86d6-4d3c-a90b-e0f0b2ccf1dd
+    -
+      vid: category
+      tid: '107'
+      langcode: vi
+      name: 'Các Thánh'
+      description__value: null
+      description__format: null
+      weight: '9'
+      parent: '103'
+      uuid: 1df31377-5a6a-46e4-b09c-80b0c4673e18
+    -
+      vid: category
+      tid: '116'
+      langcode: vi
+      name: 'CanhTân ĐặcSủng'
+      description__value: null
+      description__format: null
+      weight: '70'
+      parent: '0'
+      uuid: f2ef50af-bc89-4221-afbd-3032620f99d7
+    -
+      vid: category
+      tid: '76'
+      langcode: vi
+      name: Cartoon
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '75'
+      uuid: 44addb2a-79e4-4f3b-b072-b9e41f60e8bf
+    -
+      vid: category
+      tid: '25'
+      langcode: vi
+      name: 'Cầu nguyện'
+      description__value: null
+      description__format: null
+      weight: '63'
+      parent: '0'
+      uuid: 04ec8d68-32b7-4ec4-a362-6cbfa016cd4c
+    -
+      vid: category
+      tid: '205'
+      langcode: vi
+      name: 'Cầu nguyện'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '25'
+      uuid: 66975a02-65d1-4c86-bb6c-e0ea72a1fa36
+    -
+      vid: category
+      tid: '57'
+      langcode: vi
+      name: 'Cầu nguyện - Chia sẻ online'
+      description__value: null
+      description__format: null
+      weight: '8'
+      parent: '25'
+      uuid: f02aee80-e278-4203-ba1f-95eaa8e5ffb7
+    -
+      vid: category
+      tid: '60'
+      langcode: vi
+      name: 'Cầu nguyện ơn gọi'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '25'
+      uuid: 281185fe-87d1-4b2a-b6f1-b14dc2f5b513
+    -
+      vid: category
+      tid: '58'
+      langcode: vi
+      name: 'Cầu nguyện qua email'
+      description__value: null
+      description__format: null
+      weight: '7'
+      parent: '25'
+      uuid: 277b40b5-5858-4259-a578-84870039da69
+    -
+      vid: category
+      tid: '59'
+      langcode: vi
+      name: 'Chữa lành nghiện tình dục'
+      description__value: null
+      description__format: null
+      weight: '6'
+      parent: '25'
+      uuid: 5579aaf5-c554-4073-b594-befea7309e71
+    -
+      vid: category
+      tid: '161'
+      langcode: vi
+      name: 'Chúa và Đức Mẹ'
+      description__value: null
+      description__format: null
+      weight: '12'
+      parent: '158'
+      uuid: d3c409d6-5747-44ce-9dbb-03a5994259fb
+    -
+      vid: category
+      tid: '33'
+      langcode: vi
+      name: 'Chuỗi hạt và Tuần Cửu Nhật'
+      description__value: null
+      description__format: null
+      weight: '14'
+      parent: '26'
+      uuid: 02cec1ba-fded-4c06-88d6-5adac724ecdc
+    -
+      vid: category
+      tid: '68'
+      langcode: vi
+      name: 'Chuỗi hạt và Tuần Cửu Nhật'
+      description__value: null
+      description__format: null
+      weight: '10'
+      parent: '26'
+      uuid: c5d2cbf3-12cf-4dae-a247-0390722b587a
+    -
+      vid: category
+      tid: '110'
+      langcode: vi
+      name: 'Công Đồng Vatican II'
+      description__value: null
+      description__format: null
+      weight: '8'
+      parent: '103'
+      uuid: 054df0c9-95e3-4faf-9d98-baccd0415019
+    -
+      vid: category
+      tid: '117'
+      langcode: vi
+      name: 'CTĐS Giáo phận Orange'
+      description__value: null
+      description__format: null
+      weight: '5'
+      parent: '116'
+      uuid: da0ba245-3731-4591-8e45-6386d8674b74
+    -
+      vid: category
+      tid: '61'
+      langcode: vi
+      name: 'Dự án luyện ngục'
+      description__value: null
+      description__format: null
+      weight: '5'
+      parent: '25'
+      uuid: d712ebde-465b-4918-a409-bfe6ccd3dacf
+    -
+      vid: category
+      tid: '206'
+      langcode: vi
+      name: 'Gia đình'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '38'
+      uuid: 7cc848fd-623f-41b3-97c8-919859f87063
+    -
+      vid: category
+      tid: '112'
+      langcode: vi
+      name: 'Giáo Hội'
+      description__value: null
+      description__format: null
+      weight: '7'
+      parent: '103'
+      uuid: 5c89c9c1-99b6-49f2-8042-2bdfcee848b4
+    -
+      vid: category
+      tid: '75'
+      langcode: vi
+      name: 'Giới Trẻ'
+      description__value: null
+      description__format: null
+      weight: '72'
+      parent: '0'
+      uuid: 84744423-f95b-46c0-bc64-3507300a5f5b
+    -
+      vid: category
+      tid: '121'
+      langcode: vi
+      name: 'Hình ảnh'
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '116'
+      uuid: 63cb750a-2b0b-4fb1-9adc-3ee48097527e
+    -
+      vid: category
+      tid: '74'
+      langcode: vi
+      name: 'Hình Lòng Chúa Thương Xót'
+      description__value: null
+      description__format: null
+      weight: '8'
+      parent: '26'
+      uuid: a654cf4d-daa7-467a-b822-8a32d6f5e60e
+    -
+      vid: category
+      tid: '77'
+      langcode: vi
+      name: 'Hình vẽ Thánh Kinh'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '75'
+      uuid: afd3031b-b925-42ba-a4ae-0b9fb3c70370
+    -
+      vid: category
+      tid: '37'
+      langcode: vi
+      name: 'Hình vui'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '29'
+      uuid: aad78274-a9c4-4f82-a2fb-9c6d171c8308
+    -
+      vid: category
+      tid: '36'
+      langcode: vi
+      name: 'Hình đẹp'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '29'
+      uuid: a88526fd-85c8-450e-9e59-453abb42aad4
+    -
+      vid: category
+      tid: '42'
+      langcode: vi
+      name: 'Khoa học'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '29'
+      uuid: 66d72d2c-aa1e-4be9-9c01-a7076d9581a0
+    -
+      vid: category
+      tid: '174'
+      langcode: vi
+      name: 'Kinh Nguyện'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '150'
+      uuid: 1895d994-2b8a-4192-ab14-d5d4b7a70559
+    -
+      vid: category
+      tid: '64'
+      langcode: vi
+      name: 'Kinh nguyện tiếng Anh'
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '25'
+      uuid: 425d6a73-1369-4793-9787-22164943cdde
+    -
+      vid: category
+      tid: '63'
+      langcode: vi
+      name: 'Kinh nguyện tiếng Việt'
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '25'
+      uuid: fd0b2180-8168-4898-9677-7b0c1e17e4cc
+    -
+      vid: category
+      tid: '46'
+      langcode: vi
+      name: 'Kinh thánh MP3'
+      description__value: null
+      description__format: null
+      weight: '7'
+      parent: '24'
+      uuid: cddaae8b-0c4e-455f-be38-a438f7d08632
+    -
+      vid: category
+      tid: '152'
+      langcode: vi
+      name: 'Lời Chúa'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '150'
+      uuid: d9ad3cc1-445b-44f0-8563-be2cc532c8ea
+    -
+      vid: category
+      tid: '118'
+      langcode: vi
+      name: 'Lời chứng'
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '116'
+      uuid: f23ac18d-a2c2-43d7-993c-8183fda744b8
+    -
+      vid: category
+      tid: '39'
+      langcode: vi
+      name: 'Lời hay ý đẹp'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '29'
+      uuid: 4a06d2fb-6eb6-4cad-ab49-146ccec65751
+    -
+      vid: category
+      tid: '26'
+      langcode: vi
+      name: 'Lòng Thương Xót'
+      description__value: null
+      description__format: null
+      weight: '88'
+      parent: '0'
+      uuid: 33f358e1-f999-49d7-b98b-74c483ff7c3f
+    -
+      vid: category
+      tid: '43'
+      langcode: vi
+      name: 'Mách Cho Nhau'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '29'
+      uuid: ea6f4bad-bba4-4f3c-9e30-be351065c8e8
+    -
+      vid: category
+      tid: '88'
+      langcode: vi
+      name: 'Mẹ Maria'
+      description__value: null
+      description__format: null
+      weight: '75'
+      parent: '0'
+      uuid: 0e6000cf-ec94-4e82-b97a-15e35a703ec6
+    -
+      vid: category
+      tid: '120'
+      langcode: vi
+      name: 'Nhạc ca ngợi'
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '116'
+      uuid: 3a4b58bf-0303-4123-ba48-555f8d98c12d
+    -
+      vid: category
+      tid: '34'
+      langcode: vi
+      name: 'Nhạc Lòng Chúa Thương Xót'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '26'
+      uuid: f675be3c-63b4-42c5-ba7a-cac3ddfe9ae8
+    -
+      vid: category
+      tid: '71'
+      langcode: vi
+      name: 'Nhật ký'
+      description__value: null
+      description__format: null
+      weight: '7'
+      parent: '26'
+      uuid: adc38f2b-8b45-4a68-873f-5d2e4cbac25c
+    -
+      vid: category
+      tid: '65'
+      langcode: vi
+      name: 'Nhật Ký LTX Chúa MP3'
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '26'
+      uuid: 3faa4ec3-c524-4d19-9023-9c9f8075ff7e
+    -
+      vid: category
+      tid: '156'
+      langcode: vi
+      name: 'Phát Thanh'
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '150'
+      uuid: 6e564a05-c2a4-4f4d-b94d-a14fd495389e
+    -
+      vid: category
+      tid: '158'
+      langcode: vi
+      name: 'Phim ảnh'
+      description__value: null
+      description__format: null
+      weight: '19'
+      parent: '0'
+      uuid: cf016a86-235b-4d52-9cc4-c1918f833760
+    -
+      vid: category
+      tid: '72'
+      langcode: vi
+      name: 'Phim Thánh Faustina LTXC'
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '26'
+      uuid: 2341d4d1-b3ec-4a76-8dc4-294b38d019c7
+    -
+      vid: category
+      tid: '111'
+      langcode: vi
+      name: 'Phụng vụ'
+      description__value: null
+      description__format: null
+      weight: '6'
+      parent: '103'
+      uuid: 6036013f-4c68-477a-8fbf-84545d282baa
+    -
+      vid: category
+      tid: '73'
+      langcode: vi
+      name: 'Quảng bá LTX Chúa'
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '26'
+      uuid: 4474c135-c8d1-4b9f-8ed9-6ea0d5351297
+    -
+      vid: category
+      tid: '151'
+      langcode: vi
+      name: 'Sách audio'
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '150'
+      uuid: 1bfc4103-8345-4e3e-870f-ad6aea19d3b6
+    -
+      vid: category
+      tid: '62'
+      langcode: vi
+      name: 'Sách Lời Chúa Hôm Nay'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '25'
+      uuid: 55ef1450-fbb4-4547-98b5-a1cb18a2a00a
+    -
+      vid: category
+      tid: '162'
+      langcode: vi
+      name: 'Sinh hoạt Tôn giáo'
+      description__value: null
+      description__format: null
+      weight: '11'
+      parent: '158'
+      uuid: 221f78b5-2829-436b-92de-d460ec887cee
+    -
+      vid: category
+      tid: '44'
+      langcode: vi
+      name: 'Sức khỏe'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '29'
+      uuid: 97caa948-626c-4af1-8aaf-84af4672ccbf
+    -
+      vid: category
+      tid: '40'
+      langcode: vi
+      name: 'Suy tư'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '29'
+      uuid: 8395481f-aa52-427a-8bc9-9a5a4a2c92f1
+    -
+      vid: category
+      tid: '119'
+      langcode: vi
+      name: 'Tài liệu'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '116'
+      uuid: aa98a868-0941-4685-860e-48ccc658084d
+    -
+      vid: category
+      tid: '160'
+      langcode: vi
+      name: 'Tài liệu'
+      description__value: null
+      description__format: null
+      weight: '10'
+      parent: '158'
+      uuid: f7575dba-44b2-4b01-a7a2-0fbd33001900
+    -
+      vid: category
+      tid: '89'
+      langcode: vi
+      name: 'Tài liệu về Mẹ Maria'
+      description__value: null
+      description__format: null
+      weight: '5'
+      parent: '88'
+      uuid: e9f6800e-e209-4fc0-8120-a3e90d409fa7
+    -
+      vid: category
+      tid: '45'
+      langcode: vi
+      name: 'Tâm Linh'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '29'
+      uuid: 4dda8818-2869-42f6-8aa5-95d35c9776be
+    -
+      vid: category
+      tid: '113'
+      langcode: vi
+      name: 'Tập san, Báo'
+      description__value: null
+      description__format: null
+      weight: '5'
+      parent: '103'
+      uuid: 78d07d30-f0ad-4b09-ba55-24fa8012d691
+    -
+      vid: category
+      tid: '153'
+      langcode: vi
+      name: 'Thánh ca'
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '150'
+      uuid: e8ff67e5-ca73-45f9-ad0f-a9a7c526c89d
+    -
+      vid: category
+      tid: '24'
+      langcode: vi
+      name: 'Thánh Kinh'
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '0'
+      uuid: 5e069891-5703-46b9-bc73-5319a750ae86
+    -
+      vid: category
+      tid: '78'
+      langcode: vi
+      name: 'Thánh Kinh bằng hình'
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '75'
+      uuid: 076bce78-3eaf-4120-80d2-a300dde4b9cc
+    -
+      vid: category
+      tid: '86'
+      langcode: vi
+      name: 'Thánh lễ'
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '82'
+      uuid: f2e83343-26a7-44c5-bc6f-5b7e1e6437bb
+    -
+      vid: category
+      tid: '82'
+      langcode: vi
+      name: 'Thiên Chúa'
+      description__value: null
+      description__format: null
+      weight: '44'
+      parent: '0'
+      uuid: 310f8f48-04f7-471c-a320-0ecadc38f065
+    -
+      vid: category
+      tid: '41'
+      langcode: vi
+      name: 'Thơ vui'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '29'
+      uuid: 382af64a-9072-4be9-8204-2c7995622ca2
+    -
+      vid: category
+      tid: '66'
+      langcode: vi
+      name: 'Thông điệp'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '26'
+      uuid: 28fee3af-c9e7-4c44-bfea-d4ea60e99f02
+    -
+      vid: category
+      tid: '103'
+      langcode: vi
+      name: 'Thư Viện'
+      description__value: null
+      description__format: null
+      weight: '37'
+      parent: '0'
+      uuid: 3ad08dcc-570c-4b3b-8755-a042a9e421c2
+    -
+      vid: category
+      tid: '106'
+      langcode: vi
+      name: 'Thư viện Lời nhạc'
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '103'
+      uuid: c7793329-4c45-4c0b-9225-bb81c2057c6c
+    -
+      vid: category
+      tid: '154'
+      langcode: vi
+      name: 'Thuyết giảng'
+      description__value: null
+      description__format: null
+      weight: '5'
+      parent: '150'
+      uuid: bc7ae1d0-076e-4865-8fa4-3f931aed3d25
+    -
+      vid: category
+      tid: '122'
+      langcode: vi
+      name: 'Tiếng Anh – English'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '116'
+      uuid: b62b2744-1aee-42fc-9c50-cf6869532e03
+    -
+      vid: category
+      tid: '29'
+      langcode: vi
+      name: 'Tổng Hợp'
+      description__value: null
+      description__format: null
+      weight: '101'
+      parent: '0'
+      uuid: 2f5836c3-c3ca-441b-b2a3-727be1b8db18
+    -
+      vid: category
+      tid: '38'
+      langcode: vi
+      name: 'Tổng hợp'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '29'
+      uuid: d0de1dce-c008-4706-9ec6-1aebc1886d33
+    -
+      vid: category
+      tid: '157'
+      langcode: vi
+      name: 'Tổng hợp'
+      description__value: null
+      description__format: null
+      weight: '6'
+      parent: '150'
+      uuid: c1bd00e0-4c76-4ce4-8e35-9394c8616d50
+    -
+      vid: category
+      tid: '114'
+      langcode: vi
+      name: 'Tông Thư - Văn Kiện'
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '103'
+      uuid: 60ceff43-289b-4df9-9c04-ae137cc9c6ed
+    -
+      vid: category
+      tid: '83'
+      langcode: vi
+      name: 'Trang Chúa Cha'
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '82'
+      uuid: fbe88c95-3c10-4018-a919-44b942004e81
+    -
+      vid: category
+      tid: '84'
+      langcode: vi
+      name: 'Trang Chúa Giêsu'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '82'
+      uuid: 309cdf9d-32f6-4778-ba3a-cc34f2e8059f
+    -
+      vid: category
+      tid: '85'
+      langcode: vi
+      name: 'Trang Chúa Thánh Thần'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '82'
+      uuid: 4946a760-ea9b-40d7-8d55-b372dca6efd8
+    -
+      vid: category
+      tid: '104'
+      langcode: vi
+      name: 'Trang Download - Tải về'
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '103'
+      uuid: 2c7b16ba-4ce9-41ae-9502-551cd3ef79ef
+    -
+      vid: category
+      tid: '79'
+      langcode: vi
+      name: 'Trang Giêsu Yêu Em'
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '75'
+      uuid: 554c0e66-4226-480b-b9cb-7e8c7802dc23
+    -
+      vid: category
+      tid: '80'
+      langcode: vi
+      name: 'Truyện Thánh Kinh'
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '75'
+      uuid: 5a1bee68-873d-4470-8b11-6e950dcb7c5b
+    -
+      vid: category
+      tid: '108'
+      langcode: vi
+      name: 'Tủ sách'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '103'
+      uuid: a2db493b-a8e5-457c-b32f-1b78e2bf0d13
+    -
+      vid: category
+      tid: '48'
+      langcode: vi
+      name: 'Tự điển Kinh Thánh ABC'
+      description__value: null
+      description__format: null
+      weight: '6'
+      parent: '24'
+      uuid: cbf12733-b5e3-4e7d-9864-2cab51f221d9
+    -
+      vid: category
+      tid: '167'
+      langcode: vi
+      name: 'Video Chúa và Đức Mẹ'
+      description__value: null
+      description__format: null
+      weight: '9'
+      parent: '158'
+      uuid: abecd26c-b4b6-4d98-80e1-780cf0060e22
+    -
+      vid: category
+      tid: '163'
+      langcode: vi
+      name: 'Video Giảng Thuyết'
+      description__value: null
+      description__format: null
+      weight: '8'
+      parent: '158'
+      uuid: 83228e13-0802-4cba-9274-f72b93ee1590
+    -
+      vid: category
+      tid: '172'
+      langcode: vi
+      name: 'Video Giảng và Suy Niệm'
+      description__value: null
+      description__format: null
+      weight: '7'
+      parent: '158'
+      uuid: c6b66348-2d69-41dd-b2ab-2bda044fda1f
+    -
+      vid: category
+      tid: '169'
+      langcode: vi
+      name: 'Video Hoạt Cảnh'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '158'
+      uuid: cb09bb31-007c-4532-869f-615ad2116e98
+    -
+      vid: category
+      tid: '171'
+      langcode: vi
+      name: 'Video Lời Chúa Và Suy Niệm'
+      description__value: null
+      description__format: null
+      weight: '6'
+      parent: '158'
+      uuid: 18997286-547e-4fb0-bea7-c155e881a336
+    -
+      vid: category
+      tid: '164'
+      langcode: vi
+      name: 'Video Nhạc Ca Ngợi'
+      description__value: null
+      description__format: null
+      weight: '5'
+      parent: '158'
+      uuid: a5aa58dd-cd50-4df9-9718-2794fe602f79
+    -
+      vid: category
+      tid: '166'
+      langcode: vi
+      name: 'Video Thánh Ca'
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '158'
+      uuid: 60cd5fb4-1870-4cf3-8137-f2fe603ace8b
+    -
+      vid: category
+      tid: '165'
+      langcode: vi
+      name: 'Video Thánh Vịnh'
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '158'
+      uuid: 6e491f45-8355-4d20-80f9-36491c934270
+    -
+      vid: category
+      tid: '170'
+      langcode: vi
+      name: 'Video Tiếng Anh'
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '158'
+      uuid: b887ea2e-b27d-4408-b2ba-2d6b2d5815bd
+    -
+      vid: category
+      tid: '168'
+      langcode: vi
+      name: 'Video Tổng hợp'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '158'
+      uuid: f1c07884-3694-4b30-8cc2-0f9f4f9dac48
+    -
+      vid: category
+      tid: '115'
+      langcode: vi
+      name: 'Vui cười'
+      description__value: null
+      description__format: null
+      weight: '11'
+      parent: '103'
+      uuid: b1beaa38-14a1-4f4d-944b-30704b789c1d
+    -
+      vid: category
+      tid: '81'
+      langcode: vi
+      name: 'Vui học Thánh Kinh'
+      description__value: null
+      description__format: null
+      weight: '5'
+      parent: '75'
+      uuid: 104c3c93-9965-4501-b624-5ae51b537df5
+    -
+      vid: category
+      tid: '30'
+      langcode: vi
+      name: 'Đời sống'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '29'
+      uuid: 1ae5d5f8-ab4f-4de0-ac26-d15ab391a4b3
+    -
+      vid: category
+      tid: '91'
+      langcode: vi
+      name: 'Đức Mẹ Akita'
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '88'
+      uuid: 3d2840d0-2413-456d-91b3-dbcea8719132
+    -
+      vid: category
+      tid: '92'
+      langcode: vi
+      name: 'Đức Mẹ Fatima'
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '88'
+      uuid: 7d044b62-7b94-473c-bf5b-b7b8d7fb3a76
+    -
+      vid: category
+      tid: '93'
+      langcode: vi
+      name: 'Đức Mẹ Hồ Lụa'
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '88'
+      uuid: 53019df0-b522-4d2d-a1f6-52b7ea23f8ec
+    -
+      vid: category
+      tid: '94'
+      langcode: vi
+      name: 'Đức Mẹ Mễdu'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '88'
+      uuid: 62f2577e-af08-4ac1-bc9d-b20864f6e508
+    -
+      vid: category
+      tid: '95'
+      langcode: vi
+      name: 'Đức Mẹ Ngôi Lời'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '88'
+      uuid: 51a83f7f-1d48-41db-b3f4-dd659a6f7696
+  external_author:
+    -
+      vid: external_author
+      tid: '187'
+      langcode: vi
+      name: 'Cao Tấn Tĩnh'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 90d2edb1-21cf-4639-b988-aea8212c26dc
+    -
+      vid: external_author
+      tid: '210'
+      langcode: vi
+      name: 'Giuse Nguyễn Bình An'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 4b1ec621-d536-461e-8e80-2d10240c7d30
+    -
+      vid: external_author
+      tid: '11'
+      langcode: vi
+      name: 'Huệ Minh'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 704f6e7a-5b8e-4c92-8146-21ec03a4a099
+    -
+      vid: external_author
+      tid: '183'
+      langcode: vi
+      name: 'Huyền Linh'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 045f78de-9edd-4447-b6a4-d1358e9fba47
+    -
+      vid: external_author
+      tid: '190'
+      langcode: vi
+      name: 'Jos, Tú Nạc, NMS'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9795e07b-0fc9-44f6-bf4e-123a4d1676e5
+    -
+      vid: external_author
+      tid: '193'
+      langcode: vi
+      name: 'Jos. Tú Nạc, Nguyễn Minh Sơn'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 954d6b73-ffd7-478d-b748-618c82e4f8b1
+    -
+      vid: external_author
+      tid: '185'
+      langcode: vi
+      name: 'Lm Dương Trung Tín'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d2c7c68c-a9fe-4ab1-ae7d-0b5b590d4135
+    -
+      vid: external_author
+      tid: '196'
+      langcode: vi
+      name: 'Lm Hương Quất'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 292cc464-0f72-48f5-aa78-8437365a72d0
+    -
+      vid: external_author
+      tid: '201'
+      langcode: vi
+      name: 'Lm Thái Nguyên'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d4818095-c0ad-4cf7-84ca-ff775396804e
+    -
+      vid: external_author
+      tid: '189'
+      langcode: vi
+      name: 'Lm Trần Ngà'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 709e66e1-e577-4b44-85e4-293c969d6b59
+    -
+      vid: external_author
+      tid: '208'
+      langcode: vi
+      name: 'Lm Võ Tá Khánh'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c37c936e-0f60-4038-8fa4-daf6ac53d302
+    -
+      vid: external_author
+      tid: '184'
+      langcode: vi
+      name: 'Lm Đinh Quang Thịnh'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5a5576a1-b506-4d5c-be75-8b634adba9b7
+    -
+      vid: external_author
+      tid: '197'
+      langcode: vi
+      name: 'Lm. JB Nguyễn Minh Hùng'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 690f2b6c-5f2a-4c1b-aa5b-969444955094
+    -
+      vid: external_author
+      tid: '182'
+      langcode: vi
+      name: 'Lm. Minh Bùi'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 62458052-2fe8-4384-b63a-89ca8f230e34
+    -
+      vid: external_author
+      tid: '10'
+      langcode: vi
+      name: 'Lm. Nguyen Van An'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 348a2c72-ce43-4fab-be79-4b26070f96be
+    -
+      vid: external_author
+      tid: '13'
+      langcode: vi
+      name: 'Lm. Nguyễn Văn Quang'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: bdf8fd4c-6426-4c15-971c-d11d226af058
+    -
+      vid: external_author
+      tid: '186'
+      langcode: vi
+      name: 'M. Hoàng Thị Thùy Trang.'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9e9fbbec-7089-44eb-ad53-d86f55970681
+    -
+      vid: external_author
+      tid: '200'
+      langcode: vi
+      name: 'Nguyễn Thái Hùng'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: beca55af-9bb4-4c01-95bb-3f256f884d61
+    -
+      vid: external_author
+      tid: '211'
+      langcode: vi
+      name: 'Nhóm Thánh Vịnh Nauy'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 62aa5539-358b-441d-abeb-15ed3140eab4
+    -
+      vid: external_author
+      tid: '202'
+      langcode: vi
+      name: 'Phan Sinh Trần'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5806a73c-3a75-47ad-826c-6ab453aa0740
+    -
+      vid: external_author
+      tid: '188'
+      langcode: vi
+      name: 'PM. Cao Huy Hoàng'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ea810ce2-0527-4aed-abf4-b0fdb96930dc
+    -
+      vid: external_author
+      tid: '209'
+      langcode: vi
+      name: 'Tác giả mới'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f9f6d7c7-f28f-426e-ab65-9efc5337a094
+    -
+      vid: external_author
+      tid: '195'
+      langcode: vi
+      name: 'Trầm Hương Thơ'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c7bb440a-48ea-4438-a670-ee3e7337c717
+    -
+      vid: external_author
+      tid: '12'
+      langcode: vi
+      name: 'Trầm Thiên Thu'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 64a36b88-2eee-412c-9535-67a426bdd55a
+    -
+      vid: external_author
+      tid: '203'
+      langcode: vi
+      name: 'Trần Mỹ Duyệt'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5e1f0e22-cebd-4022-ab33-2b8554355eae
+    -
+      vid: external_author
+      tid: '198'
+      langcode: vi
+      name: 'Trần Đình Phan Tiến'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f84f9576-8c07-4687-83de-93e60812b837
+    -
+      vid: external_author
+      tid: '191'
+      langcode: vi
+      name: 'Vũ Văn An'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 57bb866d-17bd-4696-9141-4e7313fefa94
+    -
+      vid: external_author
+      tid: '192'
+      langcode: vi
+      name: 'Điền Phương Thảo'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b54d1fe5-47e0-4930-8871-cbce0e982717
+    -
+      vid: external_author
+      tid: '199'
+      langcode: vi
+      name: 'Đinh Văn Tiến Hùng'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5db4b4ce-da74-4847-b375-8fef78ddc38f
+  front_display:
+    -
+      vid: front_display
+      tid: '143'
+      langcode: vi
+      name: 'Bác ái'
+      description__value: null
+      description__format: null
+      weight: '6'
+      parent: '0'
+      uuid: a18cb14b-eee9-4887-8836-cd3f28f97deb
+    -
+      vid: front_display
+      tid: '181'
+      langcode: vi
+      name: 'Bài mới'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 661a0d20-28f6-455e-b91d-8d89f397aed4
+    -
+      vid: front_display
+      tid: '21'
+      langcode: vi
+      name: 'Bài viết đặc biệt'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '0'
+      uuid: 0d5dc2d9-5e26-43fe-9ac7-ee8e893229fa
+    -
+      vid: front_display
+      tid: '146'
+      langcode: vi
+      name: 'Danh mục sách'
+      description__value: null
+      description__format: null
+      weight: '8'
+      parent: '0'
+      uuid: 06ab944c-8659-4e99-b492-5b87ca4ac3e5
+    -
+      vid: front_display
+      tid: '20'
+      langcode: vi
+      name: 'Lời thánh dạy'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 4ef674db-3839-496c-8474-f312d2feaeda
+    -
+      vid: front_display
+      tid: '147'
+      langcode: vi
+      name: 'Thánh Kinh Đặc BIệt'
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '0'
+      uuid: 3a4b509c-5bd2-4838-b838-42d89517a4e4
+    -
+      vid: front_display
+      tid: '145'
+      langcode: vi
+      name: 'Thơ nhạc'
+      description__value: null
+      description__format: null
+      weight: '7'
+      parent: '0'
+      uuid: 60dd3eb3-4b4e-4843-abef-8e8e4d8614f5
+    -
+      vid: front_display
+      tid: '142'
+      langcode: vi
+      name: 'Thông báo'
+      description__value: null
+      description__format: null
+      weight: '5'
+      parent: '0'
+      uuid: bfb8b76c-7b39-4818-b668-d49eaca0a5b3
+    -
+      vid: front_display
+      tid: '23'
+      langcode: vi
+      name: 'Tiêu điểm'
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '0'
+      uuid: 53e2437a-33a7-4163-b3c2-afeeafa3fec0
+    -
+      vid: front_display
+      tid: '207'
+      langcode: vi
+      name: 'Tin nóng'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: dcf09037-92f2-4e4d-afaf-8bace17cce1e
+    -
+      vid: front_display
+      tid: '141'
+      langcode: vi
+      name: 'Tin tức'
+      description__value: null
+      description__format: null
+      weight: '4'
+      parent: '0'
+      uuid: 9d926d00-688a-464e-b1fc-0355cd6b47ef
+    -
+      vid: front_display
+      tid: '144'
+      langcode: vi
+      name: 'Tổng hợp'
+      description__value: null
+      description__format: null
+      weight: '9'
+      parent: '0'
+      uuid: 25866c94-16a0-4560-bd83-330e6436c5ff
+  media: {  }
+  words_of_god_category:
+    -
+      vid: words_of_god_category
+      tid: '178'
+      langcode: vi
+      name: 'Hạnh Các Thánh'
+      description__value: null
+      description__format: null
+      weight: '2'
+      parent: '0'
+      uuid: 6d3eaed5-4618-4e18-b0b6-fe7156e653e2
+    -
+      vid: words_of_god_category
+      tid: '179'
+      langcode: vi
+      name: 'Lẽ Sống'
+      description__value: null
+      description__format: null
+      weight: '3'
+      parent: '0'
+      uuid: da09f4cb-4e97-4815-9bb5-ca4e42bfb565
+    -
+      vid: words_of_god_category
+      tid: '176'
+      langcode: vi
+      name: 'Lời Chúa'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 1bc9d528-f3e2-465c-b74a-00e31f5390d7
+    -
+      vid: words_of_god_category
+      tid: '177'
+      langcode: vi
+      name: 'Suy Niệm'
+      description__value: null
+      description__format: null
+      weight: '1'
+      parent: '0'
+      uuid: ff4a7111-46d9-46d5-b00d-ad3e979bae62

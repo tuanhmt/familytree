@@ -1,0 +1,25 @@
+uuid: 8c016f76-6b9e-448e-84d0-742683f7b37f
+langcode: vi
+status: true
+dependencies:
+  config:
+    - system.menu.top
+  module:
+    - system
+  theme:
+    - familytree
+id: familytree_topmenu
+theme: familytree
+region: top_header_left
+weight: -7
+provider: null
+plugin: 'system_menu_block:top'
+settings:
+  id: 'system_menu_block:top'
+  label: 'Top menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

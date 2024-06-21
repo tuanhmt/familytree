@@ -1,0 +1,17 @@
+uuid: 55ca6944-18b0-43fa-a4dc-4d1b15147c43
+langcode: vi
+status: true
+dependencies:
+  module:
+    - focal_point
+name: the_living
+label: 'Church - The Living'
+effects:
+  37443969-4668-49a9-95a8-b69631b5a112:
+    uuid: 37443969-4668-49a9-95a8-b69631b5a112
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 360
+      height: 180
+      crop_type: focal_point

@@ -1,0 +1,11 @@
+uuid: 795b10b8-43f7-406d-8fdd-b7b3e5048dcd
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.create_video_in_modal
+label: 'Create Video in Modal'
+description: ''
+targetEntityType: media
+cache: true

@@ -1,0 +1,12 @@
+uuid: fbd693f5-a66d-4b44-b27f-8650232a605d
+langcode: en
+status: true
+dependencies: {  }
+label: Slideshow
+id: slideshow
+description: ''
+aspect_ratio: '555:385'
+soft_limit_width: 555
+soft_limit_height: 385
+hard_limit_width: null
+hard_limit_height: null

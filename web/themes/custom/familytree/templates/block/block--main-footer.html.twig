@@ -1,0 +1,12 @@
+{% extends "block--system-menu-block.html.twig" %}
+
+{% set heading_id = attributes.id ~ '-menu'|clean_id %}
+{% set classes = [
+  'navbar',
+  'navbar-default',
+  'navbar-expand-lg',
+  'py-0'
+] %}
+{% block nav_open %}
+  <nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes.addClass(classes)|without('role', 'aria-labelledby') }}>
+{% endblock %}

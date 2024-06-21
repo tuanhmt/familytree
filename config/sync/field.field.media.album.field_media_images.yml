@@ -1,0 +1,28 @@
+uuid: c3d6ac71-1871-4557-b642-8f6751bc62fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_images
+    - media.type.album
+    - media.type.image
+id: media.album.field_media_images
+field_name: field_media_images
+entity_type: media
+bundle: album
+label: Images
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

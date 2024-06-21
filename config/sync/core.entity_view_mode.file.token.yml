@@ -1,0 +1,11 @@
+uuid: c318c947-2771-4055-b4a8-5f4c9fab0979
+langcode: vi
+status: true
+dependencies:
+  module:
+    - file
+id: file.token
+label: Token
+description: ''
+targetEntityType: file
+cache: true

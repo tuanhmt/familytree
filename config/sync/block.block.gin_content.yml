@@ -1,0 +1,22 @@
+uuid: c437353d-9540-40f9-a79c-793a2ae2e280
+langcode: vi
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - gin
+_core:
+  default_config_hash: hBHXB7hC05XU7pDYzETt-GUcpFlogK1gkjyAsg0Ym58
+id: gin_content
+theme: gin
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Nội dung chính của trang'
+  label_display: '0'
+  provider: system
+visibility: {  }

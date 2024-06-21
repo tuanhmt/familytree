@@ -1,0 +1,68 @@
+version: '3'
+services:
+  # reverse_proxy: 
+  #   image: ${IMAGE_NGINX}
+  #   container_name: "${COMPOSE_PROJECT_NAME}_reverse_proxy"
+  #   volumes:
+  #     - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+  #     - ./nginx/conf.d:/etc/nginx/conf.d
+  #     - ./nginx/ssl:/etc/ssl/certs
+  #   environment:
+  #     - NGINX_HOST=${NGINX_HOST}
+  #   ports:
+  #     - 80:80
+  #     - 443:443
+  #   networks:
+  #     - front
+  #   links:
+  #     - drupal
+      
+  drupal:
+    container_name: "${COMPOSE_PROJECT_NAME}_drupal"
+    build: 
+      context: ./../
+      dockerfile: ./docker/Dockerfile
+    restart: always
+    environment:
+      - MYSQL_HOSTNAME=${DB_HOST}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASS}
+      - MYSQL_DATABASE=${DB_NAME}
+      - DB_PORT=${DB_PORT}
+      - XDEBUG_MODE=debug
+      - XDEBUG_HOST=$(ipconfig getifaddr en0)
+      - XDEBUG_CONFIG=client_host=192.168.65.1 client_port=9003
+    volumes:
+      - ../:/var/www/html/
+      - ./php/php-dev.ini:/usr/local/etc/php/conf.d/php-dev.ini
+      - ./php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+    networks:
+      - front
+
+  # mariadb:
+  #   image: ${IMAGE_MARIADB}
+  #   container_name: "${COMPOSE_PROJECT_NAME}_mariadb"
+  #   restart: always
+  #   environment:
+  #     - MYSQL_RANDOM_ROOT_PASSWORD=1
+  #     - MYSQL_USER=${DB_USER}
+  #     - MYSQL_PASSWORD=${DB_PASS}
+  #     - MYSQL_DATABASE=${DB_NAME}
+  #   volumes:
+  #     - db_data:/var/lib/mysql
+  #   networks:
+  #     - front
+
+# networks:
+#   front:
+
+networks:
+  front:
+    name: external_reverse_proxy
+    external: true
+  
+volumes:
+  db_data:
+
+
+

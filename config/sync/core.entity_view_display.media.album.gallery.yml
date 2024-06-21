@@ -1,0 +1,30 @@
+uuid: 74ebe585-1b42-46ea-8713-dc5a7b040ad9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.gallery
+    - field.field.media.album.field_images
+    - field.field.media.album.field_media_images
+    - media.type.album
+id: media.album.gallery
+targetEntityType: media
+bundle: album
+mode: gallery
+content:
+  field_media_images:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: gallery
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_images: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

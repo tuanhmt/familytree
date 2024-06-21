@@ -1,0 +1,10 @@
+ckeditor5.plugin.ckeditor5_typescript_text_color:
+  type: mapping
+  label: Custom colors
+  mapping:
+    colors:
+      type: sequence
+      label: 'Colors'
+    use_default_colors:
+      type: boolean
+      label: Use default colors

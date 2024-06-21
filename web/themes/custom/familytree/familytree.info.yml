@@ -1,0 +1,33 @@
+name: Family Tree
+type: theme
+base theme: false
+description: A flexible theme with a responsive, mobile-first layout.
+package: Church
+core_version_requirement: ^9 || ^10 || ^11
+libraries:
+  - familytree/global
+
+# Regions
+regions:
+  header: "Header"
+  content: Content
+  sidebar_first: "First sidebar"
+  navigation: "Navigation"
+  menu_responsive: "Menu Responsive"
+  top_header_left: "Top Header Left"
+  top_header_right: "Top Header Right"
+  header_left: "Header Left"
+  header_right: "Header Right"
+  breaking: "Breaking"
+  slideshow: "Slideshow"
+  latest_content: "Latest Content"
+  sidebar_second: "Second sidebar"
+  footer_top: "Footer Top"
+  footer_first: "Footer First"
+  footer_second: "Footer Second"
+  highlighted: 'Highlighted'
+  help: 'Help'
+  sidebar: 'Sidebar'
+
+regions_hidden:
+  - sidebar_first

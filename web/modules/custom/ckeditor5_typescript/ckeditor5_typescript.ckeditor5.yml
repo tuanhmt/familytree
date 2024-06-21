@@ -1,0 +1,16 @@
+ckeditor5_typescript_text_color:
+  ckeditor5:
+    plugins:
+      - textcolor.TextColor
+  drupal:
+    label: 'Text color'
+    library: ckeditor5_typescript/textcolor.editor
+    admin_library: ckeditor5_typescript/textcolor.admin
+    class: Drupal\ckeditor5_typescript\Plugin\CKEditor5Plugin\TextColor
+    toolbar_items:
+      textColor:
+        label: Text Color
+    # The plugin does not provide elements.
+    elements:
+      - <span>
+      - <span class>

@@ -1,0 +1,29 @@
+uuid: 66dfaaaa-2e86-4766-87df-75b96341ae91
+langcode: vi
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_audio_file
+    - media.type.audio
+  module:
+    - file
+_core:
+  default_config_hash: sI-7KvS4Qbg6EucALXjwYEotxgxUfH-bMC19yTpZ1kw
+id: media.audio.field_media_audio_file
+field_name: field_media_audio_file
+entity_type: media
+bundle: audio
+label: 'Audio file'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: 'media/audio/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'mp3 wav aac'
+  max_filesize: '50 MB'
+  description_field: false
+field_type: file

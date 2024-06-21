@@ -1,0 +1,4 @@
+.button {
+  padding: calc(var(--space-m) - 0.3125rem) calc(var(--space-l) - 0.3125rem); }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvYnV0dG9ucy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsMEVBQThELEVBQUEiLCJmaWxlIjoiY29tcG9uZW50cy9idXR0b25zLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5idXR0b24ge1xuICBwYWRkaW5nOiBjYWxjKHZhcigtLXNwYWNlLW0pIC0gNXB4KSBjYWxjKHZhcigtLXNwYWNlLWwpIC0gNXB4KTtcbn0iXX0= */

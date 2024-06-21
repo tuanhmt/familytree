@@ -1,0 +1,11 @@
+uuid: d1556e6b-f74a-4b41-8adf-e1d2191c6041
+langcode: vi
+status: true
+dependencies:
+  module:
+    - menu_link_content
+id: menu_link_content.token
+label: Token
+description: ''
+targetEntityType: menu_link_content
+cache: true

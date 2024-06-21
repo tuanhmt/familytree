@@ -1,0 +1,11 @@
+uuid: a5d620b8-7c12-4be2-9d14-c7580502b78b
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.modal_popup
+label: 'Modal Popup'
+description: ''
+targetEntityType: media
+cache: true

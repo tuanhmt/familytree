@@ -1,0 +1,25 @@
+uuid: 48141dfa-840e-4b16-837c-f9e57c90ae1d
+langcode: vi
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - familytree
+id: familytree_mainnavigation
+theme: familytree
+region: navigation
+weight: -7
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: true
+visibility: {  }

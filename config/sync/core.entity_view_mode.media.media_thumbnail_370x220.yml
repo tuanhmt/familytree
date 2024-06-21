@@ -1,0 +1,11 @@
+uuid: 86b9d7a9-be88-4389-b610-484038e70b50
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.media_thumbnail_370x220
+label: 'Media Thumbnail (370x220)'
+description: ''
+targetEntityType: media
+cache: true

@@ -1,0 +1,18 @@
+html {
+  -webkit-font-smoothing: antialiased; }
+
+@font-face {
+  font-family: ChurchMenu;
+  src: url(/themes/custom/familytree/css/fonts/church_menu_gdi.woff); }
+
+@font-face {
+  font-family: Church;
+  src: url(/themes/custom/familytree/css/fonts/church_gdi.woff);
+  font-weight: normal; }
+
+@font-face {
+  font-family: Church;
+  src: url(/themes/custom/familytree/css/fonts/church_semibold_gdi.woff);
+  font-weight: bold; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJhc2UvZm9udHMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUNFLG1DQUFtQyxFQUFBOztBQUdyQztFQUNFLHVCQUF1QjtFQUN2QixrRUFBa0UsRUFBQTs7QUFHcEU7RUFDRSxtQkFBbUI7RUFDbkIsNkRBQTZEO0VBQzdELG1CQUFtQixFQUFBOztBQUdyQjtFQUNFLG1CQUFtQjtFQUNuQixzRUFBc0U7RUFDdEUsaUJBQWlCLEVBQUEiLCJmaWxlIjoiYmFzZS9mb250cy5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAY2hhcnNldCBcInV0Zi04XCI7XG5cbmh0bWwge1xuICAtd2Via2l0LWZvbnQtc21vb3RoaW5nOiBhbnRpYWxpYXNlZDtcbn1cblxuQGZvbnQtZmFjZSB7XG4gIGZvbnQtZmFtaWx5OiBDaHVyY2hNZW51O1xuICBzcmM6IHVybCgvdGhlbWVzL2N1c3RvbS9mYW1pbHl0cmVlL2Nzcy9mb250cy9jaHVyY2hfbWVudV9nZGkud29mZik7XG59XG5cbkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogQ2h1cmNoO1xuICBzcmM6IHVybCgvdGhlbWVzL2N1c3RvbS9mYW1pbHl0cmVlL2Nzcy9mb250cy9jaHVyY2hfZ2RpLndvZmYpO1xuICBmb250LXdlaWdodDogbm9ybWFsO1xufVxuXG5AZm9udC1mYWNlIHtcbiAgZm9udC1mYW1pbHk6IENodXJjaDtcbiAgc3JjOiB1cmwoL3RoZW1lcy9jdXN0b20vZmFtaWx5dHJlZS9jc3MvZm9udHMvY2h1cmNoX3NlbWlib2xkX2dkaS53b2ZmKTtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG59Il19 */
