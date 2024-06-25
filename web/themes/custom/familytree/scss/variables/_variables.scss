@@ -1,11 +1,13 @@
 /* VARIABLES
 -------------------------------------------------*/
 $blue: #003A24;
-$red: #831315;
+$red: #83251D;
+$yellow: #FEB74F;
 
 :root{ 
   --data-color-blue: #{$blue};
   --data-color-red: #{$red};
+  --data-color-yellow: #{$yellow};
 }
 
 $container-max-widths: (

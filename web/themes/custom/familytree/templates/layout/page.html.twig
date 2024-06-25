@@ -52,17 +52,17 @@
 	{% block header_primary %}
 		{% embed '@familytree/components/layout/header.twig' %}
 			{% block content %}
-				<div class="header-left">
+				<div class="header-left d-flex align-item-end">
 					<img src="/themes/custom/familytree/images/phoenix.svg" alt="{{ 'Home'|t }}" />
 				</div>
-				<div class="header-primary">
+				<div class="header-primary d-flex align-item-end">
 					{% if page.header %}
 						{% block header %}
 							{{ page.header }}
 						{% endblock %}
 					{% endif %}
 				</div>
-				<div class="header-right">
+				<div class="header-right d-flex align-item-end">
 					<img src="/themes/custom/familytree/images/dragon.svg" alt="{{ 'Home'|t }}" />
 				</div>
 			{% endblock %}
@@ -185,11 +185,6 @@
 							{% endblock %}
 						{% endif %}
 						{#  end footer_second #}
-						<a href="#" class="scrollToTop">
-							{% trans %}
-							Back to top
-							{% endtrans %}
-						</a>
 					</div>
 				</div>
 			</div>

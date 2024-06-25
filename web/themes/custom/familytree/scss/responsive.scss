@@ -1,0 +1,20 @@
+@import "import";
+
+@include media-breakpoint-up(md) {
+  .header {
+    height: 260px;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .header {
+    height: 200px;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .header {
+    height: 130px;
+    background-size: cover;
+  }
+}

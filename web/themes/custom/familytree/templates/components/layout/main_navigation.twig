@@ -1,12 +1,12 @@
 {% set header_classes = [
   'mage-mainmenu',
-  'd-none',
-  'd-lg-block',
 ] %}
 
 <section class="{{ header_classes|join(' ') }}">
   <div class="container">
-    {% block content %}
-    {% endblock %}
+    <div class="main-menu-wrapper">
+      {% block content %}
+      {% endblock %}
+    </div>
   </div>
 </section>

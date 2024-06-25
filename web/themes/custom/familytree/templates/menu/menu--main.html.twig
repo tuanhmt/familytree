@@ -30,7 +30,11 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul class="nav navbar-nav">
+      <div class="menu-frame-left d-flex align-item-center">
+        <img src="/themes/custom/familytree/images/menu_frame_left.svg" />
+      </div>
+      <div class="menu-frame-center d-flex align-item-center flex-grow-1">
+        <ul class="nav navbar-nav">
     {% else %}
       <ul>
     {% endif %}
@@ -52,22 +56,21 @@
           <li{{ item.attributes.addClass(classes) }}>
             {% if menu_level == 1 %}
               {% set title %}
-                <i class="fa fa-caret-right"></i> {{ item.title }}
+                {{ item.title }}
               {% endset %}
               {{ link(title, item.url) }}
             {% else %}
-              {% if menu_level == 0 and loop.first %}
-                {% set title %}
-                  <i class="fa fa-home"></i>
-                {% endset %}
-                {{ link(title, item.url) }}
-              {% else %}
-                {{ link(item.title, item.url) }}
-              {% endif %}
+              {{ link(item.title, item.url) }}
             {% endif %}
         {% endif %}
       </li>
     {% endfor %}
     </ul>
+    {% if menu_level == 0 %}
+      </div>
+      <div class="ms-auto menu-frame-right d-flex align-item-center">
+        <img src="/themes/custom/familytree/images/menu_frame_right.svg" />
+      </div>
+    {% endif %}
   {% endif %}
 {% endmacro %}
