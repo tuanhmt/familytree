@@ -45,7 +45,6 @@ module:
   path: 0
   path_alias: 0
   phpass: 0
-  responsive_menu: 0
   select2: 0
   structure_sync: 0
   system: 0

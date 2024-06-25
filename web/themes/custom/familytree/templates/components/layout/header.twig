@@ -2,11 +2,13 @@
 
 {% set header_classes = [
   'header',
+  'd-flex',
+  'align-items-center'
 ] %}
 
 <header class="{{ header_classes|join(' ') }}">
   <div class="container">
-    <div class="row">      	
+    <div class="d-flex justify-content-between">      	
       {% block content %}
       {% endblock %}
     </div>

@@ -49,56 +49,21 @@
 {% block library %}
 {% endblock %}
 <div id="page" class="layout-container m-0">
-	{% block header_top %}
-		{% embed '@familytree/components/layout/header_top.twig' %}
-			{% block content %}
-				<div class="container">
-					<div class="row">
-						<div
-							class="col-md-8 col-sm-8">
-							{# Top Header Left #}
-							{% if page.top_header_left %}
-								{% block top_header_left %}
-									{{ page.top_header_left }}
-								{% endblock %}
-							{% endif %}
-							{# Top Header Left #}
-						</div>
-						<div
-							class="col-md-4 col-sm-4 d-flex justify-content-end">
-							{# Top Header Right #}
-							{% if page.top_header_right %}
-								{% block top_header_right %}
-									{{ page.top_header_right }}
-								{% endblock %}
-							{% endif %}
-							{# Top Header Right #}
-						</div>
-					</div>
-				</div>
-			{% endblock %}
-		{% endembed %}
-	{% endblock %}
-
 	{% block header_primary %}
 		{% embed '@familytree/components/layout/header.twig' %}
 			{% block content %}
-				<div
-					class="header-responsive d-flex">
-					{#  menu_responsive #}
-					{% if page.menu_responsive %}
-						{% block menu_responsive %}
-							{{ page.menu_responsive }}
-						{% endblock %}
-					{% endif %}
-					{#  end menu_responsive #}
+				<div class="header-left">
+					<img src="/themes/custom/familytree/images/phoenix.svg" alt="{{ 'Home'|t }}" />
 				</div>
-				<div class="col-md-6 col-sm-12">
+				<div class="header-primary">
 					{% if page.header %}
 						{% block header %}
 							{{ page.header }}
 						{% endblock %}
 					{% endif %}
+				</div>
+				<div class="header-right">
+					<img src="/themes/custom/familytree/images/dragon.svg" alt="{{ 'Home'|t }}" />
 				</div>
 			{% endblock %}
 		{% endembed %}
@@ -121,37 +86,6 @@
 	{% block header_secondary %}
 		{{ page.header_secondary }}
 	{% endblock %}
-
-	{{ attach_library('familytree/breaking') }}
-	{{ attach_library('familytree/jquery.ticker') }}
-	<section class="breaking">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-9 d-flex align-items-center">
-					{% if page.breaking %}
-						{% block breaking %}
-							{{ page.breaking }}
-						{% endblock %}
-					{% endif %}
-					<div class="ticker">
-						<ul>
-							<li>Ticker item #1</li>
-							<li>Ticker item #2</li>
-							<li><em>Another</em> ticker item</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<figure class="search">
-						<form>
-							<input type="text" placeholder="Nhập từ khóa tìm kiếm">
-							<input type="submit" value="&#xf002" class="fa">
-						</form>
-					</figure>
-				</div>
-			</div>
-		</div>
-	</section>
 
 	{% block main %}
 		<main role="main" class="mt-3">

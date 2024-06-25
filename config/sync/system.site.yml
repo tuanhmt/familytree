@@ -2,9 +2,9 @@ _core:
   default_config_hash: l58O_yEXSo-SeJi19LXdzTU1tNJG3lmnIhCitRkM1tk
 langcode: vi
 uuid: fb4e0e0d-282b-4627-8bbf-64b63f27ce9d
-name: 'Thánh Linh'
+name: 'Family tree'
 mail: admin@example.com
-slogan: 'Mạng lưới cầu nguyện'
+slogan: ''
 page:
   403: ''
   404: ''

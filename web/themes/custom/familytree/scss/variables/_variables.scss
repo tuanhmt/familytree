@@ -1,3 +1,13 @@
 /* VARIABLES
 -------------------------------------------------*/
-$grid-columns: 12 !default;
+$blue: #003A24;
+$red: #831315;
+
+:root{ 
+  --data-color-blue: #{$blue};
+  --data-color-red: #{$red};
+}
+
+$container-max-widths: (
+  xxl: 1422px
+);
