@@ -30,37 +30,47 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <div class="menu-frame-left d-flex align-item-center">
+      <div class="menu-frame-left d-none d-lg-flex align-item-center">
         <img src="/themes/custom/familytree/images/menu_frame_left.svg" />
       </div>
-      <div class="menu-frame-center d-flex align-item-center flex-grow-1">
+      <div class="menu-frame-center d-lg-flex align-item-center flex-grow-1 justify-content-center">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon mr-1"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-navbar">
         <ul class="nav navbar-nav">
     {% else %}
-      <ul>
+      <ul{{ attributes }}>
     {% endif %}
     {% for item in items %}
       {%
         set classes = [
           item.in_active_trail ? 'active-trail',
           item.in_active_trail ? 'menu-item--active-trail',
+          menu_level == 0 ? 'nav-item',
         ]
       %}
         {% if item.below %}
-          {% set classes = classes|merge(['dropdown', 'yamm-fw']) %}
+          {% set classes = classes|merge(['dropdown']) %}
           <li{{ item.attributes.addClass(classes) }}>
-            {{ link(item.title, item.url) }}
-            <section class="dropdown-menu">
-              {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-            </section>
+            {{ link(item.title, item.url, { 'class':['dropdown-toggle', 'nav-link'] , 'id': 'dropdown-' ~ menu_level ~ loop.index,'data-bs-toggle':"dropdown", 'aria-expanded':"false" }) }}
+            
+            {% set dropdownclasses = [
+              'dropdown-menu', 
+              'border-0',
+              'shadow',
+              'bsb-zoomIn'
+            ] %}
+            {{ menus.menu_links(item.below, attributes.addClass(dropdownclasses).setAttribute('aria-labelledby', 'dropdown-' ~ menu_level ~ loop.index), menu_level + 1) }}
         {% else %}
           <li{{ item.attributes.addClass(classes) }}>
             {% if menu_level == 1 %}
               {% set title %}
                 {{ item.title }}
               {% endset %}
-              {{ link(title, item.url) }}
+              {{ link(title, item.url, { 'class':['dropdown-item'] }) }}
             {% else %}
-              {{ link(item.title, item.url) }}
+              {{ link(item.title, item.url, { 'class':['nav-link'] }) }}
             {% endif %}
         {% endif %}
       </li>
@@ -68,7 +78,8 @@
     </ul>
     {% if menu_level == 0 %}
       </div>
-      <div class="ms-auto menu-frame-right d-flex align-item-center">
+      </div>
+      <div class="ms-auto menu-frame-right d-none d-lg-flex align-item-center">
         <img src="/themes/custom/familytree/images/menu_frame_right.svg" />
       </div>
     {% endif %}

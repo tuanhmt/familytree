@@ -90,62 +90,62 @@
 	{% block main %}
 		<main role="main" class="mt-3">
 			<div class="container">
-				<div class="row">
-					{# check if sidebar has content #}
-						{% if page.sidebar or is_front %}
-							<div class="col-md-8">
-								<section class="row top-content">
-									<div
-										class="col-lg-6 col-md-7">
-										{#  slideshow #}
-										{% if page.slideshow %}
-											{% block slideshow %}
-												{{ page.slideshow }}
-											{% endblock %}
-										{% endif %}
-										{#  end slideshow #}
-									</div>
-									<div
-										class="col-lg-6 col-md-5">
-										{#  latest_content #}
-										{% if page.latest_content %}
-											{% block latest_content %}
-												{{ page.latest_content }}
-											{% endblock %}
-										{% endif %}
-										{#  end latest_content #}
-									</div>
-								</section>
+				{# check if sidebar has content #}
+				{% if page.sidebar or is_front %}
+					<div class="row">
+						<div class="col-md-8">
+							<section class="row top-content">
+								<div
+									class="col-lg-6 col-md-7">
+									{#  slideshow #}
+									{% if page.slideshow %}
+										{% block slideshow %}
+											{{ page.slideshow }}
+										{% endblock %}
+									{% endif %}
+									{#  end slideshow #}
+								</div>
+								<div
+									class="col-lg-6 col-md-5">
+									{#  latest_content #}
+									{% if page.latest_content %}
+										{% block latest_content %}
+											{{ page.latest_content }}
+										{% endblock %}
+									{% endif %}
+									{#  end latest_content #}
+								</div>
+							</section>
 
-								<section
-									class="col-left">
-									{# message #}
-									{{ page.highlighted }}
-									{# end message #}
-									{# main content #}
-										{% block content %}
-										{{ page.content }}
-									{% endblock %}
-									{# end main content #}
-								</section>
-							</div>
-							<aside
-								class="col-md-4">
-								{# sidebar #}
-								{% block sidebar %}
-									{{ page.sidebar }}
-								{% endblock %}
-								{# end sidebar #}
-							</aside>
-						{% else %}
 							<section
-								class="content-fullwidth">
+								class="col-left">
+								{# message #}
+								{{ page.highlighted }}
+								{# end message #}
 								{# main content #}
-								{{ block('content') }}
+									{% block content %}
+									{{ page.content }}
+								{% endblock %}
 								{# end main content #}
 							</section>
-						{% endif %}
-				</div>
+						</div>
+						<aside
+							class="col-md-4">
+							{# sidebar #}
+							{% block sidebar %}
+								{{ page.sidebar }}
+							{% endblock %}
+							{# end sidebar #}
+						</aside>
+					</div>
+				{% else %}
+					<section
+						class="content-fullwidth">
+						{# main content #}
+						{{ block('content') }}
+						{# end main content #}
+					</section>
+				{% endif %}
 			</div>
 		</main>
 	{% endblock %}

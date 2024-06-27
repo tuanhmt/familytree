@@ -29,6 +29,7 @@ const paths = {
   },
   js: {
     bootstrap: './node_modules/bootstrap/dist/js/bootstrap.min.js',
+    bootstrap_bundle: './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
     jquery: './node_modules/jquery/dist/jquery.min.js',
     popper: './node_modules/popper.js/dist/umd/popper.min.js',
     poppermap: './node_modules/popper.js/dist/umd/popper.min.js.map',
@@ -58,7 +59,7 @@ function styles () {
 
 // Move the javascript files into our js folder
 function js () {
-  return gulp.src([paths.js.bootstrap, paths.js.jquery, paths.js.popper, paths.js.poppermap])
+  return gulp.src([paths.js.bootstrap, paths.js.bootstrap_bundle,  paths.js.jquery, paths.js.popper, paths.js.poppermap])
     .pipe(gulp.dest(paths.js.dest))
     .pipe(browserSync.stream())
 }
@@ -66,7 +67,7 @@ function js () {
 // Static Server + watching scss/html files
 function serve () {
   browserSync.init({
-    proxy: 'https://thanhlinhd10.local.test',
+    proxy: 'https://familytree.local.test',
   })
 
   gulp.watch([paths.scss.watch, paths.scss.bootstrap], styles).on('change', browserSync.reload)

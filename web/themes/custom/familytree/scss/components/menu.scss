@@ -1,4 +1,5 @@
 /* MAIN MENU */
+@import "https://unpkg.com/bs-brain@2.0.4/components/navbars/navbar-1/assets/css/navbar-1.css";
 .mage-mainmenu {
   // background: #137bb2;
   margin-top: -34px;
@@ -6,12 +7,20 @@
   .main-menu-wrapper {
     border-radius: 10px;
     background-image: url(../../images/menu_bg.png);
-    background: linear-gradient(180deg, #83251D 20.59%, rgba(131, 37, 29, 0.00) 300%), url(../../images/menu_bg.png) #83251D;
+    background: linear-gradient(180deg, var(--data-color-red) 20.59%, rgba(131, 37, 29, 0.00) 300%), url(../../images/menu_bg.png) var(--data-color-red);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 100%;
     margin-bottom: 0;
-    min-height: 68px;
+    height: 68px;
     padding: 8px;
+
+    .navbar-toggler {
+      height: 68px;
+
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(254, 183, 79, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+      }
+    }
 
     .menu-frame-left {
       margin-top: -1px;
@@ -30,7 +39,24 @@
       border-top: 1px solid var(--data-color-yellow);
       border-bottom: 1px solid var(--data-color-yellow);
 
+      .navbar-toggler {
+        border: none;
+        color: var(--data-color-yellow);
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding-left: 24px;
+        padding-right: 24px;
+
+        &:focus {
+          box-shadow: none;
+          outline: none;
+        }
+      }
+
       ul.navbar-nav {
+        padding: 0;
+
         li {
           a, span {
             color: var(--data-color-yellow);
@@ -39,16 +65,35 @@
             font-weight: 700;
             line-height: normal;
             text-transform: uppercase;
-            padding: 0 10px;
+            
+            // padding: 0 10px;
+
+            &.nav-link {
+              padding-top: 12px;
+              padding-bottom: 12px;
+            }
 
             &:hover, &.is-active {
               color: #fff;
             }
           }
 
-          &:hover {
-            .dropdown-menu {
-              display: block;
+          .dropdown-menu {
+            background-color: var(--data-color-red);
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            padding: 20px;
+            width: 350px;
+
+            li {
+              a {
+                padding: 10px 16px;
+                &.dropdown-item {
+                  &:hover,&:focus {
+                    background-color: transparent;
+                  }
+                }
+              }
             }
           }
         }

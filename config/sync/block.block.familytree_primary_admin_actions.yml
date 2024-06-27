@@ -9,7 +9,7 @@ _core:
 id: familytree_primary_admin_actions
 theme: familytree
 region: content
-weight: -2
+weight: -3
 provider: null
 plugin: local_actions_block
 settings:

@@ -18,3 +18,78 @@
     background-size: cover;
   }
 }
+
+@include media-breakpoint-down(lg) {
+  .mage-mainmenu {
+    margin-top: -25px !important;
+
+    .main-menu-wrapper {
+      padding: 0 !important;
+      height: unset !important;
+
+      .menu-frame-center {
+        background-color: var(--data-color-red);
+
+        .navbar-toggler {
+          height: auto !important;
+          padding-top: 12px;
+          padding-bottom: 12px;
+          height: 26px;
+        }
+
+        ul.navbar-nav {
+          > li {
+            border-top: 1px solid var(--data-color-yellow);
+            a {
+              padding: 12px 24px;
+            }
+          }
+
+          .dropdown-menu {
+            box-shadow: none !important;
+            background-color: transparent;
+            padding: 0 0 0 24px !important;
+            margin: 0 !important;
+            animation: none !important;
+          }
+        }
+      }
+
+      .navbar-default {
+        border-top-width: 0 !important;
+        border-bottom-width: 0 !important;
+
+        ul.navbar-nav {
+          li {
+            a, span {
+              
+              // padding: 0 10px;
+  
+              &.nav-link {
+                padding-top: 12px;
+                padding-bottom: 12px;
+              }
+  
+              &:hover, &.is-active {
+                color: #fff;
+              }
+            }
+  
+            .dropdown-menu {
+              li {
+                a {
+                  padding: 12px 24px !important;
+                  &.dropdown-item {
+                    &:hover,&:focus {
+                      background-color: transparent;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

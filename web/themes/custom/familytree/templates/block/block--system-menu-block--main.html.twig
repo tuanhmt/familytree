@@ -4,7 +4,8 @@
 {% set classes = [
   'navbar',
   'navbar-default',
-  'navbar-expand-md',
+  'navbar-expand-lg',
+  'bsb-navbar bsb-navbar-hover bsb-navbar-caret'
 ] %}
 {% block nav_open %}
   <nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes.addClass(classes)|without('role', 'aria-labelledby') }}>

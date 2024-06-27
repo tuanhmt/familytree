@@ -17,16 +17,23 @@ global:
     - core/once
     - core/drupalSettings
     - familytree/bootstrap
-    - familytree/font-awesome
+    # - familytree/font-awesome
     - familytree/tabs
     - familytree/gin
 
 bootstrap:
+  js:
+    js/bootstrap.bundle.min.js: {}
   css:
     base:
       css/bootstrap.min.css: {}
   dependencies:
     - core/jquery
+    - familytree/popper
+
+popper:
+  js:
+    js/popper.min.js: {}
 
 header:
   css:
