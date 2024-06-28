@@ -6,8 +6,8 @@ global:
     base:
       css/base/reset.min.css: {}
       css/base/fonts.min.css: {}
-      css/style.min.css: {}
       css/responsive.min.css: {}
+      css/style.min.css: {}
     layout:
       css/layouts/layout.css: {}
     theme:
@@ -20,6 +20,7 @@ global:
     - familytree/breadcrumb
     - familytree/tabs
     - familytree/gin
+    - familytree/font-awesome
 
 bootstrap:
   js:

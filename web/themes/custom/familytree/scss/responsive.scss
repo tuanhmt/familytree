@@ -19,7 +19,7 @@
   }
 
   footer {
-    height: 160px;
+    height: 160px !important;
 
     .logo {
       img {
@@ -99,6 +99,19 @@
             }
           }
         }
+      }
+    }
+  }
+
+  .article-detail {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    .social-sharing-block {
+      left: 0 !important;
+
+      .social-sharing-buttons {
+        display: none !important;
       }
     }
   }

@@ -130,3 +130,37 @@ footer {
   background-position: center center;
   height: 244px;
 }
+
+.cat-list {
+  .cat-item {
+    margin-bottom: 48px;
+
+    .cat-item-image {
+      margin-bottom: 24px;
+
+      img {
+        border-radius: 8px;
+      }
+    }
+
+    .cat-item-title {
+      margin-bottom: 10px;
+      
+      a {
+        color: #1D1D1D;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 150%;
+      }
+    }
+
+    .cat-item-datetime {
+      color: #3C435B;
+      font-family: Roboto;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+}

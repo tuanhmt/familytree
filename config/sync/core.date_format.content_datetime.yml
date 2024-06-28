@@ -1,0 +1,8 @@
+uuid: 050876d0-fae2-4a8e-baeb-664b7df8d405
+langcode: vi
+status: true
+dependencies: {  }
+id: content_datetime
+label: 'Content datetime'
+locked: false
+pattern: 'l, d/m/Y'
