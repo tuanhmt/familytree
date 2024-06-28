@@ -1,4 +1,5 @@
 label: Glossary
+description: 'All content, by letter.'
 display:
   default:
     display_title: Default

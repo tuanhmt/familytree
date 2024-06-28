@@ -1,0 +1,23 @@
+.breadcrumb {
+  padding: 10px 0;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--data-color-red);
+  color: var(--data-color-light-gray);
+  font-size: 16px;
+  font-weight: 500;
+
+  .breadcrumb-item::before {
+    color: var(--data-color-light-gray);
+  }
+
+  li {
+    a {
+      color: var(--data-color-red);
+
+      &:hover {
+        text-decoration: underline;
+        color: var(--data-color-red);
+      }
+    }
+  }
+}

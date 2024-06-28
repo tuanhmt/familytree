@@ -10,6 +10,7 @@ display:
           label: Title
         type:
           label: 'Content type'
+          separator: ', '
         name:
           label: Author
         status:
@@ -21,6 +22,13 @@ display:
           label: Updated
         operations:
           label: Operations
+      pager:
+        options:
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+            first: '« First'
+            last: 'Last »'
       exposed_form:
         options:
           submit_button: Filter
@@ -42,6 +50,7 @@ display:
           expose:
             label: Status
           group_info:
+            label: 'Published status'
             group_items:
               1:
                 title: Published
@@ -57,3 +66,4 @@ display:
         title: Content
       tab_options:
         title: Content
+        description: 'Find and manage content'

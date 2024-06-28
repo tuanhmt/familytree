@@ -17,7 +17,7 @@ global:
     - core/once
     - core/drupalSettings
     - familytree/bootstrap
-    # - familytree/font-awesome
+    - familytree/breadcrumb
     - familytree/tabs
     - familytree/gin
 
@@ -60,10 +60,10 @@ font-awesome:
     theme:
       https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css: { type: external, minified: true }
 
-breaking:
+breadcrumb:
   css:
     component:
-      css/components/breaking.min.css: {}
+      css/components/breadcrumb.min.css: {}
 
 node:
   css:

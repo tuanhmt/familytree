@@ -1,0 +1,1 @@
+.breadcrumb{padding:.625rem 0;margin-bottom:2rem;border-bottom:1px solid var(--data-color-red);color:var(--data-color-light-gray);font-size:1rem;font-weight:500}.breadcrumb .breadcrumb-item::before{color:var(--data-color-light-gray)}.breadcrumb li a{color:var(--data-color-red)}.breadcrumb li a:hover{text-decoration:underline;color:var(--data-color-red)}

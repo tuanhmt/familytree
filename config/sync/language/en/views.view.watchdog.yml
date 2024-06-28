@@ -8,6 +8,8 @@ display:
       fields:
         nothing:
           admin_label: Icon
+        wid:
+          label: WID
         severity:
           label: Severity
         type:
@@ -16,8 +18,12 @@ display:
           label: Date
         message:
           label: Message
+          alter:
+            path: 'admin/reports/dblog/event/{{ wid }}'
+            alt: '{{ message }}'
         name:
           label: User
+          separator: ', '
         link:
           label: Operations
       pager:

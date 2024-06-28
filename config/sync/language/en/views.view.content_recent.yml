@@ -1,9 +1,13 @@
 label: 'Recent content'
+description: 'Recent content.'
 display:
   default:
     display_title: Default
     display_options:
       title: 'Recent content'
+      fields:
+        changed:
+          separator: ', '
       exposed_form:
         options:
           submit_button: Apply

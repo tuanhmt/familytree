@@ -18,8 +18,8 @@ web/sites/simpletest
 # Ignore all files in web folder
 web/*.*
 # web/themes/custom/*/css/
-web/themes/custom/*/js/*.min.js
-web/themes/custom/*/js/*.min.js.map
+# web/themes/custom/*/js/*.min.js
+# web/themes/custom/*/js/*.min.js.map
 web/sites/*/services.yml
 web/sites/*/default.services.yml
 web/sites/*/default.settings.php

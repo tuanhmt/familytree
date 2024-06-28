@@ -19,12 +19,25 @@ display:
           label: Roles
         created:
           label: 'Member for'
+          settings:
+            future_format: '@interval'
+            past_format: '@interval'
         access:
           label: 'Last access'
+          settings:
+            future_format: '@interval hence'
+            past_format: '@interval ago'
         operations:
           label: Operations
+        mail:
+          separator: ', '
       pager:
         options:
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page_label: 'Items per page'
             items_per_page_options_all_label: '- All -'
@@ -40,6 +53,9 @@ display:
         area_text_custom:
           content: 'No people available.'
       filters:
+        combine:
+          expose:
+            label: 'Name or email contains'
         status:
           group_info:
             label: Status

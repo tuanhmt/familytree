@@ -1,4 +1,5 @@
 label: "Who's new"
+description: 'Shows a list of the newest user accounts on the site.'
 display:
   default:
     display_title: Default
@@ -14,5 +15,6 @@ display:
   block_1:
     display_title: "Who's new"
     display_options:
+      display_description: 'A list of new users'
       block_description: "Who's new"
       block_category: User
