@@ -19,4 +19,22 @@
     }
   };
 
+  /**
+   * Init social button behavior.
+   *
+   * @type {{attach: Drupal.behaviors.socialButtons}}
+   */
+  Drupal.behaviors.socialButtons = {
+    attach: function attach(context) {
+      $(window).scroll(function () {
+        let windowTop = $(window).scrollTop();
+        if (windowTop > 415) {
+          $('.social-sharing-block').css('top', windowTop - 300);
+        } else {
+          $('.social-sharing-block').css('top', 0);
+        }
+      });
+    }
+  };
+
 })(jQuery, Drupal, once);

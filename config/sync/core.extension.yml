@@ -4,6 +4,7 @@ langcode: vi
 module:
   admin_toolbar: 0
   admin_toolbar_tools: 0
+  better_social_sharing_buttons: 0
   big_pipe: 0
   block: 0
   breakpoint: 0
@@ -13,7 +14,6 @@ module:
   church_homepage: 0
   ckeditor5: 0
   ckeditor5_embedded_content: 0
-  ckeditor_media_resize: 0
   config: 0
   config_translation: 0
   contextual: 0
@@ -53,6 +53,7 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  twig_tweak: 0
   update: 0
   user: 0
   video_embed_field: 0

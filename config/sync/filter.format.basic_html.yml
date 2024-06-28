@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - ckeditor5_embedded_content
-    - ckeditor_media_resize
     - editor
     - media
 name: 'Basic HTML'
@@ -41,7 +40,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<br> <p class="text-align-left text-align-center text-align-right text-align-justify"> <h2 class="text-align-left text-align-center text-align-right text-align-justify"> <h3 class="text-align-left text-align-center text-align-right text-align-justify"> <h4 class="text-align-left text-align-center text-align-right text-align-justify"> <strong> <em> <u> <a href> <ul> <ol reversed start> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <drupal-media data-entity-type data-entity-uuid alt data-caption data-align data-media-width> <embedded-content data-plugin-config data-plugin-id>'
+      allowed_html: '<br> <p class="text-align-left text-align-center text-align-right text-align-justify"> <h2 class="text-align-left text-align-center text-align-right text-align-justify"> <h3 class="text-align-left text-align-center text-align-right text-align-justify"> <h4 class="text-align-left text-align-center text-align-right text-align-justify"> <strong> <em> <u> <a href> <ul> <ol reversed start> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <drupal-media data-entity-type data-entity-uuid alt data-caption data-align> <embedded-content data-plugin-config data-plugin-id>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_html_image_secure:
@@ -55,12 +54,6 @@ filters:
     provider: filter
     status: true
     weight: 15
-    settings: {  }
-  filter_resize_media:
-    id: filter_resize_media
-    provider: ckeditor_media_resize
-    status: true
-    weight: 90
     settings: {  }
   filter_url:
     id: filter_url

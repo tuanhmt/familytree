@@ -1,0 +1,44 @@
+.article-detail {
+  padding: 0 180px;
+  position: relative;
+  margin: auto;
+  line-height: 160%;
+
+  p, img {
+    margin-bottom: 24px;
+  }
+
+  .article-title {
+    color: var(--data-color-light-gray);
+    line-height: 130%;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    margin-bottom: 32px;
+  }
+
+  .social-sharing-block {
+    position:absolute;
+    left: 82px;
+    top: 0;
+    overflow:hidden;
+
+    .social-sharing-buttons {
+      margin-top: 0;
+      margin-bottom: 0;
+
+      a {
+        &.social-sharing-buttons__button {
+          border-radius: 50px;
+          border: 1px solid #DEDCDC;
+          width: 48px;
+          height: 48px;
+          flex-shrink: 0;
+          margin-bottom: 24px;
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
