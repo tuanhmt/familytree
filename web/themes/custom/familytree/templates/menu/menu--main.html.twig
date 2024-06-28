@@ -58,8 +58,7 @@
             {% set dropdownclasses = [
               'dropdown-menu', 
               'border-0',
-              'shadow',
-              'bsb-zoomIn'
+              'shadow'
             ] %}
             {{ menus.menu_links(item.below, attributes.addClass(dropdownclasses).setAttribute('aria-labelledby', 'dropdown-' ~ menu_level ~ loop.index), menu_level + 1) }}
         {% else %}
