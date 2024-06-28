@@ -18,13 +18,10 @@ regions:
   top_header_right: "Top Header Right"
   header_left: "Header Left"
   header_right: "Header Right"
-  breaking: "Breaking"
   slideshow: "Slideshow"
   latest_content: "Latest Content"
   sidebar_second: "Second sidebar"
-  footer_top: "Footer Top"
-  footer_first: "Footer First"
-  footer_second: "Footer Second"
+  footer: "Footer"
   highlighted: 'Highlighted'
   help: 'Help'
   sidebar: 'Sidebar'

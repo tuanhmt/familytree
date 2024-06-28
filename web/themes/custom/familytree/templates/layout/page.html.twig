@@ -153,39 +153,16 @@
 	{% block footer_before %}{% endblock %}
 
 	<footer>
-		<figure class="top-footer d-none d-lg-block">
-			<div class="container">
-				{% if page.footer_top %}
-					{% block footer_top %}
-						{{ page.footer_top }}
+		<figure class="top-footer text-center">
+			<div class="container pt-lg-3 pt-2">
+				{% if page.footer %}
+					{% block footer %}
+						{{ page.footer }}
 					{% endblock %}
 				{% endif %}
-			</div>
-		</figure>
-
-		<figure class="bottom-footer">
-			<div class="container">
-				<div class="row">
-					<div
-						class="col-md-6">
-						{#  footer_first #}
-						{% if page.footer_first %}
-							{% block footer_first %}
-								{{ page.footer_first }}
-							{% endblock %}
-						{% endif %}
-						{#  end footer_first #}
-					</div>
-					<div
-						class="col-md-6">
-						{#  footer_second #}
-						{% if page.footer_second %}
-							{% block footer_second %}
-								{{ page.footer_second }}
-							{% endblock %}
-						{% endif %}
-						{#  end footer_second #}
-					</div>
+				<div class="copyright text-white mt-2">
+					{{ 'Copyright 2024 - Vuong Dinh Family.'|t}}
+					{{ 'Designed by HMT.'|t}}
 				</div>
 			</div>
 		</figure>

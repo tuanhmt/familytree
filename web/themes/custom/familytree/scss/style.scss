@@ -123,3 +123,10 @@ img {
   padding: 32px;
   border-radius: 0px 0px 18px 18px;
 }
+
+footer {
+  background-color: var(--data-color-blue);
+  background-image: url(../images/footer_bg.png);
+  background-position: center center;
+  height: 244px;
+}

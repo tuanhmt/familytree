@@ -17,6 +17,16 @@
     height: 130px;
     background-size: cover;
   }
+
+  footer {
+    height: 160px;
+
+    .logo {
+      img {
+        width: 70%;
+      }
+    }
+  }
 }
 
 @include media-breakpoint-down(lg) {

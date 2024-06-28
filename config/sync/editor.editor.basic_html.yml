@@ -51,13 +51,6 @@ settings:
       multiBlock: true
     ckeditor5_sourceEditing:
       allowed_tags: {  }
-    ckeditor_media_resize_mediaResize:
-      apply_image_styles: false
-      image_styles:
-        - cke_media_resize_small
-        - cke_media_resize_medium
-        - cke_media_resize_large
-        - cke_media_resize_xl
     media_media:
       allow_view_mode_override: false
 image_upload:
