@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Drupal\church_breadcrumb;
+namespace Drupal\church_breadcrumb\Breadcrumb;
 
 use Drupal\Core\Link;
 use Drupal\node\NodeInterface;

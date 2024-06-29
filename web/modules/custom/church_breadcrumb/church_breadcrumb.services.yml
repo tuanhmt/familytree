@@ -1,8 +1,12 @@
 services:
   church_breadcrumb.content_breadcrumb:
-    class: Drupal\church_breadcrumb\ChurchContentBreadcrumb
+    class: Drupal\church_breadcrumb\Breadcrumb\ChurchContentBreadcrumb
     arguments: ['@current_user']
     tags:
-      # In order to override breadcrumbs built with PathBasedBreadcrumbBuilder
-      # set the priority higher than zero.
       - { name: breadcrumb_builder, priority: 1000 }
+
+  church_breadcrumb.taxonomy_breadcrumb:
+    class: Drupal\church_breadcrumb\Breadcrumb\ChurchTaxonomyBreadcrumb
+    arguments: ['@current_user']
+    tags:
+      - { name: breadcrumb_builder, priority: 10001 }
