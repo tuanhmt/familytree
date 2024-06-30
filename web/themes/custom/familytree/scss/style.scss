@@ -172,3 +172,19 @@ footer {
     }
   }
 }
+
+main {
+  position: relative;
+}
+
+.main-sticky-left {
+  position:absolute;
+  left: 0;
+  top: 0;
+}
+
+.main-sticky-right {
+  position:absolute;
+  right: 0;
+  top: 0;
+}

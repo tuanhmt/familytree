@@ -1,0 +1,13 @@
+uuid: ce5639f2-2344-40b5-a50c-e370d4a49a40
+langcode: vi
+status: false
+dependencies:
+  module:
+    - block_content
+_core:
+  default_config_hash: Q7yUUYeRLByl-MCGveKKF_KhAtNICLCMJuKWfugCvso
+id: block_content.full
+label: Full
+description: ''
+targetEntityType: block_content
+cache: true

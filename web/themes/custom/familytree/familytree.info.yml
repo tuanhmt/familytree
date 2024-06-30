@@ -25,6 +25,8 @@ regions:
   highlighted: 'Highlighted'
   help: 'Help'
   sidebar: 'Sidebar'
+  main_sticky_left: Main sticky left
+  main_sticky_right: Main sticky right
 
 regions_hidden:
   - sidebar_first

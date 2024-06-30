@@ -1,0 +1,11 @@
+uuid: 8f08ad94-c20a-4bc4-9352-c5cef964ccac
+langcode: vi
+status: true
+dependencies:
+  config:
+    - block_content.type.custom_block
+id: block_content.custom_block
+target_entity_type_id: block_content
+target_bundle: custom_block
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,25 @@
+uuid: 5078d414-c172-475a-89eb-2bc7d0e055f3
+langcode: vi
+status: true
+dependencies:
+  content:
+    - 'block_content:custom_block:94d8a14c-1dbb-4b87-bd2d-a9e077d7fb84'
+  module:
+    - block_content
+  theme:
+    - familytree
+id: familytree_stickyright
+theme: familytree
+region: main_sticky_right
+weight: 0
+provider: null
+plugin: 'block_content:94d8a14c-1dbb-4b87-bd2d-a9e077d7fb84'
+settings:
+  id: 'block_content:94d8a14c-1dbb-4b87-bd2d-a9e077d7fb84'
+  label: 'Sticky right'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

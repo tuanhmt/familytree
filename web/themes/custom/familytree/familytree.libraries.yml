@@ -15,6 +15,7 @@ global:
   dependencies:
     - core/jquery
     - core/once
+    - core/drupal
     - core/drupalSettings
     - familytree/bootstrap
     - familytree/breadcrumb

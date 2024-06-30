@@ -1,0 +1,8 @@
+uuid: 3be63c2c-3173-4fc1-9103-e9b41f0cc406
+langcode: vi
+status: true
+dependencies: {  }
+id: custom_block
+label: 'Custom block'
+revision: 0
+description: ''

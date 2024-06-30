@@ -88,8 +88,15 @@
 	{% endblock %}
 
 	{% block main %}
-		<main role="main" class="mt-3">
+		<main role="main" class="main-section mt-3">
 			<div class="container">
+				{% if page.main_sticky_left %}
+				<div class="main-sticky-left">
+					{% block main_sticky_left %}
+						{{ page.main_sticky_left }}
+					{% endblock %}
+				</div>
+				{% endif %}
 				{# check if sidebar has content #}
 				{% if page.sidebar or is_front %}
 					<div class="row">
@@ -145,6 +152,13 @@
 						{{ block('content') }}
 						{# end main content #}
 					</section>
+				{% endif %}
+				{% if page.main_sticky_right %}
+				<div class="main-sticky-right">
+					{% block main_sticky_right %}
+						{{ page.main_sticky_right }}
+					{% endblock %}
+				</div>
 				{% endif %}
 			</div>
 		</main>
