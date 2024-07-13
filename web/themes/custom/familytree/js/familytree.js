@@ -26,17 +26,19 @@
    */
   Drupal.behaviors.socialButtons = {
     attach: function attach(context) {
-      var targetOffset = $('.article-title').offset().top;
-      console.log(targetOffset);
-      $(window).scroll(function () {
-        let windowTop = $(window).scrollTop();
-        console.log(windowTop);
-        if (windowTop > targetOffset - 50) {
-          $('.social-sharing-block').css('top', windowTop - 350);
-        } else {
-          $('.social-sharing-block').css('top', 0);
-        }
-      });
+      let artical_title = $('.article-title');
+      if (artical_title.length) {
+        let targetOffset = artical_title.offset().top;
+        $(window).scroll(function () {
+          let windowTop = $(window).scrollTop();
+          console.log(windowTop);
+          if (windowTop > targetOffset - 50) {
+            $('.social-sharing-block').css('top', windowTop - 350);
+          } else {
+            $('.social-sharing-block').css('top', 0);
+          }
+        });
+      }
     }
   };
 
@@ -48,7 +50,6 @@
   Drupal.behaviors.stickyContent = {
     attach: function attach(context) {
       var targetOffset = $('.main-section').offset().top;
-      console.log(targetOffset);
       $(window).scroll(function () {
         let windowTop = $(window).scrollTop();
         if (windowTop > targetOffset - 50) {

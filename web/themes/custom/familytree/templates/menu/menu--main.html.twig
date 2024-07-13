@@ -38,7 +38,7 @@
           <span class="navbar-toggler-icon mr-1"></span>
         </button>
         <div class="collapse navbar-collapse" id="main-navbar">
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav me-auto">
     {% else %}
       <ul{{ attributes }}>
     {% endif %}
@@ -76,6 +76,7 @@
     {% endfor %}
     </ul>
     {% if menu_level == 0 %}
+      {{ drupal_menu('account') }}
       </div>
       </div>
       <div class="ms-auto menu-frame-right d-none d-lg-flex align-item-center">
