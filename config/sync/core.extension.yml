@@ -13,6 +13,7 @@ module:
   church_ckeditor5: 0
   church_gin: 0
   church_homepage: 0
+  church_node: 0
   ckeditor5: 0
   ckeditor5_embedded_content: 0
   config: 0

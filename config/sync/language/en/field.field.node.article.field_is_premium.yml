@@ -1,0 +1,4 @@
+description: 'Is Premium'
+settings:
+  on_label: 'On'
+  off_label: 'Off'

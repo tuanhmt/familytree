@@ -1,11 +1,11 @@
-uuid: b0727392-c557-42b2-b61b-6ef5e40575a8
+uuid: 16e23303-5b2d-40dc-9bab-81d9cbeac4e5
 langcode: vi
 status: true
 dependencies:
   module:
     - node
-id: node.field_public
-field_name: field_public
+id: node.field_is_premium
+field_name: field_is_premium
 entity_type: node
 type: boolean
 settings: {  }

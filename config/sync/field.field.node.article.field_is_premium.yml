@@ -1,0 +1,23 @@
+uuid: 96c1e359-8ef2-44d6-af5d-a576ad80c521
+langcode: vi
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_premium
+    - node.type.article
+id: node.article.field_is_premium
+field_name: field_is_premium
+entity_type: node
+bundle: article
+label: 'Khoá bài viết'
+description: 'Nếu bật lên sẽ giới hạn người dùng đăng nhập mới được xem bài viết này.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Bật
+  off_label: Tắt
+field_type: boolean
