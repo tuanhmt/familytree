@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.article.field_front_display
     - field.field.node.article.field_media_image
     - field.field.node.article.field_media_image_visibility
+    - field.field.node.article.field_public
     - node.type.article
   module:
     - text
@@ -25,6 +26,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_public:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
     region: content
   links:
     settings: {  }

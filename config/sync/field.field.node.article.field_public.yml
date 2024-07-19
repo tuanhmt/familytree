@@ -1,0 +1,23 @@
+uuid: 608e1f98-4307-4c4d-8037-11465f5a1b37
+langcode: vi
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_public
+    - node.type.article
+id: node.article.field_public
+field_name: field_public
+entity_type: node
+bundle: article
+label: 'Công khai'
+description: 'Cho phép người dùng ẩn danh xem được nội dung bài viết.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Bật
+  off_label: Tắt
+field_type: boolean
