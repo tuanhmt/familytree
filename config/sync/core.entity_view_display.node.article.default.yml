@@ -27,16 +27,6 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_is_premium:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 3
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -47,6 +37,7 @@ hidden:
   field_brief_title: true
   field_category: true
   field_front_display: true
+  field_is_premium: true
   field_media_image: true
   field_media_image_visibility: true
   langcode: true

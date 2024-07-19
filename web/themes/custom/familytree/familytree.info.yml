@@ -7,6 +7,9 @@ core_version_requirement: ^9 || ^10 || ^11
 libraries:
   - familytree/global
 
+ckeditor5-stylesheets:
+  - css/components/ckeditor5.min.css
+
 # Regions
 regions:
   header: "Header"
