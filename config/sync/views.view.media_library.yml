@@ -5,6 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.media.media_library
     - image.style.media_library
+    - media.type.album
+    - media.type.file
+    - media.type.image
   module:
     - image
     - media
@@ -331,7 +334,10 @@ display:
           entity_field: bundle
           plugin_id: bundle
           operator: in
-          value: {  }
+          value:
+            album: album
+            file: file
+            image: image
           group: 1
           exposed: true
           expose:
@@ -349,8 +355,9 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
+              editor: '0'
               administrator: '0'
-            reduce: false
+            reduce: true
           is_grouped: false
           group_info:
             label: 'Media type'
@@ -405,49 +412,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        langcode:
-          id: langcode
-          table: media_field_data
-          field: langcode
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: media
-          entity_field: langcode
-          plugin_id: language
-          operator: in
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: langcode_op
-            label: 'Ngôn ngữ'
-            description: ''
-            use_operator: false
-            operator: langcode_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: langcode
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
       style:
         type: default
         options:
@@ -478,13 +442,34 @@ display:
     cache_metadata:
       max-age: 0
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - 'url.query_args:sort_by'
         - user
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:core.entity_view_display.media.album.default'
+        - 'config:core.entity_view_display.media.album.gallery'
+        - 'config:core.entity_view_display.media.album.media_library'
+        - 'config:core.entity_view_display.media.audio.default'
+        - 'config:core.entity_view_display.media.audio.media_library'
+        - 'config:core.entity_view_display.media.file.default'
+        - 'config:core.entity_view_display.media.file.media_library'
+        - 'config:core.entity_view_display.media.image.default'
+        - 'config:core.entity_view_display.media.image.gallery'
+        - 'config:core.entity_view_display.media.image.large'
+        - 'config:core.entity_view_display.media.image.media_library'
+        - 'config:core.entity_view_display.media.image.media_slideshow_360x360'
+        - 'config:core.entity_view_display.media.image.media_thumbnail_100x70'
+        - 'config:core.entity_view_display.media.image.media_thumbnail_370x220'
+        - 'config:core.entity_view_display.media.image.medium'
+        - 'config:core.entity_view_display.media.image.thumbnail'
+        - 'config:core.entity_view_display.media.video.default'
+        - 'config:core.entity_view_display.media.video.media_library'
+        - 'config:core.entity_view_display.media.video_embed.default'
+        - 'config:core.entity_view_display.media.video_embed.media_library'
   page:
     id: page
     display_title: Trang
@@ -771,6 +756,15 @@ display:
         fields: false
       display_extenders: {  }
       path: admin/content/media-grid
+      menu:
+        type: none
+        title: 'Quản lý đa phương tiện'
+        description: ''
+        weight: 0
+        expanded: false
+        menu_name: admin
+        parent: system.admin_content
+        context: '0'
     cache_metadata:
       max-age: 0
       contexts:
@@ -781,7 +775,27 @@ display:
         - 'url.query_args:sort_by'
         - user
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:core.entity_view_display.media.album.default'
+        - 'config:core.entity_view_display.media.album.gallery'
+        - 'config:core.entity_view_display.media.album.media_library'
+        - 'config:core.entity_view_display.media.audio.default'
+        - 'config:core.entity_view_display.media.audio.media_library'
+        - 'config:core.entity_view_display.media.file.default'
+        - 'config:core.entity_view_display.media.file.media_library'
+        - 'config:core.entity_view_display.media.image.default'
+        - 'config:core.entity_view_display.media.image.gallery'
+        - 'config:core.entity_view_display.media.image.large'
+        - 'config:core.entity_view_display.media.image.media_library'
+        - 'config:core.entity_view_display.media.image.media_slideshow_360x360'
+        - 'config:core.entity_view_display.media.image.media_thumbnail_100x70'
+        - 'config:core.entity_view_display.media.image.media_thumbnail_370x220'
+        - 'config:core.entity_view_display.media.image.medium'
+        - 'config:core.entity_view_display.media.image.thumbnail'
+        - 'config:core.entity_view_display.media.video.default'
+        - 'config:core.entity_view_display.media.video.media_library'
+        - 'config:core.entity_view_display.media.video_embed.default'
+        - 'config:core.entity_view_display.media.video_embed.media_library'
   widget:
     id: widget
     display_title: Widget
@@ -1100,7 +1114,27 @@ display:
         - url.query_args
         - 'url.query_args:sort_by'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:core.entity_view_display.media.album.default'
+        - 'config:core.entity_view_display.media.album.gallery'
+        - 'config:core.entity_view_display.media.album.media_library'
+        - 'config:core.entity_view_display.media.audio.default'
+        - 'config:core.entity_view_display.media.audio.media_library'
+        - 'config:core.entity_view_display.media.file.default'
+        - 'config:core.entity_view_display.media.file.media_library'
+        - 'config:core.entity_view_display.media.image.default'
+        - 'config:core.entity_view_display.media.image.gallery'
+        - 'config:core.entity_view_display.media.image.large'
+        - 'config:core.entity_view_display.media.image.media_library'
+        - 'config:core.entity_view_display.media.image.media_slideshow_360x360'
+        - 'config:core.entity_view_display.media.image.media_thumbnail_100x70'
+        - 'config:core.entity_view_display.media.image.media_thumbnail_370x220'
+        - 'config:core.entity_view_display.media.image.medium'
+        - 'config:core.entity_view_display.media.image.thumbnail'
+        - 'config:core.entity_view_display.media.video.default'
+        - 'config:core.entity_view_display.media.video.media_library'
+        - 'config:core.entity_view_display.media.video_embed.default'
+        - 'config:core.entity_view_display.media.video_embed.media_library'
   widget_table:
     id: widget_table
     display_title: 'Widget (table)'

@@ -1,10 +1,15 @@
 uuid: cd3b155c-bcc9-429e-8304-802073c298aa
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: _none
 id: album
 label: Album
-description: ''
+description: 'Album hình ảnh'
 source: image
 queue_thumbnail_downloads: false
 new_revision: false

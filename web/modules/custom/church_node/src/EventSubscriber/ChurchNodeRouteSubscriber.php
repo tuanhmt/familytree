@@ -20,6 +20,10 @@ final class ChurchNodeRouteSubscriber extends RouteSubscriberBase {
       $route->setRequirement('_node_premium_access', 'TRUE');
     }
 
+    if ($route = $collection->get('entity.media.collection')) {
+      $route->setRequirement('_permission', 'access media overview');
+    }
+
     foreach ($this->getAllowedRoutes() as $route_name) {
       if ($route = $collection->get($route_name)) {
         $route->setRequirement('_node_premium_access', 'TRUE');

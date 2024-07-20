@@ -1,0 +1,11 @@
+uuid: ed0b3544-da3c-4cc7-869b-612d0507050e
+langcode: vi
+status: true
+dependencies:
+  config:
+    - media.type.album
+id: media.album
+target_entity_type_id: media
+target_bundle: album
+default_langcode: site_default
+language_alterable: false
