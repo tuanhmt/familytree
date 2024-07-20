@@ -8,7 +8,15 @@ id: basic_category
 label: 'Basic Category'
 type: 'canonical_entities:taxonomy_term'
 pattern: '[term:parents:join-path]/[term:name]'
-selection_criteria: {  }
+selection_criteria:
+  5efa01ac-d819-4bf2-b4da-8e668d18d23f:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 5efa01ac-d819-4bf2-b4da-8e668d18d23f
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      category: category
 selection_logic: and
 weight: -9
 relationships: {  }

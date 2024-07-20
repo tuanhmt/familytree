@@ -19,6 +19,22 @@ final class ChurchNodeRouteSubscriber extends RouteSubscriberBase {
     if ($route = $collection->get('entity.node.canonical')) {
       $route->setRequirement('_node_premium_access', 'TRUE');
     }
+
+    foreach ($this->getAllowedRoutes() as $route_name) {
+      if ($route = $collection->get($route_name)) {
+        $route->setRequirement('_node_premium_access', 'TRUE');
+      }
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function getAllowedRoutes(): array {
+    return [
+      'entity.node.canonical',
+      'entity.media.canonical',
+    ];
   }
 
 }

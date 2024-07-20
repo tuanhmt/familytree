@@ -10,12 +10,11 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\Breadcrumb\BreadcrumbBuilderInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\taxonomy\Entity\Term;
 
 /**
  * Add description for this breadcrumb builder.
  */
-final class ChurchTaxonomyBreadcrumb implements BreadcrumbBuilderInterface {
+final class ChurchViewsBreadcrumb implements BreadcrumbBuilderInterface {
 
   use StringTranslationTrait;
 
@@ -24,14 +23,21 @@ final class ChurchTaxonomyBreadcrumb implements BreadcrumbBuilderInterface {
    */
   public function __construct(
     private readonly AccountProxyInterface $currentUser,
-  ) {}
+  ) {
+  }
 
   /**
    * {@inheritdoc}
    */
   public function applies(RouteMatchInterface $route_match): bool {
-    return $route_match->getRouteName() == "entity.taxonomy_term.canonical"
-    && $route_match->getParameter('taxonomy_term') instanceof Term;
+    $parameters = $route_match->getParameters()->all();
+    if (isset($parameters['view_id'])) {
+      if (in_array($parameters['view_id'], $this->getAllowedViewsIds())) {
+        return TRUE;
+      }
+    }
+
+    return FALSE;
   }
 
   /**
@@ -40,17 +46,30 @@ final class ChurchTaxonomyBreadcrumb implements BreadcrumbBuilderInterface {
   public function build(RouteMatchInterface $route_match): Breadcrumb {
     $breadcrumb = new Breadcrumb();
     $links[] = Link::createFromRoute($this->t('Home'), '<front>');
+    $breadcrumb->addCacheContexts(["url"]);
     $parameters = $route_match->getParameters()->all();
-    if (isset($parameters['taxonomy_term'])) {
-      $term = $route_match->getParameter('taxonomy_term');
-      $breadcrumb->addCacheContexts(["url"]);
-      $breadcrumb->addCacheTags(["taxonomy_term:{$term->id()}"]);
+    if (isset($parameters['view_id'])) {
+      switch ($parameters['view_id']) {
+        case 'galleries':
+          $links[] = Link::createFromRoute($this->t('Galleries'), '<none>');
+          break;
 
-      // Add node title.
-      $links[] = Link::createFromRoute($term->label(), '<none>');
+        default:
+          break;
+      }
+      $breadcrumb->addCacheTags(["view_id:{$parameters['view_id']}"]);
     }
 
     return $breadcrumb->setLinks($links);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getAllowedViewsIds() {
+    return [
+      'galleries',
+    ];
   }
 
 }

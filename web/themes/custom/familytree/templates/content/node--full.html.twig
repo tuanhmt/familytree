@@ -69,6 +69,21 @@
  */
 #}
 <article{{ attributes.addClass('article-detail') }}>
+  {% if display_submitted %}
+    <div class="d-flex mb-3 align-items-center article-submitted">
+      <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.28662 1.66675V4.16675" stroke="#3C435B" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13.9536 1.66675V4.16675" stroke="#3C435B" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3.53662 7.57495H17.7033" stroke="#3C435B" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M18.1201 7.08341V14.1667C18.1201 16.6667 16.8701 18.3334 13.9535 18.3334H7.28678C4.37012 18.3334 3.12012 16.6667 3.12012 14.1667V7.08341C3.12012 4.58341 4.37012 2.91675 7.28678 2.91675H13.9535C16.8701 2.91675 18.1201 4.58341 18.1201 7.08341Z" stroke="#3C435B" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10.6162 11.4167H10.6237" stroke="#3C435B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7.53221 11.4167H7.53969" stroke="#3C435B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7.53221 13.9167H7.53969" stroke="#3C435B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      {{ node.getCreatedTime()|format_date('content_datetime') }}
+    </div>
+  {% endif %}
+
   {{ drupal_block("social_sharing_buttons_block") }}
   {{ title_prefix }}
   {% if label %}
@@ -77,16 +92,6 @@
     </h2>
   {% endif %}
   {{ title_suffix }}
-
-  {% if display_submitted %}
-    <footer>
-      {{ author_picture }}
-      <div{{ author_attributes }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
 
   <div{{ content_attributes }}>
     {{ content }}

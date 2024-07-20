@@ -3,22 +3,12 @@ langcode: en
 status: true
 dependencies:
   module:
-    - language
     - media
 id: _media_bundle_media_name_
 label: 'Media Basic'
 type: 'canonical_entities:media'
 pattern: '/[media:bundle]/[media:name]'
-selection_criteria:
-  747614d7-7745-4d08-b750-cf52391ddb1d:
-    id: language
-    negate: false
-    uuid: 747614d7-7745-4d08-b750-cf52391ddb1d
-    context_mapping:
-      language: 'media:langcode:language'
-    langcodes:
-      vi: vi
-      en: en
+selection_criteria: {  }
 selection_logic: and
 weight: -5
 relationships:

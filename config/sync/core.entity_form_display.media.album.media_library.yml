@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_form_mode.media.media_library
     - field.field.media.album.field_images
+    - field.field.media.album.field_is_premium
     - field.field.media.album.field_media_images
     - image.style.thumbnail
     - media.type.album
@@ -33,6 +34,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_is_premium: true
   field_media_images: true
   langcode: true
   path: true

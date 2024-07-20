@@ -3,10 +3,22 @@ services:
     class: Drupal\church_breadcrumb\Breadcrumb\ChurchContentBreadcrumb
     arguments: ['@current_user']
     tags:
-      - { name: breadcrumb_builder, priority: 1000 }
+      - { name: breadcrumb_builder, priority: 10001 }
 
   church_breadcrumb.taxonomy_breadcrumb:
     class: Drupal\church_breadcrumb\Breadcrumb\ChurchTaxonomyBreadcrumb
     arguments: ['@current_user']
     tags:
       - { name: breadcrumb_builder, priority: 10001 }
+
+  church_breadcrumb.media_breadcrumb:
+    class: Drupal\church_breadcrumb\Breadcrumb\ChurchMediaBreadcrumb
+    arguments: ['@current_user']
+    tags:
+      - { name: breadcrumb_builder, priority: 100 }
+
+  church_breadcrumb.views_breadcrumb:
+    class: Drupal\church_breadcrumb\Breadcrumb\ChurchViewsBreadcrumb
+    arguments: ['@current_user']
+    tags:
+      - { name: breadcrumb_builder, priority: 100 }

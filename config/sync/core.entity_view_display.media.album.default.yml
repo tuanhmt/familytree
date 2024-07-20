@@ -4,19 +4,36 @@ status: true
 dependencies:
   config:
     - field.field.media.album.field_images
+    - field.field.media.album.field_is_premium
     - field.field.media.album.field_media_images
+    - image.style.media_thumbnail_370x220
     - media.type.album
+  module:
+    - photoswipe
 id: media.album.default
 targetEntityType: media
 bundle: album
 mode: default
 content:
+  field_is_premium:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_media_images:
-    type: entity_reference_entity_view
+    type: photoswipe_field_formatter
     label: hidden
     settings:
-      view_mode: gallery
-      link: false
+      photoswipe_thumbnail_style_first: ''
+      photoswipe_thumbnail_style: media_thumbnail_370x220
+      photoswipe_image_style: ''
+      photoswipe_reference_image_field: field_media_image
+      photoswipe_view_mode: default
     third_party_settings: {  }
     weight: 0
     region: content

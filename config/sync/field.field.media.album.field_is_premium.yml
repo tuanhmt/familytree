@@ -1,0 +1,21 @@
+uuid: d18b1efb-2277-4560-94e9-e954ae0a90cb
+langcode: vi
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_is_premium
+    - media.type.album
+id: media.album.field_is_premium
+field_name: field_is_premium
+entity_type: media
+bundle: album
+label: 'Khoá nội dung'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Bật
+  off_label: Tắt
+field_type: boolean

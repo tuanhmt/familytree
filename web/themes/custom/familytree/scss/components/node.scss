@@ -5,6 +5,12 @@
   line-height: 160%;
   color: var(--data-color-light-gray);
 
+  .article-submitted {
+    svg {
+      margin-right: 5px;
+    }
+  }
+
   p {
     margin-bottom: 24px;
   }

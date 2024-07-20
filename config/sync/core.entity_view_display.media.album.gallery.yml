@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.media.gallery
     - field.field.media.album.field_images
+    - field.field.media.album.field_is_premium
     - field.field.media.album.field_media_images
     - media.type.album
 id: media.album.gallery
@@ -24,6 +25,7 @@ content:
 hidden:
   created: true
   field_images: true
+  field_is_premium: true
   langcode: true
   name: true
   thumbnail: true

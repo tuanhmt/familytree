@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.media.image.field_media_image
-    - field.field.media.image.field_media_tags
     - image.style.wide
     - media.type.image
   module:
@@ -29,7 +28,6 @@ content:
     region: content
 hidden:
   created: true
-  field_media_tags: true
   langcode: true
   name: true
   thumbnail: true
