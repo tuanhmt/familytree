@@ -9,6 +9,7 @@ module:
   block: 0
   block_content: 0
   breakpoint: 0
+  captcha: 0
   church_breadcrumb: 0
   church_ckeditor5: 0
   church_gin: 0
@@ -43,11 +44,13 @@ module:
   node: 0
   noreqnewpass: 0
   options: 0
+  override_node_options: 0
   page_cache: 0
   path: 0
   path_alias: 0
   photoswipe: 0
   phpass: 0
+  recaptcha: 0
   select2: 0
   structure_sync: 0
   system: 0
