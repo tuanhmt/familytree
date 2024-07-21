@@ -15,16 +15,6 @@ targetEntityType: media
 bundle: album
 mode: default
 content:
-  field_is_premium:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_media_images:
     type: photoswipe_field_formatter
     label: hidden
@@ -40,6 +30,7 @@ content:
 hidden:
   created: true
   field_images: true
+  field_is_premium: true
   langcode: true
   name: true
   thumbnail: true
