@@ -1,0 +1,20 @@
+uuid: 9e134d6a-e5b3-4f38-b883-fc74104facb2
+langcode: vi
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_saint_name
+  module:
+    - user
+id: user.user.field_saint_name
+field_name: field_saint_name
+entity_type: user
+bundle: user
+label: 'Tên Thánh'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,20 @@
+uuid: 5d2d95f1-e32c-4c60-98d6-39349b60116f
+langcode: vi
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_phone
+  module:
+    - user
+id: user.user.field_phone
+field_name: field_phone
+entity_type: user
+bundle: user
+label: 'Số điện thoại'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
