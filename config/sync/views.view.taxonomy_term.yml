@@ -70,7 +70,7 @@ display:
           element_wrapper_type: div
           element_wrapper_class: cat-item-image
           element_default_classes: false
-          empty: ''
+          empty: "<div class=\"d-flex justify-content-center\">  <img loading=\"lazy\" src=\"/sites/default/files/styles/media_thumbnail_370x220/public/media/image/2024-07/default-image.jpg?h=827069f2&amp;itok=q-WNEWfZ\"  alt=\"\">\r\n</div>"
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
