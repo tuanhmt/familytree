@@ -1,0 +1,46 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  height: 1000px;
+}
+
+.header {
+  display: flex;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+}
+
+.wrapper {
+  flex: 1;
+}
+
+.tree {
+  background: #fff;
+  /* border: 1px solid #ddd; */
+  /* border-radius: 4px; */
+}
+
+.tree i {
+  background-color: #831315 !important;
+}
+
+.reset {
+  position: absolute;
+  right: 10px;
+  top: 60px;
+  padding: 4px 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.details {
+  position: absolute;
+  left: 10px;
+  top: 60px;
+}

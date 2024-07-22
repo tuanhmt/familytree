@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-family-tree-example/static/css/main.c7264914.css",
+    "main.js": "/react-family-tree-example/static/js/main.9e09f17c.js",
+    "index.html": "/react-family-tree-example/index.html",
+    "main.c7264914.css.map": "/react-family-tree-example/static/css/main.c7264914.css.map",
+    "main.9e09f17c.js.map": "/react-family-tree-example/static/js/main.9e09f17c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c7264914.css",
+    "static/js/main.9e09f17c.js"
+  ]
+}
