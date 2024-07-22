@@ -56,9 +56,6 @@ display:
                 title: Published
               2:
                 title: Unpublished
-        langcode:
-          expose:
-            label: Language
   page_1:
     display_title: Page
     display_options:

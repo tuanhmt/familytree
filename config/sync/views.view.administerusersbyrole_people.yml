@@ -20,7 +20,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Mọi người'
+      title: 'Người dùng'
       fields:
         user_bulk_form:
           id: user_bulk_form
@@ -546,7 +546,7 @@ display:
           exposed: true
           expose:
             operator_id: combine_op
-            label: 'Name or email contains'
+            label: 'Tên hoặc email'
             description: ''
             use_operator: false
             operator: combine_op
@@ -868,7 +868,7 @@ display:
         context: ''
       tab_options:
         type: normal
-        title: 'Mọi người'
+        title: 'Người dùng'
         description: 'Quản lý tài khoản người dùng, vai trò và quyền'
         weight: 0
         menu_name: admin

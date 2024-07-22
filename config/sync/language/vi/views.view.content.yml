@@ -47,9 +47,6 @@ display:
                 title: 'Đã công bố'
               2:
                 title: 'Đã bỏ công bố'
-        langcode:
-          expose:
-            label: 'Ngôn ngữ'
   page_1:
     display_title: Trang
     display_options:
