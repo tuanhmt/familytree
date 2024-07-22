@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Contains ftree_gin.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function ftree_gin_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id === "node_article_edit_form") {
+    $form['#attached']['library'][] = 'ftree_gin/gin';
+    $form['#attached']['library'][] = 'familytree/font-awesome';
+  }
+}

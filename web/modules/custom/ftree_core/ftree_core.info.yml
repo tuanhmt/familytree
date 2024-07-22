@@ -1,0 +1,5 @@
+name: 'FTree - Core'
+type: module
+description: 'Provide core functions family tree.'
+package: Family Tree
+core_version_requirement: ^10 || ^11

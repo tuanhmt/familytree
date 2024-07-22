@@ -1,0 +1,5 @@
+# Custom library for general purposes.
+gin:
+  css:
+    component:
+      css/gin.css: {}

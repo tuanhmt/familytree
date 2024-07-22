@@ -5,7 +5,7 @@ dependencies:
   config:
     - filter.format.basic_html
   module:
-    - church_node
+    - ftree_node
     - filter
     - media
     - system

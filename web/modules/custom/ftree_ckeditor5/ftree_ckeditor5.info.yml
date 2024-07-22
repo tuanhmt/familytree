@@ -1,0 +1,8 @@
+name: 'FTree - CKEditor5'
+type: module
+description: 'Add custom features to CKEditor 5'
+package: Family Tree
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:ckeditor5
+  - drupal:ckeditor5_embedded_content

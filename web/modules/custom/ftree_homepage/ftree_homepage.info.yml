@@ -1,0 +1,5 @@
+name: 'FTree - Home page'
+type: module
+description: 'Provide home page route and preprocess.'
+package: Family Tree
+core_version_requirement: ^10 || ^11

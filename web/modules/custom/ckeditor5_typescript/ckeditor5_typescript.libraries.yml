@@ -1,6 +1,0 @@
-textcolor.admin: { css: { theme: { css/textcolor.admin.css: {} } } }
-textcolor.editor:
-  js:
-    js/build/textcolor.js: { preprocess: false, minified: true }
-  dependencies:
-    - core/ckeditor5

@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * The module file with theming functions.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function ftree_ckeditor5_theme($existing, $type, $theme, $path) {
+  return [
+    'ckeditor5_embedded_youtube' => [
+      'variables' => [
+        'attributes' => NULL,
+        'content' => NULL,
+        'video_caption' => NULL,
+      ],
+      'template' => 'ckeditor5-embedded-youtube',
+    ],
+  ];
+}

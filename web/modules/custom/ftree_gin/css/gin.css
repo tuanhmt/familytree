@@ -1,0 +1,12 @@
+.gin--edit-form .field--name-title .form-element {
+  font-size: 25px;
+  color: #137bb2;
+}
+
+.views-exposed-form .form-text {
+  margin-top: 0 !important;
+}
+
+.ck-content .drupal-media > figcaption {
+  padding-left: 0 !important;
+}

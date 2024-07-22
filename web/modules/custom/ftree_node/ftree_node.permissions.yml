@@ -1,0 +1,4 @@
+# mymodule.permissions.yml
+view premium content:
+  title: 'View premium content'
+  description: 'Allow user to see premium content.'

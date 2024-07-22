@@ -1,0 +1,5 @@
+name: 'FTree - Gin'
+type: module
+description: 'Provide custom style for gin admin'
+package: Family Tree
+core_version_requirement: ^10 || ^11

@@ -1,0 +1,5 @@
+name: 'FTree - Breadcrumb'
+type: module
+description: 'Add FTree custom breadcrumb'
+package: Family Tree
+core_version_requirement: ^10
