@@ -1,0 +1,21 @@
+uuid: d793802f-54cc-4c55-9ad7-00d3c3b3cd55
+langcode: vi
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_sex
+  module:
+    - options
+    - user
+id: user.user.field_sex
+field_name: field_sex
+entity_type: user
+bundle: user
+label: 'Giới tính'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

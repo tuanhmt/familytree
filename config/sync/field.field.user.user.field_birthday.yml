@@ -1,0 +1,21 @@
+uuid: 6331a1c6-ec81-410b-a22f-382f52b58aea
+langcode: vi
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_birthday
+  module:
+    - datetime
+    - user
+id: user.user.field_birthday
+field_name: field_birthday
+entity_type: user
+bundle: user
+label: 'Ngày tháng năm sinh'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

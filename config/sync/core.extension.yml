@@ -2,6 +2,7 @@ _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 langcode: vi
 module:
+  address: 0
   admin_toolbar: 0
   admin_toolbar_tools: 0
   better_social_sharing_buttons: 0

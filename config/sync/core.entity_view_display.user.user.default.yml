@@ -1,0 +1,86 @@
+uuid: e22ad255-22a6-490d-a0c5-f1acaf264aa6
+langcode: vi
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_address
+    - field.field.user.user.field_birthday
+    - field.field.user.user.field_full_name
+    - field.field.user.user.field_nickname
+    - field.field.user.user.field_phone
+    - field.field.user.user.field_saint_name
+    - field.field.user.user.field_sex
+    - field.field.user.user.user_picture
+  module:
+    - address
+    - datetime
+    - options
+    - user
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  field_address:
+    type: address_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_birthday:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_full_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_nickname:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_phone:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_saint_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_sex:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  member_for:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  langcode: true
+  user_picture: true

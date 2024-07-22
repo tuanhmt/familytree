@@ -1,0 +1,27 @@
+uuid: 6a47b584-5af6-4648-b739-4622b463d1d1
+langcode: vi
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_sex
+field_name: field_sex
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: male
+      label: Nam
+    -
+      value: female
+      label: Nữ
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
