@@ -1,8 +1,8 @@
 _core:
   default_config_hash: ByOVf1cU9r5NkZ4ieBJ7k9sUid6jb03ojMN1gjJ0-OU
 langcode: vi
-site_key: 6LdGHRUqAAAAAJuvzO62oOMQUd0zTGIW04-84iHh
-secret_key: 6LdGHRUqAAAAANq6swsrd7SSMt_OJrVhGQi-_Pn7
+site_key: test
+secret_key: test
 verify_hostname: false
 use_globally: false
 widget:
