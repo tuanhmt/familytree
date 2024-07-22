@@ -1,0 +1,7 @@
+ftree_core.family_tree:
+  path: '/family-tree'
+  defaults:
+    _title: 'Family tree'
+    _controller: '\Drupal\ftree_core\Controller\FamilyTreeController'
+  requirements:
+    _permission: 'access premium content'

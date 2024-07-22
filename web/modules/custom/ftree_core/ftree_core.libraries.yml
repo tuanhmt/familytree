@@ -1,0 +1,6 @@
+ftree_app:
+  css:
+    theme:
+      js/dist/ftree.bundle.css: { preprocess: false, minified: true }
+  js:
+    js/dist/ftree.bundle.min.js: { preprocess: false, minified: true }
