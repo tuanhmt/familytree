@@ -1,8 +1,6 @@
 import React, { useMemo, useState, useCallback } from 'react';
 import type { Node, ExtNode } from 'relatives-tree/lib/types';
-import treePackage from 'relatives-tree/package.json';
 import ReactFamilyTree from 'react-family-tree';
-import { SourceSelect } from '../SourceSelect/SourceSelect';
 import { PinchZoomPan } from '../PinchZoomPan/PinchZoomPan';
 import { FamilyNode } from '../FamilyNode/FamilyNode';
 import { NodeDetails } from '../NodeDetails/NodeDetails';
@@ -23,17 +21,6 @@ export default React.memo(
     const [hoverId, setHoverId] = useState<string>();
 
     const resetRootHandler = useCallback(() => setRootId(firstNodeId), [firstNodeId]);
-
-    const changeSourceHandler = useCallback(
-      (value: string, nodes: readonly Readonly<Node>[]) => {
-        setRootId(nodes[0].id);
-        setNodes(nodes);
-        setSource(value);
-        setSelectId(undefined);
-        setHoverId(undefined);
-      },
-      [],
-    );
 
     const selected = useMemo(() => (
       nodes.find(item => item.id === selectId)

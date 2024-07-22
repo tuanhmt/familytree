@@ -12,7 +12,12 @@ import type { Node } from 'relatives-tree/lib/types';
 export const NODE_WIDTH = 174;
 export const NODE_HEIGHT = 232;
 
+declare global {
+  interface Window { drupalSettings: any; }
+}
+
 export const SOURCES = {
+  'DRUPAL': window.drupalSettings.ftree_nodes,
   'average-tree.json': averageTree,
   'couple.json': couple,
   'diff-parents.json': diffParents,

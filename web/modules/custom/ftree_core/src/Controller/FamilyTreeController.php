@@ -26,6 +26,59 @@ final class FamilyTreeController extends ControllerBase {
       ],
     ];
 
+    $data = [
+      [
+        "id" => "dyTpfj6sr",
+        "gender" => "male",
+        "spouses" => [
+          [
+            "id" => "dyTpfj6ss",
+            "type" => "married",
+          ],
+        ],
+        "siblings" => [],
+        "parents" => [],
+        "children" => [
+          [
+            "id" => "ahfR5lR2s",
+            "type" => "blood",
+          ],
+        ],
+      ],
+      [
+        "id" => "dyTpfj6ss",
+        "gender" => "female",
+        "spouses" => [
+          [
+            "id" => "dyTpfj6sr",
+            "type" => "married",
+          ],
+        ],
+        "siblings" => [],
+        "parents" => [],
+        "children" => [
+          [
+            "id" => "ahfR5lR2s",
+            "type" => "blood",
+          ],
+        ],
+      ],
+      [
+        "id" => "ahfR5lR2s",
+        "gender" => "female",
+        "spouses" => [],
+        "siblings" => [],
+        "parents" => [
+          [
+            "id" => "dyTpfj6sr",
+            "type" => "blood",
+          ],
+        ],
+        "children" => [],
+      ],
+    ];
+
+    $build['#attached']['drupalSettings']['ftree_nodes'] = $data;
     return $build;
   }
 

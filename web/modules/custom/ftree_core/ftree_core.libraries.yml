@@ -4,3 +4,6 @@ ftree_app:
       js/dist/ftree.bundle.css: { preprocess: false, minified: true }
   js:
     js/dist/ftree.bundle.min.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
