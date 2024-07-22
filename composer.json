@@ -85,6 +85,7 @@
         "dimsemenov/photoswipe": "^5.4",
         "drupal/address": "^2.0",
         "drupal/admin_toolbar": "^3",
+        "drupal/administerusersbyrole": "^3.4",
         "drupal/better_social_sharing_buttons": "^4.0",
         "drupal/ckeditor5_dev": "^1.0",
         "drupal/ckeditor5_embedded_content": "^1.0",

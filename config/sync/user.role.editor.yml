@@ -15,53 +15,33 @@ dependencies:
     - media
     - node
     - override_node_options
-    - path
     - system
     - toolbar
 id: editor
 label: Editor
-weight: 2
+weight: -8
 is_admin: null
 permissions:
   - 'access administration pages'
   - 'access content overview'
-  - 'access media overview'
   - 'access toolbar'
   - 'access user profiles'
   - 'create album media'
   - 'create article content'
   - 'create file media'
   - 'create image media'
-  - 'create url aliases'
-  - 'delete any album media'
-  - 'delete any album media revisions'
-  - 'delete any article content'
-  - 'delete any file media'
-  - 'delete any file media revisions'
-  - 'delete any image media'
-  - 'delete any image media revisions'
-  - 'delete article revisions'
   - 'delete own album media'
   - 'delete own article content'
   - 'delete own file media'
   - 'delete own image media'
   - 'dropzone upload files'
-  - 'edit any album media'
-  - 'edit any article content'
-  - 'edit any file media'
-  - 'edit any image media'
   - 'edit own album media'
   - 'edit own article content'
   - 'edit own file media'
   - 'edit own image media'
   - 'override article authored on option'
-  - 'update media'
   - 'use ckeditor5 embedded content'
   - 'use text format basic_html'
-  - 'view all media revisions'
-  - 'view any album media revisions'
-  - 'view any file media revisions'
-  - 'view any image media revisions'
   - 'view media'
   - 'view own unpublished media'
   - 'view the administration theme'

@@ -1,0 +1,59 @@
+uuid: b8fef19d-0934-4d4a-90a0-b621bf64bdfe
+langcode: vi
+status: true
+dependencies:
+  config:
+    - media.type.album
+    - media.type.file
+    - media.type.image
+    - node.type.article
+  module:
+    - administerusersbyrole
+    - ckeditor5_embedded_content
+    - dropzonejs
+    - media
+    - node
+    - override_node_options
+    - path
+    - system
+    - toolbar
+id: manager
+label: Manager
+weight: -9
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access media overview'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'access users overview'
+  - 'cancel users by role'
+  - 'create album media'
+  - 'create article content'
+  - 'create file media'
+  - 'create image media'
+  - 'create url aliases'
+  - 'create users'
+  - 'delete any album media'
+  - 'delete any album media revisions'
+  - 'delete any article content'
+  - 'delete any file media'
+  - 'delete any file media revisions'
+  - 'delete any image media'
+  - 'delete any image media revisions'
+  - 'dropzone upload files'
+  - 'edit any album media'
+  - 'edit any article content'
+  - 'edit any file media'
+  - 'edit any image media'
+  - 'edit users by role'
+  - 'override article authored by option'
+  - 'override article authored on option'
+  - 'role-assign users by role'
+  - 'use ckeditor5 embedded content'
+  - 'view any album media revisions'
+  - 'view any file media revisions'
+  - 'view any image media revisions'
+  - 'view the administration theme'
+  - 'view users by role'

@@ -51,9 +51,6 @@ display:
         roles_target_id:
           expose:
             label: 'Vai trò'
-        permission:
-          expose:
-            label: Quyền
       use_more_text: thêm
   page_1:
     display_title: Trang
