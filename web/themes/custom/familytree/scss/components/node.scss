@@ -80,4 +80,24 @@
       }
     }
   }
+
+  table {
+    border: 1px double #b3b3b3;
+    border-collapse: collapse;
+    border-spacing: 0;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 24px;
+
+
+    tbody tr {
+      border-bottom: 1px solid var(--gin-border-color-table);
+    }
+
+    td, th {
+      border: 1px solid #bfbfbf;
+      min-width: 2em;
+      padding: .4em;
+    }
+  }
 }
