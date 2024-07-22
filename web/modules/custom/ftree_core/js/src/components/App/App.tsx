@@ -41,12 +41,6 @@ export default React.memo(
 
     return (
       <div className={css.root}>
-        <header className={css.header}>
-          <div>
-            <label>Source: </label>
-            <SourceSelect value={source} items={SOURCES} onChange={changeSourceHandler} />
-          </div>
-        </header>
         {nodes.length > 0 && (
           <PinchZoomPan min={0.5} max={2.5} captureWheel className={css.wrapper}>
             <ReactFamilyTree
@@ -74,7 +68,7 @@ export default React.memo(
             Reset
           </button>
         )}
-        {/* {selected && (
+        {selected && (
           <NodeDetails
             node={selected}
             className={css.details}
@@ -82,7 +76,7 @@ export default React.memo(
             onHover={setHoverId}
             onClear={() => setHoverId(undefined)}
           />
-        )} */}
+        )}
       </div>
     );
   },

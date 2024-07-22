@@ -1,7 +1,7 @@
 .root {
   position: absolute;
   display: flex;
-  padding: 10px;
+  padding: 24px 12px;
 }
 
 .inner {

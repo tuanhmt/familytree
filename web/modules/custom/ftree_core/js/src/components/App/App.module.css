@@ -25,6 +25,7 @@
 
 .tree i {
   background-color: #831315 !important;
+  border: 1px solid #831315;
 }
 
 .reset {
