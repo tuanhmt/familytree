@@ -5,3 +5,11 @@ ftree_core.family_tree:
     _controller: '\Drupal\ftree_core\Controller\FamilyTreeController'
   requirements:
     _permission: 'access premium content'
+
+entity.family_node.settings:
+  path: 'admin/structure/family-node'
+  defaults:
+    _form: '\Drupal\ftree_core\Form\FamilyNodeSettingsForm'
+    _title: 'Family Node'
+  requirements:
+    _permission: 'administer family_node'

@@ -1,0 +1,5 @@
+family_node.add_form:
+  title: 'Add family node'
+  route_name: entity.family_node.add_form
+  appears_on:
+    - entity.family_node.collection

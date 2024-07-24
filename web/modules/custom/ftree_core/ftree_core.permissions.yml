@@ -1,0 +1,3 @@
+administer family_node:
+  title: 'Administer family nodes'
+  restrict access: true

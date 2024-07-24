@@ -1,0 +1,22 @@
+entity.family_node.settings:
+  title: 'Settings'
+  route_name: entity.family_node.settings
+  base_route: entity.family_node.settings
+entity.family_node.view:
+  title: 'View'
+  route_name: entity.family_node.canonical
+  base_route: entity.family_node.canonical
+entity.family_node.edit_form:
+  title: 'Edit'
+  route_name: entity.family_node.edit_form
+  base_route: entity.family_node.canonical
+entity.family_node.delete_form:
+  title: 'Delete'
+  route_name: entity.family_node.delete_form
+  base_route: entity.family_node.canonical
+  weight: 10
+entity.family_node.collection:
+  title: 'Family Nodes'
+  route_name: entity.family_node.collection
+  base_route: system.admin_content
+  weight: 10

@@ -1,0 +1,10 @@
+entity.family_node.edit_form:
+  route_name: entity.family_node.edit_form
+  group: family_node
+  title: 'Edit'
+
+entity.family_node.delete_form:
+  route_name: entity.family_node.delete_form
+  group: family_node
+  title: 'Delete'
+  weight: 10

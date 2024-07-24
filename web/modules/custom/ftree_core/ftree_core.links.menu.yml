@@ -1,0 +1,11 @@
+entity.family_node.settings:
+  title: 'Family Node'
+  description: 'Configure a Family Node entity type.'
+  route_name:  entity.family_node.settings
+  parent: system.admin_structure
+
+entity.family_node.collection:
+  title: 'Family Nodes'
+  description: 'List of family nodes.'
+  route_name: entity.family_node.collection
+  parent: system.admin_content
