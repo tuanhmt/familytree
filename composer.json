@@ -96,6 +96,7 @@
         "drupal/core-recommended": "^10.2",
         "drupal/crop": "^2.3",
         "drupal/dropzonejs": "^2.10",
+        "drupal/exif_orientation": "^1.4",
         "drupal/focal_point": "^2.0",
         "drupal/gin": "^3.0@RC",
         "drupal/gin_toolbar": "^1.0@RC",
