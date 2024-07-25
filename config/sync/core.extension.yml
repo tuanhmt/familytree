@@ -33,6 +33,7 @@ module:
   focal_point: 0
   ftree_breadcrumb: 0
   ftree_ckeditor5: 0
+  ftree_core: 0
   ftree_gin: 0
   ftree_homepage: 0
   ftree_node: 0

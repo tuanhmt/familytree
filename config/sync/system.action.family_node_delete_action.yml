@@ -1,0 +1,13 @@
+uuid: 314283cc-a120-41c4-8479-70cce95a43ce
+langcode: vi
+status: true
+dependencies:
+  module:
+    - ftree_core
+_core:
+  default_config_hash: pyP1e7XbtY9yR21sC4RTvsXWWV759U4x25YaycxoDmY
+id: family_node_delete_action
+label: 'Delete family nodes'
+type: family_node
+plugin: 'entity:delete_action:family_node'
+configuration: {  }
