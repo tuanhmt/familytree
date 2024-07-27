@@ -1,0 +1,30 @@
+uuid: d1067747-85d7-4bce-9110-7371c2b89c61
+langcode: vi
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_family_branch
+    - taxonomy.vocabulary.family_branch
+  module:
+    - user
+id: user.user.field_family_branch
+field_name: field_family_branch
+entity_type: user
+bundle: user
+label: 'Chi Nhánh'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      family_branch: family_branch
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

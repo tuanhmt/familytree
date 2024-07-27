@@ -5,7 +5,10 @@ dependencies:
   config:
     - field.field.user.user.field_address
     - field.field.user.user.field_birthday
+    - field.field.user.user.field_family_branch
+    - field.field.user.user.field_father
     - field.field.user.user.field_full_name
+    - field.field.user.user.field_mother
     - field.field.user.user.field_nickname
     - field.field.user.user.field_phone
     - field.field.user.user.field_saint_name
@@ -37,6 +40,22 @@ content:
     third_party_settings: {  }
     weight: 9
     region: content
+  field_family_branch:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_father:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
   field_full_name:
     type: string
     label: above
@@ -44,6 +63,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_mother:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 15
     region: content
   field_nickname:
     type: string

@@ -1,0 +1,20 @@
+uuid: dea420cf-16df-42e9-81fa-5c2c0893f82d
+langcode: vi
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_mother
+  module:
+    - user
+id: user.user.field_mother
+field_name: field_mother
+entity_type: user
+bundle: user
+label: 'Con bà'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

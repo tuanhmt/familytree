@@ -1,0 +1,11 @@
+uuid: b716c6d3-f825-4721-9ee8-cdce3399308a
+langcode: vi
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.family_branch
+id: taxonomy_term.family_branch
+target_entity_type_id: taxonomy_term
+target_bundle: family_branch
+default_langcode: site_default
+language_alterable: false
