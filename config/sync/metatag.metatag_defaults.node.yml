@@ -1,0 +1,14 @@
+uuid: 40a70421-c811-4edf-b581-22690dc04c40
+langcode: vi
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: rpwvgyEURXLz_JjgMCrkS1rUv-0k3L79BpO-ReN7fDI
+id: node
+label: 'Nội dung'
+tags:
+  canonical_url: '[node:url]'
+  description: '[node:summary]'
+  image_src: '[node:field_media_image:entity:thumbnail]'
+  robots: 'max-image-preview:standard'
+  title: '[node:title] | [site:name]'

@@ -9,6 +9,7 @@ dependencies:
     - media.type.album
   module:
     - media_library
+    - media_library_edit
 id: media.album.default
 targetEntityType: media
 bundle: album
@@ -27,7 +28,9 @@ content:
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
   name:
     type: string_textfield
     weight: 0
