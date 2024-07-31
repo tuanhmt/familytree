@@ -11,7 +11,7 @@ id: user.user.field_family_branch
 field_name: field_family_branch
 entity_type: user
 bundle: user
-label: 'Chi Nhánh'
+label: Chi/Nhánh
 description: ''
 required: false
 translatable: false

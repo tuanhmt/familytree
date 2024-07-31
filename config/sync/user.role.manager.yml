@@ -7,6 +7,7 @@ dependencies:
     - media.type.file
     - media.type.image
     - node.type.article
+    - taxonomy.vocabulary.family_branch
   module:
     - administerusersbyrole
     - ckeditor5_embedded_content
@@ -16,6 +17,7 @@ dependencies:
     - override_node_options
     - path
     - system
+    - taxonomy
     - toolbar
 id: manager
 label: Manager
@@ -25,6 +27,7 @@ permissions:
   - 'access administration pages'
   - 'access content overview'
   - 'access media overview'
+  - 'access taxonomy overview'
   - 'access toolbar'
   - 'access user profiles'
   - 'access users overview'
@@ -33,6 +36,7 @@ permissions:
   - 'create article content'
   - 'create file media'
   - 'create image media'
+  - 'create terms in family_branch'
   - 'create url aliases'
   - 'create users'
   - 'delete any album media'
@@ -42,11 +46,13 @@ permissions:
   - 'delete any file media revisions'
   - 'delete any image media'
   - 'delete any image media revisions'
+  - 'delete terms in family_branch'
   - 'dropzone upload files'
   - 'edit any album media'
   - 'edit any article content'
   - 'edit any file media'
   - 'edit any image media'
+  - 'edit terms in family_branch'
   - 'edit users by role'
   - 'override article authored by option'
   - 'override article authored on option'

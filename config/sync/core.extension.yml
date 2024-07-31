@@ -21,6 +21,7 @@ module:
   config_translation: 0
   contextual: 0
   crop: 0
+  cshs: 0
   datetime: 0
   dblog: 0
   dropzonejs: 0
