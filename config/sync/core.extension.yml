@@ -44,6 +44,7 @@ module:
   language: 0
   link: 0
   locale: 0
+  mailcontrol: 0
   media: 0
   media_library: 0
   media_library_edit: 0

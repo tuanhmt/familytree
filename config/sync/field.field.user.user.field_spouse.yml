@@ -10,7 +10,7 @@ id: user.user.field_spouse
 field_name: field_spouse
 entity_type: user
 bundle: user
-label: 'Họ tên chồng/vợ'
+label: 'Họ và tên chồng/vợ (trong trường hợp là dâu/rể)'
 description: ''
 required: false
 translatable: false
