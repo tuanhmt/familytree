@@ -36,3 +36,12 @@ function familytree_preprocess_menu_local_task(&$variables) {
     $variables["link"]['#attributes']['class'][] = 'nav-link';
   }
 }
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form_element.
+ */
+function familytree_theme_suggestions_form_element_alter(&$suggestions, $variables) {
+  if (!empty($variables['element']['#type'])) {
+    $suggestions[] = 'form_element__' . $variables['element']['#type'];
+  }
+}

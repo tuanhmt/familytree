@@ -76,3 +76,14 @@ fieldset {
     }
   }
 }
+
+.field--widget-cshs {
+  .select-wrapper {
+    margin-bottom: 10px;
+
+    label {
+      font-weight: 500;
+      margin-bottom: .5rem;
+    }
+  }
+}
