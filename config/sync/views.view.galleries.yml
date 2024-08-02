@@ -244,8 +244,8 @@ display:
           tags:
             next: ››
             previous: ‹‹
-            first: '« First'
-            last: 'Last »'
+            first: '« Trang đầu'
+            last: 'Trang cuối »'
           expose:
             items_per_page: false
             items_per_page_label: 'Số mục trên một trang'

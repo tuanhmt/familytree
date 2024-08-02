@@ -253,8 +253,8 @@ display:
           tags:
             next: 'Next ›'
             previous: '‹ Previous'
-            first: '« First'
-            last: 'Last »'
+            first: '« Trang đầu'
+            last: 'Trang cuối »'
       exposed_form:
         type: basic
         options:
