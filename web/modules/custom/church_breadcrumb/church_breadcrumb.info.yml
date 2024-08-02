@@ -1,5 +1,0 @@
-name: 'Church breadcrumb'
-type: module
-description: 'Add church custom breadcrumb'
-package: 'church'
-core_version_requirement: ^10

@@ -1,5 +1,0 @@
-name: 'Church Node'
-type: module
-description: 'Provide the functions for node.'
-package: church
-core_version_requirement: ^10 || ^11
