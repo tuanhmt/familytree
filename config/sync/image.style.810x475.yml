@@ -1,0 +1,17 @@
+uuid: 7b58d868-c480-4861-bb94-53ecd7705691
+langcode: vi
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 810x475
+label: 'Feature - Main (810x475)'
+effects:
+  05215f17-acb5-4ab9-a0d9-064d8d20f872:
+    uuid: 05215f17-acb5-4ab9-a0d9-064d8d20f872
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 810
+      height: 475
+      crop_type: focal_point

@@ -1,0 +1,29 @@
+uuid: 3782c477-7122-4136-b672-92b1ae1b6c7d
+langcode: vi
+status: true
+dependencies:
+  config:
+    - views.view.front_features
+  module:
+    - system
+    - views
+  theme:
+    - familytree
+id: front_features_main
+theme: familytree
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:front_features-main'
+settings:
+  id: 'views_block:front_features-main'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

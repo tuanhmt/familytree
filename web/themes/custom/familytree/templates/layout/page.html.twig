@@ -88,7 +88,7 @@
 	{% endblock %}
 
 	{% block main %}
-		<main role="main" class="main-section my-3">
+		<main role="main" class="main-section my-5">
 			<div class="container">
 				{% if page.main_sticky_left %}
 				<div class="main-sticky-left">
@@ -98,7 +98,7 @@
 				</div>
 				{% endif %}
 				{# check if sidebar has content #}
-				{% if page.sidebar or is_front %}
+				{% if page.sidebar %}
 					<div class="row">
 						<div class="col-md-8">
 							<section class="row top-content">
@@ -146,8 +146,9 @@
 						</aside>
 					</div>
 				{% else %}
+					{% set wrapper_classes = is_front ? "content-front" : "content-fullwidth" %}
 					<section
-						class="content-fullwidth">
+						class="{{ wrapper_classes }}">
 						{# main content #}
 						{{ block('content') }}
 						{# end main content #}

@@ -1,0 +1,17 @@
+uuid: d252c9d2-5a01-4e26-923e-5bf88a6e0614
+langcode: vi
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 190x140
+label: 'Feature - Sub (190x140)'
+effects:
+  795e9db5-aeaa-4701-89aa-e452ee53e139:
+    uuid: 795e9db5-aeaa-4701-89aa-e452ee53e139
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 190
+      height: 140
+      crop_type: focal_point

@@ -121,7 +121,7 @@ img {
 .content-fullwidth {
   background-color: #fff;
   padding: 32px;
-  border-radius: 0px 0px 18px 18px;
+  border-radius: 18px;
 }
 
 footer {
@@ -145,7 +145,7 @@ footer {
 
     .cat-item-title {
       margin-bottom: 10px;
-      
+
       a {
         color: #1D1D1D;
         font-size: 18px;
@@ -187,4 +187,94 @@ main {
   position:absolute;
   right: 0;
   top: 0;
+}
+
+.feature-main {
+  .card {
+    .card-img {
+      img {
+        border-radius: 8px;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.80) 0%, rgba(102, 102, 102, 0.00) 62.29%);
+      }
+    }
+
+    .card-img-overlay {
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.80) 0%, rgba(102, 102, 102, 0.00) 62.29%);
+      padding: 32px;
+
+      .card-cat {
+        color: var(--data-color-yellow);
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .card-title {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 140%;
+
+        a {
+          color: #fff;
+
+          &:hover {
+            color: var(--data-color-yellow);
+          }
+        }
+      }
+
+      .card-created {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 400;
+
+        i {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  .feature-sub {
+    .card {
+      img {
+        border-radius: 8px;
+      }
+
+      .card-cat {
+        color: var(--data-color-yellow);
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+
+      .card-title {
+        a {
+          color: #1D1D1D;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 150%;
+
+          &:hover {
+            color: var(--data-color-yellow);
+          }
+        }
+      }
+
+      .card-created {
+        color: var(--data-color-light-gray);
+        font-size: 14px;
+        font-weight: 400;
+
+        i {
+          margin-right: 5px;
+        }
+      }
+    }
+
+  }
 }
