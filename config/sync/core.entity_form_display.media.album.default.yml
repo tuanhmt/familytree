@@ -3,6 +3,7 @@ langcode: vi
 status: true
 dependencies:
   config:
+    - field.field.media.album.field_description
     - field.field.media.album.field_images
     - field.field.media.album.field_is_premium
     - field.field.media.album.field_media_images
@@ -10,11 +11,28 @@ dependencies:
   module:
     - media_library
     - media_library_edit
+    - text
 id: media.album.default
 targetEntityType: media
 bundle: album
 mode: default
 content:
+  created:
+    type: datetime_timestamp
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_description:
+    type: text_textarea_with_summary
+    weight: 3
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
   field_is_premium:
     type: boolean_checkbox
     weight: 1
@@ -40,7 +58,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
-  created: true
   field_images: true
   langcode: true
   path: true

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.gallery
+    - field.field.media.album.field_description
     - field.field.media.album.field_images
     - field.field.media.album.field_is_premium
     - field.field.media.album.field_media_images
@@ -24,6 +25,7 @@ content:
     region: content
 hidden:
   created: true
+  field_description: true
   field_images: true
   field_is_premium: true
   langcode: true

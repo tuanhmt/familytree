@@ -1,0 +1,15 @@
+uuid: e18470c1-fb65-4a3b-a846-9c9d0bddd1b4
+langcode: vi
+status: true
+dependencies: {  }
+id: media__album
+label: 'Phương tiện: Album'
+tags:
+  description: '[media:field_description:summary]'
+  image_src: '[media:thumbnail:media_thumbnail_320x220:url]'
+  og_description: '[media:field_description:summary]'
+  og_image: '[media:thumbnail:media_thumbnail_320x220:url]'
+  og_image_url: '[media:thumbnail:media_thumbnail_320x220:url]'
+  og_title: '[media:field_description:summary]'
+  robots: 'max-image-preview:large'
+  title: '[media:field_description:summary]'

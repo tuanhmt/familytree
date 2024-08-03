@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.album.field_description
     - field.field.media.album.field_images
     - field.field.media.album.field_is_premium
     - field.field.media.album.field_media_images
@@ -10,11 +11,19 @@ dependencies:
     - media.type.album
   module:
     - photoswipe
+    - text
 id: media.album.default
 targetEntityType: media
 bundle: album
 mode: default
 content:
+  field_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_media_images:
     type: photoswipe_field_formatter
     label: hidden
