@@ -4,12 +4,14 @@ $blue: #003A24;
 $red: #83251D;
 $yellow: #FEB74F;
 $light-gray: #3C435B;
+$header: #1d1d1d;
 
-:root{ 
+:root{
   --data-color-blue: #{$blue};
   --data-color-red: #{$red};
   --data-color-yellow: #{$yellow};
   --data-color-light-gray: #{$light-gray};
+  --data-color-header: #{$header};
 }
 
 $container-max-widths: (

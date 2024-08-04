@@ -1,0 +1,17 @@
+uuid: b4aeaf23-7ebf-4e45-9151-e04813bc8cfb
+langcode: vi
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 163x120
+label: 163x120
+effects:
+  e4237384-dde3-47ce-b8de-f4f404c562ea:
+    uuid: e4237384-dde3-47ce-b8de-f4f404c562ea
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 163
+      height: 120
+      crop_type: focal_point

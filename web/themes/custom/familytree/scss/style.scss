@@ -147,7 +147,7 @@ footer {
       margin-bottom: 10px;
 
       a {
-        color: #1D1D1D;
+        color: var(--data-color-header);;
         font-size: 18px;
         font-weight: 500;
         line-height: 150%;
@@ -230,6 +230,12 @@ main {
         font-size: 14px;
         font-weight: 400;
 
+        svg {
+          path {
+            stroke: #fff;
+          }
+        }
+
         i {
           margin-right: 5px;
         }
@@ -253,7 +259,7 @@ main {
 
       .card-title {
         a {
-          color: #1D1D1D;
+          color: var(--data-color-header);;
           font-size: 18px;
           font-style: normal;
           font-weight: 600;
@@ -276,5 +282,71 @@ main {
       }
     }
 
+  }
+}
+
+.block-title {
+  padding: 8px 0;
+  border-bottom: 2px solid var(--data-color-red);
+  font-family: "SG85-CHI SON 1";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--data-color-red);
+
+  a.block-view-more {
+    color: var(--data-color-header);;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    &:hover {
+      color: var(--data-color-yellow);
+    }
+  }
+}
+
+.horizontal-list {
+  .horizontal-item {
+    .horizontal-img {
+      margin-bottom: 24px;
+
+      img {
+        border-radius: 8px;
+      }
+    }
+
+    .horizontal-title {
+      margin-bottom: 10px;
+
+      a {
+        color: var(--data-color-header);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+
+        &:hover {
+          color: var(--data-color-yellow);
+        }
+      }
+    }
+
+    .horizontal-created {
+      color: var(--data-color-light-gray);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+}
+
+.article-submitted {
+  svg {
+    margin-right: 5px;
   }
 }

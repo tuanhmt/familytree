@@ -1,0 +1,33 @@
+uuid: 4ba16f24-7325-469f-9c51-73ee15c73c5c
+langcode: vi
+status: true
+dependencies:
+  config:
+    - views.view.horizontal
+  module:
+    - block_class
+    - system
+    - views
+  theme:
+    - familytree
+third_party_settings:
+  block_class:
+    attributes: data-view-more-route-name|<front>
+id: horizontal
+theme: familytree
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:horizontal-horizontal'
+settings:
+  id: 'views_block:horizontal-horizontal'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

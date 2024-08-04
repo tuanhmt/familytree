@@ -1,0 +1,17 @@
+uuid: 800d92fd-682d-424b-9327-0590deec0d30
+langcode: vi
+status: true
+dependencies:
+  module:
+    - focal_point
+name: 327x200
+label: 327x200
+effects:
+  736c6996-4f7c-4af0-aaf4-7a7578a12374:
+    uuid: 736c6996-4f7c-4af0-aaf4-7a7578a12374
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 327
+      height: 200
+      crop_type: focal_point
