@@ -11,19 +11,11 @@ dependencies:
     - media.type.album
   module:
     - photoswipe
-    - text
 id: media.album.default
 targetEntityType: media
 bundle: album
 mode: default
 content:
-  field_description:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_media_images:
     type: photoswipe_field_formatter
     label: hidden
@@ -38,6 +30,7 @@ content:
     region: content
 hidden:
   created: true
+  field_description: true
   field_images: true
   field_is_premium: true
   langcode: true
