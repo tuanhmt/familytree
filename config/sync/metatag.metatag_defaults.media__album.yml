@@ -6,10 +6,10 @@ id: media__album
 label: 'Phương tiện: Album'
 tags:
   description: '[media:field_description:summary]'
-  image_src: '[media:thumbnail:media_thumbnail_320x220:url]'
+  image_src: '[media:field_media_images:0:entity:field_media_image:media_thumbnail_370x220:url]]'
   og_description: '[media:field_description:summary]'
-  og_image: '[media:thumbnail:media_thumbnail_320x220:url]'
-  og_image_url: '[media:thumbnail:media_thumbnail_320x220:url]'
+  og_image: '[media:field_media_images:0:entity:field_media_image:media_thumbnail_370x220:url]]'
+  og_image_url: '[media:field_media_images:0:entity:field_media_image:media_thumbnail_370x220:url]]'
   og_title: '[media:field_description:summary]'
   robots: 'max-image-preview:large'
   title: '[media:field_description:summary]'
