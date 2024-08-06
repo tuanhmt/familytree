@@ -61,6 +61,7 @@ function familytree_preprocess_block(&$variables) {
 function familytree_preprocess_owlcarousel_views(array &$variables) {
   if (isset($variables["attributes"]["data-settings"])) {
     $data_settings = json_decode($variables["attributes"]["data-settings"], TRUE);
+    $data_settings['margin'] = 30;
     $data_settings['navText'] = [
       "<i class='fa fa-angle-left'></i>",
       "<i class='fa fa-angle-right'></i>",
