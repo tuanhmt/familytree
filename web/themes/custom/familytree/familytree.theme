@@ -54,3 +54,17 @@ function familytree_preprocess_block(&$variables) {
     $variables['view_more_route'] = $variables["attributes"]["data-view-more-route-name"][0];
   }
 }
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function familytree_preprocess_owlcarousel_views(array &$variables) {
+  if (isset($variables["attributes"]["data-settings"])) {
+    $data_settings = json_decode($variables["attributes"]["data-settings"], TRUE);
+    $data_settings['navText'] = [
+      "<i class='fa fa-angle-left'></i>",
+      "<i class='fa fa-angle-right'></i>",
+    ];
+    $variables["attributes"]["data-settings"] = json_encode($data_settings);
+  }
+}

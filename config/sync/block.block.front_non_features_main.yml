@@ -1,9 +1,9 @@
-uuid: 4ba16f24-7325-469f-9c51-73ee15c73c5c
+uuid: f5a84bbd-3559-4323-be79-30a85ee997a3
 langcode: vi
 status: true
 dependencies:
   config:
-    - views.view.horizontal
+    - views.view.front_non_features
   module:
     - block_class
     - system
@@ -12,16 +12,15 @@ dependencies:
     - familytree
 third_party_settings:
   block_class:
-    classes: 'mt-4 mt-xl-5 horizontal-list'
-    attributes: data-view-more-route-name|<front>
-id: horizontal
+    classes: 'mt-4 mt-xl-5 non-feature'
+id: front_non_features_main
 theme: familytree
 region: content
-weight: -2
+weight: -1
 provider: null
-plugin: 'views_block:horizontal-horizontal'
+plugin: 'views_block:front_non_features-main'
 settings:
-  id: 'views_block:horizontal-horizontal'
+  id: 'views_block:front_non_features-main'
   label: ''
   label_display: visible
   provider: views

@@ -1,19 +1,22 @@
-uuid: 99873ebd-923f-402e-9bdb-5287f314fa3e
+uuid: daf829d4-abbd-416f-8e9c-f4db36332953
 langcode: vi
 status: true
 dependencies:
   config:
-    - field.storage.node.field_category
     - field.storage.node.field_media_image
-    - image.style.190x140
-    - image.style.810x475
+    - image.style.163x120
+    - image.style.414x408
     - node.type.article
+    - taxonomy.vocabulary.category
+  content:
+    - 'taxonomy_term:category:5a1505d4-a084-4dec-91e6-ec4c23b3d4ce'
   module:
     - media
     - node
+    - taxonomy
     - user
-id: front_features
-label: 'Front - Features'
+id: front_non_features
+label: 'Front - Non features'
 module: views
 description: ''
 tag: ''
@@ -26,7 +29,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: ''
+      title: 'Tin tức'
       fields:
         field_media_image:
           id: field_media_image
@@ -81,7 +84,7 @@ display:
           type: media_thumbnail
           settings:
             image_link: content
-            image_style: 810x475
+            image_style: 414x408
             image_loading:
               attribute: lazy
           group_column: target_id
@@ -143,69 +146,6 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
-        field_category:
-          id: field_category
-          table: node__field_category
-          field: field_category
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: span
-          element_class: 'btn btn-primary btn-sm card-cat'
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: '0'
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
         title:
           id: title
           table: node_field_data
@@ -457,6 +397,59 @@ display:
           plugin_id: bundle
           value:
             article: article
+        field_category_target_id:
+          id: field_category_target_id
+          table: node__field_category
+          field: field_category_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value:
+            2: 2
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: category
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+          save_lineage: false
+          force_deepest: false
+          parent: null
+          level_labels: ''
+          hierarchy_depth: 0
+          required_depth: 0
+          none_label: '- Please select -'
       style:
         type: default
         options:
@@ -486,7 +479,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_category'
         - 'config:field.storage.node.field_media_image'
   attachment:
     id: attachment
@@ -587,7 +579,7 @@ display:
           element_label_class: ''
           element_label_colon: false
           element_wrapper_type: div
-          element_wrapper_class: col-4
+          element_wrapper_class: col-3
           element_default_classes: false
           empty: ''
           hide_empty: false
@@ -597,7 +589,7 @@ display:
           type: media_thumbnail
           settings:
             image_link: content
-            image_style: 190x140
+            image_style: 163x120
             image_loading:
               attribute: lazy
           group_column: target_id
@@ -622,7 +614,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"col-8\">\r\n<div class=\"card-body py-0\">"
+            text: "<div class=\"col-9\">\r\n<div class=\"card-body py-0\">"
             make_link: false
             path: ''
             absolute: false
@@ -659,69 +651,6 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
-        field_category:
-          id: field_category
-          table: node__field_category
-          field: field_category
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: span
-          element_class: 'btn btn-primary btn-sm card-cat'
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: '0'
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
         title:
           id: title
           table: node_field_data
@@ -992,7 +921,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_category'
         - 'config:field.storage.node.field_media_image'
   main:
     id: main
@@ -1009,5 +937,4 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_category'
         - 'config:field.storage.node.field_media_image'

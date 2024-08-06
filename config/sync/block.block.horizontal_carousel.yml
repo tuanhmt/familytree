@@ -1,9 +1,9 @@
-uuid: 4ba16f24-7325-469f-9c51-73ee15c73c5c
+uuid: 1ef8fe1c-99f3-4220-8998-0218a67ead2b
 langcode: vi
 status: true
 dependencies:
   config:
-    - views.view.horizontal
+    - views.view.horizontal_carousel
   module:
     - block_class
     - system
@@ -12,20 +12,19 @@ dependencies:
     - familytree
 third_party_settings:
   block_class:
-    classes: 'mt-4 mt-xl-5 horizontal-list'
-    attributes: data-view-more-route-name|<front>
-id: horizontal
+    classes: 'mt-4 mt-xl-5'
+id: horizontal_carousel
 theme: familytree
 region: content
-weight: -2
+weight: 0
 provider: null
-plugin: 'views_block:horizontal-horizontal'
+plugin: 'views_block:horizontal_carousel-block_1'
 settings:
-  id: 'views_block:horizontal-horizontal'
-  label: ''
+  id: 'views_block:horizontal_carousel-block_1'
+  label: 'Hình ảnh'
   label_display: visible
   provider: views
-  views_label: ''
+  views_label: 'Hình ảnh'
   items_per_page: none
 visibility:
   request_path:

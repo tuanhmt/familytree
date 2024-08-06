@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * The module file with theming functions.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function ftree_block_theme($existing, $type, $theme, $path) {
+  return [
+    'card_overlay_block' => [
+      'variables' => [
+        'card_image' => NULL,
+        'card_header' => NULL,
+        'card_text' => NULL,
+        'card_link' => NULL,
+      ],
+      'template' => 'card-overlay-block',
+    ],
+  ];
+}

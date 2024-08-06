@@ -9,7 +9,7 @@ dependencies:
 id: familytree_breadcrumbs_2
 theme: familytree
 region: content
-weight: -2
+weight: -5
 provider: null
 plugin: system_breadcrumb_block
 settings:

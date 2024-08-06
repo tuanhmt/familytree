@@ -1,0 +1,5 @@
+name: 'FTree - Blocks'
+type: module
+description: 'Add custom block to page'
+package: Family Tree
+core_version_requirement: ^10

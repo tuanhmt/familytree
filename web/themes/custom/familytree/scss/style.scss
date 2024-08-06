@@ -350,3 +350,81 @@ main {
     margin-right: 5px;
   }
 }
+
+.card-overlay {
+  color: var(--data-color-yellow);
+
+  .card-img-overlay {
+    padding: 46px 26px 0 26px;
+  }
+
+  .card-title {
+    font-family: "SG85-CHI SON 1";
+    font-size: 38px;
+    margin-bottom: 10px;
+  }
+
+  .card-text {
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+.btn {
+  &.btn-lg.btn-outline-warning {
+    border: 1px solid var(--data-color-yellow);
+    padding: 10px 32px;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 50px;
+  }
+}
+
+.horizontal-carousel {
+  .owl-carousel {
+    .owl-item {
+      a {
+        color: var(--data-color-header);
+        font-weight: 500;
+        font-size: 18px;
+
+        &:hover {
+          color: var(--data-color-yellow);
+        }
+      }
+
+      img {
+        border-radius: 8px;
+        margin-bottom: 24px;
+      }
+    }
+
+    .owl-nav {
+      .owl-next,.owl-prev {
+        width: 48px;
+        height: 48px;
+        border: 1px solid #F2EFEF;
+        background-color: #fff;
+        color: #747C97;
+        border-radius: 100%;
+        font-size: 22px;
+        position: absolute;
+        top: 30%;
+        margin: 0;
+
+        &:hover {
+          background-color: var(--data-color-yellow);
+          color: #831315;
+        }
+      }
+
+      .owl-next {
+        right: -24px;
+      }
+
+      .owl-prev {
+        left: -24px;
+      }
+    }
+  }
+}

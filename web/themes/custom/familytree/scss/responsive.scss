@@ -95,19 +95,19 @@
         ul.navbar-nav {
           li {
             a, span {
-              
+
               // padding: 0 10px;
-  
+
               &.nav-link {
                 padding-top: 12px;
                 padding-bottom: 12px;
               }
-  
+
               &:hover, &.is-active {
                 color: #fff;
               }
             }
-  
+
             .dropdown-menu {
               li {
                 a {
@@ -159,12 +159,39 @@
 }
 
 @include media-breakpoint-down(sm) {
-  .main-sticky-left, .main-sticky-right { 
+  .main-sticky-left, .main-sticky-right {
     display: none;
   }
 
   .main-section {
     padding-left: 0;
     padding-right: 0;
+  }
+}
+
+@include media-breakpoint-only(xl) {
+  .feature-main {
+    .feature-sub {
+      .card {
+        .card-title {
+          a {
+            font-size: 13px !important;
+          }
+        }
+
+        .card-cat {
+          font-size: 10px !important;
+        }
+
+        .card-created {
+          font-size: 12px !important;
+
+          svg {
+            height: 15px !important;
+          }
+        }
+      }
+
+    }
   }
 }

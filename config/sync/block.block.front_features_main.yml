@@ -12,7 +12,7 @@ dependencies:
 id: front_features_main
 theme: familytree
 region: content
-weight: 0
+weight: -3
 provider: null
 plugin: 'views_block:front_features-main'
 settings:

@@ -12,6 +12,6 @@ effects:
     id: focal_point_scale_and_crop
     weight: 1
     data:
-      width: 327
-      height: 280
+      width: 490
+      height: 420
       crop_type: focal_point

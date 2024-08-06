@@ -1,0 +1,7 @@
+block.settings.card_overlay_block:
+  type: block_settings
+  label: 'Card Overlay Block block'
+  mapping:
+    example:
+      type: string
+      label: Example

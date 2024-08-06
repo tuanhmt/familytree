@@ -6,7 +6,7 @@ dependencies:
     - crop
 third_party_settings:
   crop:
-    image_field: field_images
+    image_field: _none
 id: album
 label: Album
 description: 'Album hình ảnh'
