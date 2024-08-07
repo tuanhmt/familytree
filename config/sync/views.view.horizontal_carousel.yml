@@ -225,16 +225,16 @@ display:
           grouping: {  }
           row_class: ''
           default_row_class: true
-          items: '4'
-          margin: '0'
+          items: '1'
+          margin: '30'
           nav: 1
           autoplay: 1
           autoplayHoverPause: 0
           loop: 0
           dots: 0
-          dimensionMobile: '0'
+          dimensionMobile: '320'
           itemsMobile: '1'
-          dimensionDesktop: '0'
+          dimensionDesktop: '768'
           itemsDesktop: '4'
       row:
         type: fields

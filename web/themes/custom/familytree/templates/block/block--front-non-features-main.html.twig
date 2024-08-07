@@ -31,14 +31,12 @@
 {% extends "block.html.twig" %}
 
 {% block content %}
-  <div class="container">
-    <div class="row">
-      <div class="col-9">
-        {{ content }}
-      </div>
-      <div class="col-3" >
-        {{ drupal_block('card_overlay_block') }}
-      </div>
+  <div class="row">
+    <div class="col-xl-9 col-md-8">
+      {{ content }}
+    </div>
+    <div class="col-xl-3 col-md-4 col-sm-8 mt-4 mt-md-0">
+      {{ drupal_block('card_overlay_block') }}
     </div>
   </div>
 {% endblock %}
