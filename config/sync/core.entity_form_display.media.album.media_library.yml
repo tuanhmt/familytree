@@ -8,6 +8,7 @@ dependencies:
     - field.field.media.album.field_images
     - field.field.media.album.field_is_premium
     - field.field.media.album.field_media_images
+    - field.field.media.album.field_promote
     - image.style.thumbnail
     - media.type.album
   module:
@@ -38,6 +39,7 @@ hidden:
   field_description: true
   field_is_premium: true
   field_media_images: true
+  field_promote: true
   langcode: true
   path: true
   status: true

@@ -41,6 +41,7 @@ permissions:
   - 'edit own file media'
   - 'edit own image media'
   - 'override article authored on option'
+  - 'override article promote to front page option'
   - 'use ckeditor5 embedded content'
   - 'use text format basic_html'
   - 'view media'

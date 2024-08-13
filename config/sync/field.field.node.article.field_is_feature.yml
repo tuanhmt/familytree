@@ -1,0 +1,23 @@
+uuid: 414da855-7bd6-4874-bd66-7b0354acf2af
+langcode: vi
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_feature
+    - node.type.article
+id: node.article.field_is_feature
+field_name: field_is_feature
+entity_type: node
+bundle: article
+label: 'Tin nổi bật ?'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Bật
+  off_label: Tắt
+field_type: boolean

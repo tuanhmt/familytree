@@ -56,6 +56,7 @@ permissions:
   - 'edit users by role'
   - 'override article authored by option'
   - 'override article authored on option'
+  - 'override article promote to front page option'
   - 'role-assign users by role'
   - 'use ckeditor5 embedded content'
   - 'view any album media revisions'

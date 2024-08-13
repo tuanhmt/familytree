@@ -7,6 +7,7 @@ dependencies:
     - field.field.media.album.field_images
     - field.field.media.album.field_is_premium
     - field.field.media.album.field_media_images
+    - field.field.media.album.field_promote
     - media.type.album
   module:
     - media_library
@@ -49,6 +50,13 @@ content:
     third_party_settings:
       media_library_edit:
         show_edit: '1'
+  field_promote:
+    type: boolean_checkbox
+    weight: 26
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   name:
     type: string_textfield
     weight: 0

@@ -1,0 +1,21 @@
+uuid: 3e1cf7f1-1366-4af5-b0cb-52536e421384
+langcode: vi
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_promote
+    - media.type.album
+id: media.album.field_promote
+field_name: field_promote
+entity_type: media
+bundle: album
+label: 'Đưa lên trang chủ'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Bật
+  off_label: Tắt
+field_type: boolean
