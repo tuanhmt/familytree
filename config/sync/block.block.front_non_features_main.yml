@@ -13,6 +13,9 @@ dependencies:
 third_party_settings:
   block_class:
     classes: 'mt-4 mt-xl-5 non-feature'
+    attributes: |-
+      data-view-more-route-name|entity.taxonomy_term.canonical
+      data-view-more-route-args|taxonomy_term,2
 id: front_non_features_main
 theme: familytree
 region: content

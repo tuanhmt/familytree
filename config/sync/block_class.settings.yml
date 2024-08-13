@@ -18,6 +18,6 @@ weight_id: 0
 filter_html_clean_css_identifier: ''
 maxlength_attributes: 0
 maxlength_id: 255
-attribute_keys_stored: '{"data-route":"data-route","data-view-more-route-name":"data-view-more-route-name"}'
-attribute_value_stored: '{"\u003Cfront\u003E":"\u003Cfront\u003E"}'
-attributes_inline: '{"data-route=\u003Cfront\u003E":"data-route=\u003Cfront\u003E","data-view-more-route-name=\u003Cfront\u003E":"data-view-more-route-name=\u003Cfront\u003E"}'
+attribute_keys_stored: '{"data-route":"data-route","data-view-more-route-name":"data-view-more-route-name","data-view-more-route-args":"data-view-more-route-args"}'
+attribute_value_stored: '{"\u003Cfront\u003E":"\u003Cfront\u003E","entity.taxonomy_term.canonical":"entity.taxonomy_term.canonical","tid,2":"tid,2","taxonomy_term,2":"taxonomy_term,2","taxonomy_term,3":"taxonomy_term,3"}'
+attributes_inline: '{"data-route=\u003Cfront\u003E":"data-route=\u003Cfront\u003E","data-view-more-route-name=\u003Cfront\u003E":"data-view-more-route-name=\u003Cfront\u003E","data-view-more-route-name=entity.taxonomy_term.canonical":"data-view-more-route-name=entity.taxonomy_term.canonical","data-view-more-route-args=tid,2":"data-view-more-route-args=tid,2","data-view-more-route-args=taxonomy_term,2":"data-view-more-route-args=taxonomy_term,2","data-view-more-route-args=taxonomy_term,3":"data-view-more-route-args=taxonomy_term,3"}'

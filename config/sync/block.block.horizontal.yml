@@ -13,7 +13,9 @@ dependencies:
 third_party_settings:
   block_class:
     classes: 'mt-4 mt-xl-5 horizontal-list'
-    attributes: data-view-more-route-name|<front>
+    attributes: |-
+      data-view-more-route-name|entity.taxonomy_term.canonical
+      data-view-more-route-args|taxonomy_term,3
 id: horizontal
 theme: familytree
 region: content

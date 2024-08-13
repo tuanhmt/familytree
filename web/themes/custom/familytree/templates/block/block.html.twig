@@ -60,7 +60,7 @@
         {{ label }}
       </span>
       {% if view_more_route %}
-        <a class="block-view-more" href="{{  path(view_more_route, {}) }}">{{ 'View more'|t }}</a>
+        <a class="block-view-more" href="{{  path(view_more_route, view_more_route_args) }}">{{ 'View more'|t }}</a>
       {% endif %}
     </h2>
   {% endif %}

@@ -52,6 +52,19 @@ function familytree_theme_suggestions_form_element_alter(&$suggestions, $variabl
 function familytree_preprocess_block(&$variables) {
   if (isset($variables["attributes"]["data-view-more-route-name"][0])) {
     $variables['view_more_route'] = $variables["attributes"]["data-view-more-route-name"][0];
+    $variables['view_more_route_args'] = [];
+    if (isset($variables["attributes"]["data-view-more-route-args"][0])) {
+      $args_str = explode(';', $variables["attributes"]["data-view-more-route-args"][0]);
+      $args = [];
+      foreach ($args_str as $arg) {
+        $arg_arr = explode(',', $arg);
+        if (isset($arg_arr[0]) && isset($arg_arr[1])) {
+          $args[$arg_arr[0]] = $arg_arr[1];
+        }
+      }
+
+      $variables['view_more_route_args'] = $args;
+    }
   }
 }
 
