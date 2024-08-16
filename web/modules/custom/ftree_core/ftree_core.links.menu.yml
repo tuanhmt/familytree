@@ -9,3 +9,8 @@ entity.family_node.collection:
   description: 'List of family nodes.'
   route_name: entity.family_node.collection
   parent: system.admin_content
+
+ftree_core.user.logout:
+  weight: 10
+  menu_name: account
+  class: Drupal\ftree_core\Plugin\Menu\LoginLogoutMenuLink
