@@ -68,3 +68,9 @@ definitions:
     weight: 12
     expanded: true
     enabled: true
+  user__logout:
+    enabled: false
+    menu_name: account
+    parent: ''
+    expanded: false
+    weight: 10
