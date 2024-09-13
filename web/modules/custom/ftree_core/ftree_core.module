@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Module file.
+ */
+
 declare(strict_types=1);
 
 /**
@@ -7,8 +12,10 @@ declare(strict_types=1);
  * Provides a family node entity type.
  */
 
-use Drupal\Core\Render\Element;
 use Drupal\user\UserInterface;
+use Drupal\Core\Render\Element;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
 
 /**
  * Implements hook_theme().
@@ -26,8 +33,8 @@ function ftree_core_theme(): array {
  *
  * @param array $variables
  *   An associative array containing:
- *   - elements: An associative array containing the family node information and any
- *     fields attached to the entity.
+ *   - elements: An associative array containing
+ *     the family node information and any fields attached to the entity.
  *   - attributes: HTML attributes for the containing element.
  */
 function template_preprocess_family_node(array &$variables): void {
@@ -50,7 +57,7 @@ function ftree_core_user_cancel($edit, UserInterface $account, $method): void {
         ->accessCheck(FALSE)
         ->execute();
       foreach ($storage->loadMultiple($family_node_ids) as $family_node) {
-        $family_node->setOwnerId(0)->save();
+        $family_node->setOwnerId(1)->save();
       }
       break;
   }
@@ -66,7 +73,225 @@ function ftree_core_user_predelete(UserInterface $account): void {
     ->condition('uid', $account->id())
     ->accessCheck(FALSE)
     ->execute();
-  $storage->delete(
-    $storage->loadMultiple($family_node_ids)
-  );
+  foreach ($storage->loadMultiple($family_node_ids) as $family_node) {
+    $family_node->setOwnerId(1)->save();
+  }
+}
+
+/**
+ * Implements hook_update_N().
+ */
+function ftree_core_update_10301() {
+  $newStorageDefinitions = [];
+  $newStorageDefinitions['gender'] = BaseFieldDefinition::create('list_string')
+    ->setLabel(t('Gender'))
+    ->setDefaultValue(200)
+    ->setSettings([
+      'allowed_values' => [
+        'male' => 'Male',
+        'female' => 'Female',
+      ],
+    ])
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE);
+
+  $newStorageDefinitions['spouses'] = BaseFieldDefinition::create('entity_reference')
+    ->setLabel(t('Spouses'))
+    ->setSetting('target_type', 'family_node')
+    ->setSetting('handler', 'default')
+    ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+    ->setDisplayOptions('view', [
+      'label' => 'above',
+      'type' => 'entity_reference_label',
+      'weight' => -2,
+    ])
+    ->setDisplayOptions('form', [
+      'type' => 'entity_reference_autocomplete',
+      'weight' => -2,
+      'settings' => [
+        'match_operator' => 'CONTAINS',
+        'size' => '60',
+        'placeholder' => '',
+      ],
+    ])
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE);
+
+  $newStorageDefinitions['siblings'] = BaseFieldDefinition::create('entity_reference')
+    ->setLabel(t('Siblings'))
+    ->setSetting('target_type', 'family_node')
+    ->setSetting('handler', 'default')
+    ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+    ->setDisplayOptions('view', [
+      'label' => 'above',
+      'type' => 'entity_reference_label',
+      'weight' => -2,
+    ])
+    ->setDisplayOptions('form', [
+      'type' => 'entity_reference_autocomplete',
+      'weight' => -2,
+      'settings' => [
+        'match_operator' => 'CONTAINS',
+        'size' => '60',
+        'placeholder' => '',
+      ],
+    ])
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE);
+
+  $newStorageDefinitions['children'] = BaseFieldDefinition::create('entity_reference')
+    ->setLabel(t('Children'))
+    ->setSetting('target_type', 'family_node')
+    ->setSetting('handler', 'default')
+    ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+    ->setDisplayOptions('view', [
+      'label' => 'above',
+      'type' => 'entity_reference_label',
+      'weight' => -2,
+    ])
+    ->setDisplayOptions('form', [
+      'type' => 'entity_reference_autocomplete',
+      'weight' => -2,
+      'settings' => [
+        'match_operator' => 'CONTAINS',
+        'size' => '60',
+        'placeholder' => '',
+      ],
+    ])
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE);
+
+  $entityUpdateManager = \Drupal::entityDefinitionUpdateManager();
+  $entityTypeId = 'family_node';
+  $moduleName = 'ftree_core';
+  foreach ($newStorageDefinitions as $fieldName => $newStorageDefinition) {
+    $field_definition = $entityUpdateManager->getFieldStorageDefinition($fieldName, $entityTypeId);
+    $entityUpdateManager->uninstallFieldStorageDefinition($field_definition);
+    $entityUpdateManager->installFieldStorageDefinition(
+      $fieldName, $entityTypeId, $moduleName, $newStorageDefinition
+    );
+  }
+}
+
+/**
+ * Implements hook_update_N().
+ */
+function ftree_core_update_10302() {
+  $newStorageDefinitions = [];
+
+  $newStorageDefinitions['parents'] = BaseFieldDefinition::create('entity_reference')
+    ->setLabel(t('Parents'))
+    ->setSetting('target_type', 'family_node')
+    ->setSetting('handler', 'default')
+    ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+    ->setDisplayOptions('view', [
+      'label' => 'above',
+      'type' => 'entity_reference_label',
+      'weight' => -2,
+    ])
+    ->setDisplayOptions('form', [
+      'type' => 'entity_reference_autocomplete',
+      'weight' => -2,
+      'settings' => [
+        'match_operator' => 'CONTAINS',
+        'size' => '60',
+        'placeholder' => '',
+      ],
+    ])
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE);
+
+  $entityUpdateManager = \Drupal::entityDefinitionUpdateManager();
+  $entityTypeId = 'family_node';
+  $moduleName = 'ftree_core';
+  foreach ($newStorageDefinitions as $fieldName => $newStorageDefinition) {
+    $field_definition = $entityUpdateManager->getFieldStorageDefinition($fieldName, $entityTypeId);
+    $entityUpdateManager->uninstallFieldStorageDefinition($field_definition);
+    $entityUpdateManager->installFieldStorageDefinition(
+      $fieldName, $entityTypeId, $moduleName, $newStorageDefinition
+    );
+  }
+}
+
+/**
+ * Implements hook_update_N().
+ */
+function ftree_core_update_10303() {
+  $newStorageDefinitions = [];
+
+  $newStorageDefinitions['ftree_er'] = BaseFieldDefinition::create('ftree_entity_reference')
+    ->setLabel(t('Ftree entity reference'))
+    ->setSetting('target_type', 'family_node')
+    ->setSetting('handler', 'default')
+    ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+    ->setDisplayOptions('view', [
+      'label' => 'above',
+      'type' => 'entity_reference_label',
+      'weight' => -2,
+    ])
+    ->setDisplayOptions('form', [
+      'type' => 'entity_reference_autocomplete',
+      'weight' => -2,
+      'settings' => [
+        'match_operator' => 'CONTAINS',
+        'size' => '60',
+        'placeholder' => '',
+      ],
+    ])
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE);
+
+  $entityUpdateManager = \Drupal::entityDefinitionUpdateManager();
+  $entityTypeId = 'family_node';
+  $moduleName = 'ftree_core';
+  foreach ($newStorageDefinitions as $fieldName => $newStorageDefinition) {
+    // $field_definition = $entityUpdateManager->getFieldStorageDefinition($fieldName, $entityTypeId);
+    // $entityUpdateManager->uninstallFieldStorageDefinition($field_definition);
+    $entityUpdateManager->installFieldStorageDefinition(
+      $fieldName, $entityTypeId, $moduleName, $newStorageDefinition
+    );
+  }
+}
+
+/**
+ * Implements hook_update_N().
+ */
+function ftree_core_update_10304() {
+  $field_names = [
+    'spouses' => t('Spouses'),
+    'siblings' => t('Siblings'),
+    'children' => t('Children'),
+    'parents' => t('Parents'),
+  ];
+  $newStorageDefinitions = [];
+  foreach ($field_names as $field_name => $label) {
+    $newStorageDefinitions[$field_name] = BaseFieldDefinition::create('ftree_entity_reference')
+      ->setLabel($label)
+      ->setSetting('target_type', 'family_node')
+      ->setSetting('handler', 'default')
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+  }
+
+  $entityUpdateManager = \Drupal::entityDefinitionUpdateManager();
+  $entityTypeId = 'family_node';
+  $moduleName = 'ftree_core';
+  foreach ($newStorageDefinitions as $fieldName => $newStorageDefinition) {
+    $field_definition = $entityUpdateManager->getFieldStorageDefinition($fieldName, $entityTypeId);
+    $entityUpdateManager->uninstallFieldStorageDefinition($field_definition);
+    $entityUpdateManager->installFieldStorageDefinition(
+      $fieldName, $entityTypeId, $moduleName, $newStorageDefinition
+    );
+  }
+}
+
+/**
+ * Implements hook_update_N().
+ */
+function ftree_core_update_10305() {
+  $entityUpdateManager = \Drupal::entityDefinitionUpdateManager();
+  $entityTypeId = 'family_node';
+  $field_definition = $entityUpdateManager->getFieldStorageDefinition('ftree_er', $entityTypeId);
+  $entityUpdateManager->uninstallFieldStorageDefinition($field_definition);
 }

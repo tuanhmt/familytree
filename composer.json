@@ -111,6 +111,7 @@
         "drupal/cshs": "^4.0",
         "drupal/dropzonejs": "^2.10",
         "drupal/exif_orientation": "^1.4",
+        "drupal/field_group": "^3.6",
         "drupal/focal_point": "^2.0",
         "drupal/gin": "^3.0@RC",
         "drupal/gin_toolbar": "^1.0@RC",

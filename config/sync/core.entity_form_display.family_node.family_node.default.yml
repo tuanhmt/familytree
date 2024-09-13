@@ -1,0 +1,159 @@
+uuid: 99b23b41-6a80-4878-bae4-548ebc8f423d
+langcode: vi
+status: true
+dependencies:
+  module:
+    - field_group
+    - file
+    - ftree_core
+    - text
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_basic_info
+        - group_family
+      label: tabs
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        label_as_html: false
+        direction: vertical
+        width_breakpoint: 640
+    group_basic_info:
+      children:
+        - fullname
+        - gender
+        - avatar
+        - description
+      label: 'Basic info'
+      region: content
+      parent_name: group_tabs
+      weight: 7
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
+    group_family:
+      children:
+        - spouses
+        - siblings
+        - children
+        - parents
+      label: Family
+      region: content
+      parent_name: group_tabs
+      weight: 8
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        formatter: closed
+        description: ''
+        required_fields: true
+id: family_node.family_node.default
+targetEntityType: family_node
+bundle: family_node
+mode: default
+content:
+  avatar:
+    type: file_generic
+    weight: 4
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  children:
+    type: ftree_entity_reference_autocomplete
+    weight: 4
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  description:
+    type: text_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  ftree_er:
+    type: ftree_inline_entity_form_complex
+    weight: -2
+    region: content
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      collapsible: '1'
+      collapsed: '1'
+      allow_existing: '1'
+      match_operator: CONTAINS
+      removed_reference: keep
+      revision: 0
+      override_labels: 0
+      allow_new: 0
+      allow_duplicate: 0
+    third_party_settings: {  }
+  fullname:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  gender:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  parents:
+    type: ftree_entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  siblings:
+    type: ftree_entity_reference_autocomplete
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  spouses:
+    type: ftree_entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  uid: true

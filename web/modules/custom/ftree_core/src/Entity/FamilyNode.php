@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace Drupal\ftree_core\Entity;
 
+use Drupal\user\EntityOwnerTrait;
 use Drupal\Core\Entity\ContentEntityBase;
-use Drupal\Core\Entity\EntityStorageInterface;
-use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\ftree_core\FamilyNodeInterface;
-use Drupal\user\EntityOwnerTrait;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Entity\EntityStorageInterface;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
 
 /**
  * Defines the family node entity class.
@@ -87,7 +88,7 @@ final class FamilyNode extends ContentEntityBase implements FamilyNodeInterface 
       ->setReadOnly(TRUE);
 
     $fields['fullname'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Label'))
+      ->setLabel(t('Fullname'))
       ->setRequired(TRUE)
       ->setSetting('max_length', 255)
       ->setDisplayOptions('form', [
@@ -117,7 +118,7 @@ final class FamilyNode extends ContentEntityBase implements FamilyNodeInterface 
       ->setDisplayConfigurable('view', TRUE);
 
     $fields['avatar'] = BaseFieldDefinition::create('file')
-      ->setLabel('Image')
+      ->setLabel('Avatar')
       ->setSettings([
         'uri_scheme' => 'public',
         'file_directory' => 'avatar',
@@ -135,7 +136,7 @@ final class FamilyNode extends ContentEntityBase implements FamilyNodeInterface 
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-    $fields['gender'] = BaseFieldDefinition::create('list_integer')
+    $fields['gender'] = BaseFieldDefinition::create('list_string')
       ->setLabel(t('Gender'))
       ->setDefaultValue(200)
       ->setSettings([
@@ -147,35 +148,35 @@ final class FamilyNode extends ContentEntityBase implements FamilyNodeInterface 
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-    $fields['spouses'] = BaseFieldDefinition::create('map')
+    $fields['spouses'] = BaseFieldDefinition::create('ftree_entity_reference')
       ->setLabel(t('Spouses'))
-      ->setSettings([
-        'type' => 'json',
-      ])
+      ->setSetting('target_type', 'family_node')
+      ->setSetting('handler', 'default')
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-    $fields['siblings'] = BaseFieldDefinition::create('map')
+    $fields['siblings'] = BaseFieldDefinition::create('ftree_entity_reference')
       ->setLabel(t('Siblings'))
-      ->setSettings([
-        'type' => 'json',
-      ])
+      ->setSetting('target_type', 'family_node')
+      ->setSetting('handler', 'default')
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-    $fields['parents'] = BaseFieldDefinition::create('map')
-      ->setLabel(t('Parents'))
-      ->setSettings([
-        'type' => 'json',
-      ])
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
-
-    $fields['children'] = BaseFieldDefinition::create('map')
+    $fields['children'] = BaseFieldDefinition::create('ftree_entity_reference')
       ->setLabel(t('Children'))
-      ->setSettings([
-        'type' => 'json',
-      ])
+      ->setSetting('target_type', 'family_node')
+      ->setSetting('handler', 'default')
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['parents'] = BaseFieldDefinition::create('ftree_entity_reference')
+      ->setLabel(t('Parents'))
+      ->setSetting('target_type', 'family_node')
+      ->setSetting('handler', 'default')
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
