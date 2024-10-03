@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Drupal\ftree_core\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\File\FileUrlGeneratorInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -14,15 +15,31 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 final class FamilyTreeController extends ControllerBase {
 
   /**
-   * {@inheritdoc}
+   * Entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
+
   protected $entityTypeManager;
 
   /**
-   * {@inheritdoc}
+   * File url generator object.
+   *
+   * @var \Drupal\Core\File\FileUrlGeneratorInterface
    */
-  public function __construct(EntityTypeManagerInterface $entityTypeManager) {
+  protected $fileUrlGenerator;
+
+  /**
+   * Constructs new PhotoswipePreprocessProcessor object.
+   *
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   *   Entity manager.
+   * @param \Drupal\Core\File\FileUrlGeneratorInterface $fileUrlGenerator
+   *   File url generator object.
+   */
+  public function __construct(EntityTypeManagerInterface $entityTypeManager, FileUrlGeneratorInterface $fileUrlGenerator) {
     $this->entityTypeManager = $entityTypeManager;
+    $this->fileUrlGenerator = $fileUrlGenerator;
   }
 
   /**
@@ -30,7 +47,8 @@ final class FamilyTreeController extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('entity_type.manager')
+      $container->get('entity_type.manager'),
+      $container->get('file_url_generator')
     );
   }
 
@@ -73,6 +91,14 @@ final class FamilyTreeController extends ControllerBase {
           ];
         }
       }
+
+      $image = $family_node->avatar->entity;
+
+      if (!is_null($image)) {
+        $file_uri = $image->getFileUri();
+        $image_url = $this->fileUrlGenerator->generateAbsoluteString($file_uri);
+      }
+      $node_data['avatar'] = $image_url;
 
       // Add to data collector.
       $data[] = $node_data;
