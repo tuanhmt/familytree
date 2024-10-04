@@ -13,7 +13,7 @@ export default React.memo(
     // const [source, setSource] = useState(DEFAULT_SOURCE);
     const [nodes, setNodes] = useState(window.drupalSettings.ftree_nodes);
 
-    const firstNodeId = useMemo(() => nodes[5].id, [nodes]);
+    const firstNodeId = useMemo(() => nodes[0].id, [nodes]);
     const [rootId, setRootId] = useState(firstNodeId);
 
     const [selectId, setSelectId] = useState<string>();
