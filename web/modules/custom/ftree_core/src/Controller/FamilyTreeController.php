@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\ftree_core\Controller;
 
+use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\File\FileUrlGeneratorInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -131,6 +132,17 @@ final class FamilyTreeController extends ControllerBase {
     }
 
     $build['#attached']['drupalSettings']['ftree_nodes'] = array_values(array: $data);
+    $build['#cache'] = [
+      'tags' => ['family_node_list'],
+    ];
+
+    // Apply cache metadata to the render array.
+    $cache_metadata = new CacheableMetadata();
+    // Attach a cache tag that is invalidated when nodes of this content type are added, updated, or deleted.
+    $cache_metadata->setCacheTags(['family_node_list:']);
+    // Apply cache metadata.
+    $cache_metadata->applyTo($data);
+
     return $build;
   }
 

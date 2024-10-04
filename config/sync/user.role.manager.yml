@@ -12,6 +12,7 @@ dependencies:
     - administerusersbyrole
     - ckeditor5_embedded_content
     - dropzonejs
+    - ftree_core
     - media
     - node
     - override_node_options
@@ -31,6 +32,7 @@ permissions:
   - 'access toolbar'
   - 'access user profiles'
   - 'access users overview'
+  - 'administer family_node'
   - 'cancel users by role'
   - 'create album media'
   - 'create article content'
