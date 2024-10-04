@@ -4,7 +4,7 @@ ftree_core.family_tree:
     _title: 'Family tree'
     _controller: '\Drupal\ftree_core\Controller\FamilyTreeController'
   requirements:
-    _permission: 'access premium content'
+    _permission: 'view premium content'
 
 entity.family_node.settings:
   path: 'admin/structure/family-node'
