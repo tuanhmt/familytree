@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import classNames from 'classnames';
 import css from './FamilyNode.module.css';
+import ReactImageFallback from "react-image-fallback";
 
 interface FamilyNodeProps {
   node: any;
@@ -27,9 +28,16 @@ export const FamilyNode = React.memo(
           )}
           onClick={clickHandler}
         >
-          <img className={css.avatar} src={node.avatar} alt="Avatar" />
+          <div className={css.avatar}>
+            <ReactImageFallback
+              fallbackImage="/themes/custom/familytree/images/default_avatar.jpg"
+              className={css.avatarPlaceholder}
+              alt={node.fullname}
+              src={node.avatar}
+            />
+          </div>
           <div className={css.fullname}>{node.fullname}</div>
-          <div className={css.year}>{node.birth_year} {(node.death_year != null) ? '' : ' - ' + node.death_year}</div>
+          <div className={css.year}>{node.birth_year} {(node.death_year == "") ? "" : " - " + node.death_year}</div>
         </div>
         {node.hasSubTree && (
           <div

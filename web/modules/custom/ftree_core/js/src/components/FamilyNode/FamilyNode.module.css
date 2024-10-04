@@ -1,7 +1,7 @@
 .root {
   position: absolute;
   display: flex;
-  padding: 24px 12px;
+  padding: 24px;
 }
 
 .inner {
@@ -17,10 +17,10 @@
   border: 1px solid #ECEAF4;
 }
 
-.avatar {
-  width: 80px;
-  height: 106px;
-  border-radius: 6px;
+.avatar img {
+  width: 160px;
+  height: 212px;
+  border-radius: 12px;
   margin-bottom: 12px;
 }
 
@@ -28,17 +28,17 @@
   color: var(--Text, #1D1D1D);
   text-align: center;
   font-family: Roboto;
-  font-size: 14px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .year {
   color: var(--Red, #831315);
   font-family: Roboto;
-  font-size: 14px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -50,10 +50,6 @@
 
 .female {
   background: #FBF7F1;;
-}
-
-.isRoot {
-  /* border-color: rgba(0, 0, 0, .4); */
 }
 
 .isHover {

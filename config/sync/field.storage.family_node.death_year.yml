@@ -1,0 +1,21 @@
+uuid: f6ba4d2d-78be-479f-b5c0-80e1c7b49dff
+langcode: vi
+status: true
+dependencies:
+  module:
+    - ftree_core
+id: family_node.death_year
+field_name: death_year
+entity_type: family_node
+type: string
+settings:
+  max_length: 4
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

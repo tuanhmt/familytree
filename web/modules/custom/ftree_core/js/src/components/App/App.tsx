@@ -13,7 +13,7 @@ export default React.memo(
     // const [source, setSource] = useState(DEFAULT_SOURCE);
     const [nodes, setNodes] = useState(window.drupalSettings.ftree_nodes);
 
-    const firstNodeId = useMemo(() => nodes[0].id, [nodes]);
+    const firstNodeId = useMemo(() => nodes[5].id, [nodes]);
     const [rootId, setRootId] = useState(firstNodeId);
 
     const [selectId, setSelectId] = useState<string>();
@@ -24,7 +24,7 @@ export default React.memo(
     return (
       <div className={css.root}>
         {nodes.length > 0 && (
-          <PinchZoomPan min={0.1} max={2} captureWheel className={css.wrapper}>
+          <PinchZoomPan min={0.3} max={1} captureWheel className={css.wrapper}>
             <ReactFamilyTree
               nodes={nodes}
               rootId={rootId}

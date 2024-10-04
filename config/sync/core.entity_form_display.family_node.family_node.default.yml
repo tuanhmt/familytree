@@ -2,10 +2,14 @@ uuid: 99b23b41-6a80-4878-bae4-548ebc8f423d
 langcode: vi
 status: true
 dependencies:
+  config:
+    - field.field.family_node.family_node.birth_year
+    - field.field.family_node.family_node.death_year
   module:
     - field_group
     - file
     - ftree_core
+    - select2
     - text
 third_party_settings:
   field_group:
@@ -31,6 +35,8 @@ third_party_settings:
         - gender
         - avatar
         - description
+        - birth_year
+        - death_year
       label: 'Basic info'
       region: content
       parent_name: group_tabs
@@ -48,7 +54,6 @@ third_party_settings:
       children:
         - spouses
         - siblings
-        - children
         - parents
       label: Family
       region: content
@@ -75,13 +80,19 @@ content:
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
-  children:
-    type: ftree_entity_reference_autocomplete
-    weight: 4
+  birth_year:
+    type: string_textfield
+    weight: 6
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  death_year:
+    type: string_textfield
+    weight: 7
+    region: content
+    settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
@@ -155,5 +166,15 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  uid:
+    type: select2_entity_reference
+    weight: 1
+    region: content
+    settings:
+      width: 100%
+      autocomplete: false
+      match_operator: CONTAINS
+      match_limit: 10
+    third_party_settings: {  }
 hidden:
-  uid: true
+  children: true

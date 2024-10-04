@@ -82,7 +82,7 @@ final class FamilyTreeController extends ControllerBase {
         "gender" => $family_node->get('gender')?->value,
         "fullname" => $family_node->get('fullname')?->value,
         "birth_year" => $family_node->get('birth_year')?->value,
-        "death_year" => $family_node->get('death_year')?->value,
+        "death_year" => $family_node->get('death_year')?->value ?? '',
       ];
       foreach ($relation_types as $type) {
         $node_data[$type] = [];
@@ -92,6 +92,24 @@ final class FamilyTreeController extends ControllerBase {
             'id' => $relation["target_id"],
             'type' => $relation["relationship_type"],
           ];
+          switch ($type) {
+            case 'spouses':
+              $data[(int) $relation["target_id"]]['spouses'][] = [
+                'id' => $family_node->id(),
+                'type' => $relation["relationship_type"],
+              ];
+              break;
+
+            case 'parents':
+              $data[(int) $relation["target_id"]]['children'][] = [
+                'id' => $family_node->id(),
+                'type' => $relation["relationship_type"],
+              ];
+              break;
+
+            default:
+              break;
+          }
         }
       }
 
@@ -104,10 +122,15 @@ final class FamilyTreeController extends ControllerBase {
       }
 
       // Add to data collector.
-      $data[] = $node_data;
+      if (isset($data[$family_node->id()])) {
+        $data[$family_node->id()] = array_merge_recursive($data[$family_node->id()], $node_data);
+      }
+      else {
+        $data[$family_node->id()] = $node_data;
+      }
     }
 
-    $build['#attached']['drupalSettings']['ftree_nodes'] = $data;
+    $build['#attached']['drupalSettings']['ftree_nodes'] = array_values(array: $data);
     return $build;
   }
 
