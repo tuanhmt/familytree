@@ -7,6 +7,7 @@
 .inner {
   display: flex;
   flex: 1;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -14,6 +15,33 @@
   color: #1D1D1D;
   border-radius: 6px;
   border: 1px solid #ECEAF4;
+}
+
+.avatar {
+  width: 80px;
+  height: 106px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.fullname {
+  color: var(--Text, #1D1D1D);
+  text-align: center;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 10px;
+}
+
+.year {
+  color: var(--Red, #831315);
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .male {
@@ -25,7 +53,7 @@
 }
 
 .isRoot {
-  border-color: rgba(0, 0, 0, .4);
+  /* border-color: rgba(0, 0, 0, .4); */
 }
 
 .isHover {
@@ -33,10 +61,13 @@
 }
 
 .id {
-  font-size: 15px;
-  /* line-height: 1; */
-  /* opacity: .5; */
-  font-weight: bold;
+  color: var(--Text, #1D1D1D);
+  text-align: center;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
 .sub {

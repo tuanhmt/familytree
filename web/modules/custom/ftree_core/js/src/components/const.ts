@@ -18,16 +18,7 @@ declare global {
 
 export const SOURCES = {
   'DRUPAL': window.drupalSettings.ftree_nodes,
-  'average-tree.json': averageTree,
-  'couple.json': couple,
-  'diff-parents.json': diffParents,
-  'divorced-parents.json': divorcedParents,
-  'empty.json': empty,
-  'several-spouses.json': severalSpouses,
-  'simple-family.json': simpleFamily,
-  'test-tree-n1.json': testTreeN1,
-  'test-tree-n2.json': testTreeN2,
-} as Readonly<{ [key: string]: readonly Readonly<Node>[] }>;
+};
 
 export const DEFAULT_SOURCE = Object.keys(SOURCES)[0];
 

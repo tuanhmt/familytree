@@ -1,10 +1,9 @@
 import React, { useCallback } from 'react';
 import classNames from 'classnames';
-import type { ExtNode } from 'relatives-tree/lib/types';
 import css from './FamilyNode.module.css';
 
 interface FamilyNodeProps {
-  node: ExtNode;
+  node: any;
   isRoot: boolean;
   isHover?: boolean;
   onClick: (id: string) => void;
@@ -28,7 +27,9 @@ export const FamilyNode = React.memo(
           )}
           onClick={clickHandler}
         >
-          <div className={css.id}>{node.id}</div>
+          <img className={css.avatar} src={node.avatar} alt="Avatar" />
+          <div className={css.fullname}>{node.fullname}</div>
+          <div className={css.year}>{node.birth_year} {(node.death_year != null) ? '' : ' - ' + node.death_year}</div>
         </div>
         {node.hasSubTree && (
           <div

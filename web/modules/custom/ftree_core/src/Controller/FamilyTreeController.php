@@ -80,6 +80,9 @@ final class FamilyTreeController extends ControllerBase {
       $node_data = [
         "id" => $family_node->id(),
         "gender" => $family_node->get('gender')?->value,
+        "fullname" => $family_node->get('fullname')?->value,
+        "birth_year" => $family_node->get('birth_year')?->value,
+        "death_year" => $family_node->get('death_year')?->value,
       ];
       foreach ($relation_types as $type) {
         $node_data[$type] = [];
@@ -96,9 +99,9 @@ final class FamilyTreeController extends ControllerBase {
 
       if (!is_null($image)) {
         $file_uri = $image->getFileUri();
-        $image_url = $this->fileUrlGenerator->generateAbsoluteString($file_uri);
+        $image_url = $this->fileUrlGenerator->generateString($file_uri);
+        $node_data['avatar'] = $image_url;
       }
-      $node_data['avatar'] = $image_url;
 
       // Add to data collector.
       $data[] = $node_data;
