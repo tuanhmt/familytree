@@ -2,16 +2,14 @@ import React, { useMemo, useState, useCallback } from 'react';
 import ReactFamilyTree from 'react-family-tree';
 import { PinchZoomPan } from '../PinchZoomPan/PinchZoomPan';
 import { FamilyNode } from '../FamilyNode/FamilyNode';
-import { NodeDetails } from '../NodeDetails/NodeDetails';
-import { NODE_WIDTH, NODE_HEIGHT, SOURCES, DEFAULT_SOURCE } from '../const';
+import { NODE_WIDTH, NODE_HEIGHT, DEFAULT_SOURCE } from '../const';
 import { getNodeStyle } from './utils';
 
 import css from './App.module.css';
 
 export default React.memo(
   function App() {
-    // const [source, setSource] = useState(DEFAULT_SOURCE);
-    const [nodes, setNodes] = useState(window.drupalSettings.ftree_nodes);
+    const [nodes, setNodes] = useState(DEFAULT_SOURCE);
 
     const firstNodeId = useMemo(() => nodes[0].id, [nodes]);
     const [rootId, setRootId] = useState(firstNodeId);

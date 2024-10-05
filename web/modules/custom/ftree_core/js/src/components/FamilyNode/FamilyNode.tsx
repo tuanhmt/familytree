@@ -28,6 +28,9 @@ export const FamilyNode = React.memo(
           )}
           onClick={clickHandler}
         >
+          {(node.order && node.order.trim() !== '') &&
+            <div className={css.order}>{node.order}</div>
+          }
           <div className={css.avatar}>
             <ReactImageFallback
               fallbackImage="/themes/custom/familytree/images/default_avatar.jpg"
