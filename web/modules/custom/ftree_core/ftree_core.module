@@ -14,6 +14,7 @@ declare(strict_types=1);
 
 use Drupal\user\UserInterface;
 use Drupal\Core\Render\Element;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 
@@ -76,6 +77,41 @@ function ftree_core_user_predelete(UserInterface $account): void {
   foreach ($storage->loadMultiple($family_node_ids) as $family_node) {
     $family_node->setOwnerId(1)->save();
   }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function ftree_core_entity_type_alter(array &$entity_types) {
+  // Alter the access control handler for family_node.
+  if (isset($entity_types['family_node'])) {
+    $entity_types['family_node']->setHandlerClass('access', 'Drupal\ftree_core\Access\FamilyNodeAccessControlHandler');
+  }
+}
+
+/**
+ * Helper function to get entities referencing the current entity.
+ */
+function _ftree_core_get_referencing_entities(EntityInterface $entity) {
+  // Get`spouses` and `children`.
+  $query = \Drupal::entityQuery('family_node')
+    ->accessCheck(FALSE);
+  $group = $query->orConditionGroup()
+    ->condition('spouses.target_id', $entity->id(), '=')
+    ->condition('parents.target_id', $entity->id(), '=');
+  $query->condition($group);
+
+  $referenced_ids = $query->execute();
+
+  $referencing_entities = [];
+  if (!empty($referenced_ids)) {
+    // Load the entities that reference the current entity.
+    $referencing_entities = \Drupal::entityTypeManager()
+      ->getStorage('family_node')
+      ->loadMultiple($referenced_ids);
+  }
+
+  return $referencing_entities;
 }
 
 /**
@@ -245,8 +281,6 @@ function ftree_core_update_10303() {
   $entityTypeId = 'family_node';
   $moduleName = 'ftree_core';
   foreach ($newStorageDefinitions as $fieldName => $newStorageDefinition) {
-    // $field_definition = $entityUpdateManager->getFieldStorageDefinition($fieldName, $entityTypeId);
-    // $entityUpdateManager->uninstallFieldStorageDefinition($field_definition);
     $entityUpdateManager->installFieldStorageDefinition(
       $fieldName, $entityTypeId, $moduleName, $newStorageDefinition
     );
