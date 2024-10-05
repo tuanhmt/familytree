@@ -12,6 +12,7 @@ interface FamilyNodeProps {
   style?: React.CSSProperties;
 }
 
+
 export const FamilyNode = React.memo(
   function FamilyNode({ node, isRoot, isHover, onClick, onSubClick, style }: FamilyNodeProps) {
     const clickHandler = useCallback(() => onClick(node.id), [node.id, onClick]);
@@ -37,6 +38,7 @@ export const FamilyNode = React.memo(
               className={css.avatarPlaceholder}
               alt={node.fullname}
               src={node.avatar}
+              draggable="false"
             />
           </div>
           <div className={css.fullname}>{node.fullname}</div>
