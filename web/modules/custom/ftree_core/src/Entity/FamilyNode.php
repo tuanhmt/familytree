@@ -148,6 +148,20 @@ final class FamilyNode extends ContentEntityBase implements FamilyNodeInterface 
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
+    $fields['generation'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Generation'))
+      ->setDescription(t('The Generation of this fnode in relation to other fnodes.'))
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDefaultValue(0);
+
+    $fields['order'] = BaseFieldDefinition::create('integer')
+      ->setLabel(t('Order'))
+      ->setDescription(t('The Order of this fnode in relation to siblings.'))
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDefaultValue(0);
+
     $fields['spouses'] = BaseFieldDefinition::create('ftree_entity_reference')
       ->setLabel(t('Spouses'))
       ->setSetting('target_type', 'family_node')

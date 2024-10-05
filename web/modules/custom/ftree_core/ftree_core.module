@@ -295,3 +295,32 @@ function ftree_core_update_10305() {
   $field_definition = $entityUpdateManager->getFieldStorageDefinition('ftree_er', $entityTypeId);
   $entityUpdateManager->uninstallFieldStorageDefinition($field_definition);
 }
+
+/**
+ * Implements hook_update_N().
+ */
+function ftree_core_update_10306() {
+  $fields = [];
+  $fields['generation'] = BaseFieldDefinition::create('integer')
+    ->setLabel(t('Generation'))
+    ->setDescription(t('The Generation of this fnode in relation to other fnodes.'))
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE)
+    ->setDefaultValue(0);
+
+  $fields['order'] = BaseFieldDefinition::create('integer')
+    ->setLabel(t('Order'))
+    ->setDescription(t('The Order of this fnode in relation to siblings.'))
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE)
+    ->setDefaultValue(0);
+
+  $entityUpdateManager = \Drupal::entityDefinitionUpdateManager();
+  $entityTypeId = 'family_node';
+  $moduleName = 'ftree_core';
+  foreach ($fields as $fieldName => $newStorageDefinition) {
+    $entityUpdateManager->installFieldStorageDefinition(
+      $fieldName, $entityTypeId, $moduleName, $newStorageDefinition
+    );
+  }
+}
