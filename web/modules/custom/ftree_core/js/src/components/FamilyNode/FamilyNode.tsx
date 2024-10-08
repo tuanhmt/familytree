@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 import css from './FamilyNode.module.css';
 import ReactImageFallback from "react-image-fallback";
@@ -12,11 +12,56 @@ interface FamilyNodeProps {
   style?: React.CSSProperties;
 }
 
-
 export const FamilyNode = React.memo(
   function FamilyNode({ node, isRoot, isHover, onClick, onSubClick, style }: FamilyNodeProps) {
-    const clickHandler = useCallback(() => onClick(node.id), [node.id, onClick]);
-    const clickSubHandler = useCallback(() => onSubClick(node.id), [node.id, onSubClick]);
+    const [isDragging, setIsDragging] = useState(false);
+    const [mouseDownTime, setMouseDownTime] = useState(0);
+    const [mouseDownPos, setMouseDownPos] = useState({ x: 0, y: 0 });
+
+    const handleMouseDown = (e: React.MouseEvent) => {
+      setMouseDownTime(Date.now());
+      setMouseDownPos({ x: e.clientX, y: e.clientY });
+    };
+
+    const handleMouseUp = (e: React.MouseEvent) => {
+      const mouseUpTime = Date.now();
+      const mouseUpPos = { x: e.clientX, y: e.clientY };
+      const timeDiff = mouseUpTime - mouseDownTime;
+      const distance = Math.sqrt(
+        Math.pow(mouseUpPos.x - mouseDownPos.x, 2) +
+        Math.pow(mouseUpPos.y - mouseDownPos.y, 2)
+      );
+
+      if (timeDiff < 200 && distance < 5) {
+        // Considered a click if the mouse was down for less than 200ms and moved less than 5 pixels
+        onClick(node);
+      }
+
+      setIsDragging(false);
+    };
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+      if (e.buttons === 1) { // Left mouse button is pressed
+        setIsDragging(true);
+      }
+    };
+
+    const handleDragStart = () => {
+      setIsDragging(true);
+    };
+
+    const handleDragEnd = () => {
+      setIsDragging(false);
+    };
+
+    const handleDrop = (e: any) => {
+      e.preventDefault();
+      setIsDragging(false);
+    };
+
+    const handleSubClick = () => {
+      onSubClick(node.id);
+    };
 
     return (
       <div className={css.root} style={style}>
@@ -27,7 +72,11 @@ export const FamilyNode = React.memo(
             isRoot && css.isRoot,
             isHover && css.isHover,
           )}
-          onClick={clickHandler}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          onDragStart={handleDragStart}
+          onDrop={handleDrop}
         >
           {(node.order && node.order.trim() !== '') &&
             <div className={css.order}>{node.order}</div>
@@ -47,7 +96,7 @@ export const FamilyNode = React.memo(
         {node.hasSubTree && (
           <div
             className={classNames(css.sub, css[node.gender])}
-            onClick={clickSubHandler}
+            onClick={handleSubClick}
           />
         )}
       </div>

@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Provide functions for user.
+ */
+
+/**
+ * Implements hook_page_attachments().
+ */
+function ftree_user_page_attachments(array &$attachments) {
+  $current_user = \Drupal::currentUser();
+  if ($current_user->getAccount()->hasPermission('administer family_node')) {
+    $attachments['#attached']['drupalSettings']['ftree_user']['currentUserPermissions'] = ['administer family_node'];
+  }
+}

@@ -124,12 +124,7 @@ final class FamilyTreeController extends ControllerBase {
       }
 
       // Add to data collector.
-      if (isset($data[$family_node->id()])) {
-        $data[$family_node->id()] = array_merge_recursive($data[$family_node->id()], $node_data);
-      }
-      else {
-        $data[$family_node->id()] = $node_data;
-      }
+      $data[$family_node->id()] = isset($data[$family_node->id()]) ? array_merge_recursive($data[$family_node->id()], $node_data) : $node_data;
     }
 
     $build['#attached']['drupalSettings']['ftree_nodes'] = array_values(array: $data);
@@ -139,8 +134,9 @@ final class FamilyTreeController extends ControllerBase {
 
     // Apply cache metadata to the render array.
     $cache_metadata = new CacheableMetadata();
-    // Attach a cache tag that is invalidated when nodes of this content type are added, updated, or deleted.
-    $cache_metadata->setCacheTags(['family_node_list:']);
+    // Attach a cache tag that is invalidated
+    // when nodes of this content type are added, updated, or deleted.
+    $cache_metadata->setCacheTags(['family_node_list']);
     // Apply cache metadata.
     $cache_metadata->applyTo($data);
 

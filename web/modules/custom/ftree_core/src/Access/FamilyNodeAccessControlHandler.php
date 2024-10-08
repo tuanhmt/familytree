@@ -55,20 +55,7 @@ class FamilyNodeAccessControlHandler extends EntityAccessControlHandler implemen
     if ($operation === 'delete' && $entity->getEntityTypeId() === 'family_node') {
       // Check if other family_node entities reference this entity.
       $referencing_entities = _ftree_core_get_referencing_entities($entity);
-
       if (!empty($referencing_entities)) {
-        // Deny access to delete and show the user a message.
-        // $this->messenger->addError($this->t('The Family Node entity with ID @id cannot be deleted because it is referenced by other entities.', ['@id' => $entity->id()]));
-
-        // // Add more information about the referencing entities in the message.
-        // foreach ($referencing_entities as $referencing_entity) {
-        //   $this->messenger->addError($this->t('<a href="@edit_url" target="_blank">@title (ID: @id)</a>', [
-        //     '@edit_url' => $referencing_entity->toUrl('edit-form')->toString(),
-        //     '@title' => $referencing_entity->label(),
-        //     '@id' => $referencing_entity->id(),
-        //   ]));
-        // }
-
         return AccessResult::forbidden();
       }
     }

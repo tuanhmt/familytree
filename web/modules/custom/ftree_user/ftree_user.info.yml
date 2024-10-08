@@ -1,0 +1,5 @@
+name: 'Ftree - User'
+type: module
+description: 'Provide functions for user.'
+package: Family Tree
+core_version_requirement: ^10 || ^11

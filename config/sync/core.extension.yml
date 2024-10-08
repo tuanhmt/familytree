@@ -42,6 +42,7 @@ module:
   ftree_gin: 0
   ftree_homepage: 0
   ftree_node: 0
+  ftree_user: 0
   gin_toolbar: 0
   image: 0
   language: 0
