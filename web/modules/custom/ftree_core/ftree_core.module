@@ -358,3 +358,54 @@ function ftree_core_update_10306() {
     );
   }
 }
+
+/**
+ * Add birthday and deathday fields to family_node entity.
+ */
+function ftree_core_update_10307() {
+  $entity_definition_update_manager = \Drupal::entityDefinitionUpdateManager();
+
+  // Add birthday field.
+  $birthday_field = BaseFieldDefinition::create('datetime')
+    ->setLabel(t('Birthday'))
+    ->setDescription(t('The birthday of the family member.'))
+    ->setSettings([
+      'datetime_type' => 'date',
+    ])
+    ->setDisplayOptions('form', [
+      'type' => 'datetime_default',
+      'weight' => 11,
+    ])
+    ->setDisplayOptions('view', [
+      'label' => 'above',
+      'type' => 'datetime_default',
+      'weight' => 11,
+    ])
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE);
+
+  $entity_definition_update_manager->installFieldStorageDefinition('birthday', 'family_node', 'ftree_core', $birthday_field);
+
+  // Add deathday field.
+  $deathday_field = BaseFieldDefinition::create('datetime')
+    ->setLabel(t('Deathday'))
+    ->setDescription(t('The date of death of the family member.'))
+    ->setSettings([
+      'datetime_type' => 'date',
+    ])
+    ->setDisplayOptions('form', [
+      'type' => 'datetime_default',
+      'weight' => 12,
+    ])
+    ->setDisplayOptions('view', [
+      'label' => 'above',
+      'type' => 'datetime_default',
+      'weight' => 12,
+    ])
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE);
+
+  $entity_definition_update_manager->installFieldStorageDefinition('deathday', 'family_node', 'ftree_core', $deathday_field);
+
+  return t('Birthday and deathday fields have been added to the family_node entity.');
+}

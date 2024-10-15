@@ -215,6 +215,42 @@ final class FamilyNode extends ContentEntityBase implements FamilyNodeInterface 
       ])
       ->setDisplayConfigurable('view', TRUE);
 
+    $fields['birthday'] = BaseFieldDefinition::create('datetime')
+      ->setLabel(t('Birthday'))
+      ->setDescription(t('The birthday of the family member.'))
+      ->setSettings([
+        'datetime_type' => 'date',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'datetime_default',
+        'weight' => 11,
+      ])
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'datetime_default',
+        'weight' => 11,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['deathday'] = BaseFieldDefinition::create('datetime')
+      ->setLabel(t('Deathday'))
+      ->setDescription(t('The date of death of the family member.'))
+      ->setSettings([
+        'datetime_type' => 'date',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'datetime_default',
+        'weight' => 12,
+      ])
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'datetime_default',
+        'weight' => 12,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
     return $fields;
   }
 
