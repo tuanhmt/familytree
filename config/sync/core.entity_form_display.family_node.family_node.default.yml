@@ -2,10 +2,8 @@ uuid: 99b23b41-6a80-4878-bae4-548ebc8f423d
 langcode: vi
 status: true
 dependencies:
-  config:
-    - field.field.family_node.family_node.birth_year
-    - field.field.family_node.family_node.death_year
   module:
+    - datetime
     - field_group
     - file
     - ftree_core
@@ -80,21 +78,17 @@ content:
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
-  birth_year:
-    type: string_textfield
-    weight: 6
+  birthday:
+    type: datetime_default
+    weight: 11
     region: content
-    settings:
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-  death_year:
-    type: string_textfield
-    weight: 7
+  deathday:
+    type: datetime_default
+    weight: 12
     region: content
-    settings:
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   description:
     type: text_textarea
