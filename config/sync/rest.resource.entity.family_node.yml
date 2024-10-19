@@ -1,0 +1,18 @@
+uuid: c36c0f9a-6a18-416e-bce4-3f248be0cc65
+langcode: vi
+status: false
+dependencies:
+  module:
+    - ftree_core
+    - serialization
+    - user
+id: entity.family_node
+plugin_id: 'entity:family_node'
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - cookie
