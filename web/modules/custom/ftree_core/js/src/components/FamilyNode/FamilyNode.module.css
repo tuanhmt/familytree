@@ -107,3 +107,15 @@
 .sub.female {
   background: #a4ecff;
 }
+
+.avatarPlaceholder {
+  background-color: #ddd;
+}
+
+.isRoot {
+  /* border-color: rgba(0, 0, 0, .8); */
+}
+
+.isHover {
+  /* border-color: rgba(0, 0, 0, .8); */
+}

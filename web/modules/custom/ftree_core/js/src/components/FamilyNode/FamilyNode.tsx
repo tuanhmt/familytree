@@ -50,10 +50,6 @@ export const FamilyNode = React.memo(
       setIsDragging(true);
     };
 
-    const handleDragEnd = () => {
-      setIsDragging(false);
-    };
-
     const handleDrop = (e: any) => {
       e.preventDefault();
       setIsDragging(false);
@@ -91,7 +87,7 @@ export const FamilyNode = React.memo(
             />
           </div>
           <div className={css.fullname}>{node.fullname}</div>
-          <div className={css.year}>{node.birth_year} {(node.death_year == "") ? "" : " - " + node.death_year}</div>
+          <div className={css.year}>{node.birth_year} {(node.death_year === "") ? "" : " - " + node.death_year}</div>
         </div>
         {node.hasSubTree && (
           <div

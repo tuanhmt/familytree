@@ -1,0 +1,16 @@
+services:
+  ftree_api.family_node_resource:
+    class: Drupal\ftree_api\Plugin\rest\resource\FamilyNodeResource
+    arguments: ['@entity_type.manager']
+    tags:
+      - { name: rest_resource }
+
+  ftree_api.family_node_transformer:
+    class: Drupal\ftree_api\Plugin\DataTransformer\FamilyNodeTransformer
+    tags:
+      - { name: ftree_api.data_transformer }
+
+  ftree_api.normalizer.family_node_dto:
+    class: Drupal\ftree_api\Normalizer\FamilyNodeDTONormalizer
+    tags:
+      - { name: normalizer, priority: 10 }
