@@ -6,7 +6,6 @@ dependencies:
     - field.field.family_node.family_node.birth_year
     - field.field.family_node.family_node.death_year
   module:
-    - datetime
     - field_group
     - file
     - ftree_core
@@ -37,8 +36,6 @@ third_party_settings:
         - description
         - generation
         - order
-        - birthday
-        - deathday
         - birth_year
         - death_year
       label: 'Thông tin cơ bản'
@@ -91,12 +88,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  birthday:
-    type: datetime_default
-    weight: 8
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   death_year:
     type: string_textfield
     weight: 11
@@ -104,12 +95,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  deathday:
-    type: datetime_default
-    weight: 9
-    region: content
-    settings: {  }
     third_party_settings: {  }
   description:
     type: text_textarea
@@ -186,6 +171,8 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
+  birthday: true
   children: true
+  deathday: true
   siblings: true
   uid: true
