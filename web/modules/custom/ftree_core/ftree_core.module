@@ -358,15 +358,3 @@ function ftree_core_update_10306() {
     );
   }
 }
-
-/**
- * Remove birthday and deathday fields to family_node entity.
- */
-function ftree_core_update_10308() {
-  $entityUpdateManager = \Drupal::entityDefinitionUpdateManager();
-  $entityTypeId = 'family_node';
-  $field_definition = $entityUpdateManager->getFieldStorageDefinition('birthday', $entityTypeId);
-  $entityUpdateManager->uninstallFieldStorageDefinition($field_definition);
-  $field_definition = $entityUpdateManager->getFieldStorageDefinition('deathday', $entityTypeId);
-  $entityUpdateManager->uninstallFieldStorageDefinition($field_definition);
-}
