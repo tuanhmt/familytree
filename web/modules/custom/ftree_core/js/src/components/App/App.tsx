@@ -10,8 +10,9 @@ import FamilyNodeModal from '../FamilyNode/FamilyNodeModal';
 export default React.memo(
   function App() {
     const [nodes] = useState(DEFAULT_SOURCE);
+    const [isLoading, setIsLoading] = useState(() => !window.drupalSettings?.ftree_nodes);
 
-    const firstNodeId = useMemo(() => nodes[0].id, [nodes]);
+    const firstNodeId = useMemo(() => nodes[4].id, [nodes]);
     const [rootId, setRootId] = useState(firstNodeId);
 
     const [hoverId] = useState<string>();

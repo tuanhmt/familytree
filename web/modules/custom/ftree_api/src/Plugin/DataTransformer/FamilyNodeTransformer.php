@@ -33,7 +33,7 @@ class FamilyNodeTransformer implements DataTransformerInterface {
       'fullName' => $entity->get('fullname')->value,
       // 'nickName' => $entity->get('nickname')->value,
       // 'saintName' => $entity->get('saintname')->value,
-      'gender' => $entity->get('gender')->value,
+      'gender' => ($entity->get('gender')->value === 'male') ? t('Male') : t('Female'),
       // 'fatherName' => $entity->get('fathername')->value,
       // 'motherName' => $entity->get('mothername')->value,
       // 'livingAddress' => $entity->get('livingaddress')->value,

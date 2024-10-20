@@ -33,6 +33,7 @@ class FamilyNodeDTONormalizer implements NormalizerInterface {
       'id' => $object->id,
       'fullname' => $object->fullName,
       'avatar' => $object->avatar,
+      'gender' => $object->gender,
     ];
   }
 
