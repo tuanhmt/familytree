@@ -2,8 +2,10 @@ uuid: 99b23b41-6a80-4878-bae4-548ebc8f423d
 langcode: vi
 status: true
 dependencies:
+  config:
+    - field.field.family_node.family_node.birth_year
+    - field.field.family_node.family_node.death_year
   module:
-    - datetime
     - field_group
     - file
     - ftree_core
@@ -81,14 +83,24 @@ content:
   birthday:
     type: datetime_default
     weight: 8
+  birth_year:
+    type: string_textfield
+    weight: 6
     region: content
-    settings: {  }
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   deathday:
     type: datetime_default
     weight: 9
+  death_year:
+    type: string_textfield
+    weight: 7
     region: content
-    settings: {  }
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   description:
     type: text_textarea
