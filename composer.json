@@ -130,6 +130,7 @@
         "drupal/responsive_menu": "^4.4",
         "drupal/restui": "^1.22",
         "drupal/select2": "^1.15",
+        "drupal/smtp": "^1.4",
         "drupal/structure_sync": "^2.0",
         "drupal/taxonomy_menu": "^3.6",
         "drupal/twig_tweak": "^3.3",
