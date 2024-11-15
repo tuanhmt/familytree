@@ -1,0 +1,21 @@
+uuid: a5b608cc-3ab4-47e4-8347-caa2b649587f
+langcode: vi
+status: true
+dependencies:
+  module:
+    - ftree_core
+id: family_node.living_address
+field_name: living_address
+entity_type: family_node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

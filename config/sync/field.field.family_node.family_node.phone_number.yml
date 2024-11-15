@@ -1,0 +1,20 @@
+uuid: 277d9f07-ff03-454e-8e3e-351836b3fa95
+langcode: vi
+status: true
+dependencies:
+  config:
+    - field.storage.family_node.phone_number
+  module:
+    - ftree_core
+id: family_node.family_node.phone_number
+field_name: phone_number
+entity_type: family_node
+bundle: family_node
+label: 'Số điện thoại'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

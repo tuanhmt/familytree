@@ -1,0 +1,20 @@
+uuid: a737c26c-da11-4446-90c4-a47a878b68c3
+langcode: vi
+status: true
+dependencies:
+  config:
+    - field.storage.family_node.nickname
+  module:
+    - ftree_core
+id: family_node.family_node.nickname
+field_name: nickname
+entity_type: family_node
+bundle: family_node
+label: 'Danh hiệu'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

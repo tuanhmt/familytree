@@ -1,0 +1,20 @@
+uuid: 81340c51-5756-414e-ab75-a58454125e1a
+langcode: vi
+status: true
+dependencies:
+  config:
+    - field.storage.family_node.living_address
+  module:
+    - ftree_core
+id: family_node.family_node.living_address
+field_name: living_address
+entity_type: family_node
+bundle: family_node
+label: 'Địa chỉ'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

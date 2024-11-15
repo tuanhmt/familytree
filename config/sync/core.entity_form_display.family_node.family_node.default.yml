@@ -4,8 +4,16 @@ status: true
 dependencies:
   config:
     - field.field.family_node.family_node.birth_year
+    - field.field.family_node.family_node.birthday
     - field.field.family_node.family_node.death_year
+    - field.field.family_node.family_node.deathday
+    - field.field.family_node.family_node.email
+    - field.field.family_node.family_node.living_address
+    - field.field.family_node.family_node.nickname
+    - field.field.family_node.family_node.phone_number
+    - field.field.family_node.family_node.saintname
   module:
+    - datetime
     - field_group
     - file
     - ftree_core
@@ -31,13 +39,18 @@ third_party_settings:
     group_basic_info:
       children:
         - fullname
+        - nickname
         - gender
         - avatar
         - description
-        - generation
-        - order
+        - saintname
         - birth_year
         - death_year
+        - birthday
+        - deathday
+        - living_address
+        - phone_number
+        - email
       label: 'Thông tin cơ bản'
       region: content
       parent_name: group_tabs
@@ -55,6 +68,8 @@ third_party_settings:
       children:
         - spouses
         - parents
+        - order
+        - generation
       label: 'Thông tin gia phả'
       region: content
       parent_name: group_tabs
@@ -75,34 +90,54 @@ mode: default
 content:
   avatar:
     type: file_generic
-    weight: 4
+    weight: 5
     region: content
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
   birth_year:
     type: string_textfield
-    weight: 10
+    weight: 8
     region: content
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  birthday:
+    type: datetime_default
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   death_year:
     type: string_textfield
-    weight: 11
+    weight: 9
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  deathday:
+    type: datetime_default
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   description:
     type: text_textarea
-    weight: 5
+    weight: 6
     region: content
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  email:
+    type: email_default
+    weight: 14
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
     third_party_settings: {  }
   ftree_er:
     type: ftree_inline_entity_form_complex
@@ -132,27 +167,43 @@ content:
     third_party_settings: {  }
   gender:
     type: options_select
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   generation:
     type: number
-    weight: 6
+    weight: 13
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
+  living_address:
+    type: string_textfield
+    weight: 12
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  nickname:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   order:
     type: number
-    weight: 7
+    weight: 12
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   parents:
     type: ftree_entity_reference_autocomplete
-    weight: 5
+    weight: 11
     region: content
     settings:
       match_operator: CONTAINS
@@ -160,9 +211,25 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  phone_number:
+    type: string_textfield
+    weight: 13
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  saintname:
+    type: string_textfield
+    weight: 7
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   spouses:
     type: ftree_entity_reference_autocomplete
-    weight: 2
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
@@ -171,8 +238,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
-  birthday: true
   children: true
-  deathday: true
   siblings: true
   uid: true

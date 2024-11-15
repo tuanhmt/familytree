@@ -12,4 +12,15 @@ use Drupal\user\EntityOwnerInterface;
  */
 interface FamilyNodeInterface extends ContentEntityInterface, EntityOwnerInterface {
 
+  /**
+   * Summary of getBloodParent.
+   *
+   * @param string $type
+   *   Father or mother.
+   *
+   * @return string
+   *   Parent name.
+   */
+  public function getBloodParent(string $type): string;
+
 }

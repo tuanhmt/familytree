@@ -1,0 +1,21 @@
+uuid: d3b07499-0cf0-4dee-aac6-8d9a5bdfe9b4
+langcode: vi
+status: true
+dependencies:
+  config:
+    - field.storage.family_node.birthday
+  module:
+    - datetime
+    - ftree_core
+id: family_node.family_node.birthday
+field_name: birthday
+entity_type: family_node
+bundle: family_node
+label: 'Ngày sinh'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

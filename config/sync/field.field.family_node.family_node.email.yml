@@ -1,0 +1,20 @@
+uuid: 739a20cc-ff72-4eeb-b6ef-f81b655d624b
+langcode: vi
+status: true
+dependencies:
+  config:
+    - field.storage.family_node.email
+  module:
+    - ftree_core
+id: family_node.family_node.email
+field_name: email
+entity_type: family_node
+bundle: family_node
+label: Email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

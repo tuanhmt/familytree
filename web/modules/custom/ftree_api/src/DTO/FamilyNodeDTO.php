@@ -50,6 +50,55 @@ class FamilyNodeDTO {
   public ?string $avatar;
 
   /**
+   * Father Name of the family member.
+   *
+   * @var string|null
+   */
+  public ?string $fatherName;
+
+  /**
+   * Mother Name of the family member.
+   *
+   * @var string|null
+   */
+  public ?string $motherName;
+
+  /**
+   * BirthDay of the family member.
+   *
+   * @var string|null
+   */
+  public ?string $birthDay;
+
+  /**
+   * DeathDay of the family member.
+   *
+   * @var string|null
+   */
+  public ?string $deathDay;
+
+  /**
+   * Living Address of the family member.
+   *
+   * @var string|null
+   */
+  public ?string $livingAddress;
+
+  /**
+   * Phone Number of the family member.
+   *
+   * @var string|null
+   */
+  public ?string $phoneNumber;
+
+  /**
+   * Email of the family member.
+   *
+   * @var string|null
+   */
+  public ?string $email;
+
+  /**
    * FamilyNodeDTO constructor.
    *
    * @param array $data

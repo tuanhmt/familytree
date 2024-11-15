@@ -1,0 +1,21 @@
+uuid: 04073f7c-7138-40e3-9b13-e4693b4026f2
+langcode: vi
+status: true
+dependencies:
+  module:
+    - ftree_core
+id: family_node.saintname
+field_name: saintname
+entity_type: family_node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

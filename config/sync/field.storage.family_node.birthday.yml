@@ -1,0 +1,20 @@
+uuid: aceeeaf8-5bb6-434a-ab1c-bb4a2e907443
+langcode: vi
+status: true
+dependencies:
+  module:
+    - datetime
+    - ftree_core
+id: family_node.birthday
+field_name: birthday
+entity_type: family_node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

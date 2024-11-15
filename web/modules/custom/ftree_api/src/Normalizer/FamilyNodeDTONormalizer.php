@@ -31,9 +31,18 @@ class FamilyNodeDTONormalizer implements NormalizerInterface {
     // Convert the DTO to an array.
     return [
       'id' => $object->id,
-      'fullname' => $object->fullName,
+      'full_name' => $object->fullName,
       'avatar' => $object->avatar,
       'gender' => $object->gender,
+      'nick_name' => $object->nickName,
+      'saint_name' => $object->saintName,
+      'father_name' => $object->fatherName,
+      'mother_name' => $object->motherName,
+      'birth_day' => $object->birthDay,
+      'death_day' => $object->deathDay,
+      'phone_number' => $object->phoneNumber,
+      'email' => $object->email,
+      'living_address' => $object->livingAddress,
     ];
   }
 

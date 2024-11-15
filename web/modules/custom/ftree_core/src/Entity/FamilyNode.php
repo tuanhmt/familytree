@@ -218,4 +218,18 @@ final class FamilyNode extends ContentEntityBase implements FamilyNodeInterface 
     return $fields;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getBloodParent(string $type): string {
+    $parent = $this->get('parents')->referencedEntities();
+    foreach ($parent as $p) {
+      if ($p->get('gender')->value == $type) {
+        return $p->get('fullname')->value;
+      }
+    }
+
+    return '';
+  }
+
 }

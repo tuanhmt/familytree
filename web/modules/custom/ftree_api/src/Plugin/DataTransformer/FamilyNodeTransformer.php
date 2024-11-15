@@ -28,17 +28,35 @@ class FamilyNodeTransformer implements DataTransformerInterface {
       throw new \InvalidArgumentException('Invalid entity type or bundle');
     }
 
+    // Process birth day.
+    $birthday = $entity->get('birthday')?->value ?? '';
+    if ($birthday) {
+      // Create a DateTime object.
+      $birthday = \DateTime::createFromFormat('Y-m-d', $birthday);
+    }
+
+    // Process death day.
+    $deathday = $entity->get('deathday')?->value ?? '';
+    if ($deathday) {
+      // Create a DateTime object.
+      $deathday = \DateTime::createFromFormat('Y-m-d', $deathday);
+    }
+
+    $format = 'd-m-Y';
+
     return new FamilyNodeDTO([
       'id' => $entity->id(),
       'fullName' => $entity->get('fullname')->value,
-      // 'nickName' => $entity->get('nickname')->value,
-      // 'saintName' => $entity->get('saintname')->value,
+      'nickName' => $entity->get('nickname')->value,
+      'saintName' => $entity->get('saintname')->value,
       'gender' => ($entity->get('gender')->value === 'male') ? t('Male') : t('Female'),
-      // 'fatherName' => $entity->get('fathername')->value,
-      // 'motherName' => $entity->get('mothername')->value,
-      // 'livingAddress' => $entity->get('livingaddress')->value,
-      // 'phone' => $entity->get('phone')->value,
-      // 'email' => $entity->get('email')->value,
+      'fatherName' => $entity->getBloodParent('male'),
+      'motherName' => $entity->getBloodParent('female'),
+      'birthDay' => $birthday instanceof DateTime ? $birthday->format($format) : '',
+      'deathDay' => $deathday instanceof DateTime ? $deathday->format($format) : '',
+      'livingAddress' => $entity->get('living_address')->value,
+      'phoneNumber' => $entity->get('phone_number')->value,
+      'email' => $entity->get('email')->value,
       'avatar' => $entity->get('avatar')->entity instanceof FileInterface
         ? $entity->get('avatar')->entity->createFileUrl()
         : NULL,

@@ -1,0 +1,20 @@
+uuid: 67b64aad-e9b5-42c8-905b-0382df2f77b3
+langcode: vi
+status: true
+dependencies:
+  config:
+    - field.storage.family_node.saintname
+  module:
+    - ftree_core
+id: family_node.family_node.saintname
+field_name: saintname
+entity_type: family_node
+bundle: family_node
+label: 'Tên thánh'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

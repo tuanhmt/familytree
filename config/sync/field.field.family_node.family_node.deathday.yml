@@ -1,0 +1,21 @@
+uuid: c4557a7a-2230-40c4-a820-18e7e5aca48c
+langcode: vi
+status: true
+dependencies:
+  config:
+    - field.storage.family_node.deathday
+  module:
+    - datetime
+    - ftree_core
+id: family_node.family_node.deathday
+field_name: deathday
+entity_type: family_node
+bundle: family_node
+label: 'Ngày mất'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

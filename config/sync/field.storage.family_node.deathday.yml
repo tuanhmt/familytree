@@ -1,0 +1,20 @@
+uuid: f5a991d7-032a-4bd4-8aa6-ad2349e762e7
+langcode: vi
+status: true
+dependencies:
+  module:
+    - datetime
+    - ftree_core
+id: family_node.deathday
+field_name: deathday
+entity_type: family_node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
