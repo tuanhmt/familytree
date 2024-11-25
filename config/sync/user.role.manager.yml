@@ -7,6 +7,7 @@ dependencies:
     - media.type.file
     - media.type.image
     - node.type.article
+    - rest.resource.family_node_resource
     - taxonomy.vocabulary.family_branch
   module:
     - administerusersbyrole
@@ -17,6 +18,7 @@ dependencies:
     - node
     - override_node_options
     - path
+    - rest
     - system
     - taxonomy
     - toolbar
@@ -59,6 +61,7 @@ permissions:
   - 'override article authored by option'
   - 'override article authored on option'
   - 'override article promote to front page option'
+  - 'restful get family_node_resource'
   - 'role-assign users by role'
   - 'use ckeditor5 embedded content'
   - 'view any album media revisions'

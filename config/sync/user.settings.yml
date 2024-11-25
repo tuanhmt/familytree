@@ -5,8 +5,8 @@ anonymous: 'Ẩn danh'
 verify_mail: false
 notify:
   cancel_confirm: false
-  password_reset: false
-  status_activated: false
+  password_reset: true
+  status_activated: true
   status_blocked: false
   status_canceled: false
   register_admin_created: false
