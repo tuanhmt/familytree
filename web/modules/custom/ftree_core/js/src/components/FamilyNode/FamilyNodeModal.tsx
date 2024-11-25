@@ -16,12 +16,13 @@ const fields = {
   'gender': window.Drupal.t('Gender'),
   'nick_name': window.Drupal.t('Nick Name'),
   'saint_name': window.Drupal.t('Saint Name'),
-  'mother_name': window.Drupal.t('Mother Name'),
   'father_name': window.Drupal.t('Father Name'),
+  'mother_name': window.Drupal.t('Mother Name'),
   'birth_day': window.Drupal.t('Birth Day'),
-  'death_day': window.Drupal.t('Death Day'),
-  'phone_number': window.Drupal.t('Phone NUmber'),
-  'living_address': window.Drupal.t('Living Address')
+  // 'death_day': window.Drupal.t('Death Day'),
+  'phone_number': window.Drupal.t('Phone Number'),
+  'email': window.Drupal.t('Email Address'),
+  // 'living_address': window.Drupal.t('Living Address')
 };
 
 const FamilyNodeModal: React.FC<FamilyNodeModalProps> = ({ isOpen, onRequestClose, fullNodeData, selectedNode }) => {
