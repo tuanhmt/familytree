@@ -12,6 +12,19 @@ import {
   useControls,
 } from "react-zoom-pan-pinch";
 
+const Controls = () => {
+  const { zoomIn, zoomOut, resetTransform, centerView } = useControls();
+
+  return (
+    <div className="tools">
+      <button className='btn btn-primary' onClick={() => zoomIn()}>+</button>
+      <button className='btn btn-primary' onClick={() => zoomOut()}>-</button>
+      <button className='btn btn-primary' onClick={() => resetTransform()}>Reset</button>
+      <button className='btn btn-primary' onClick={() => centerView()}>Center</button>
+    </div>
+  );
+};
+
 export default React.memo(
   function App() {
     const [nodes] = useState(DEFAULT_SOURCE);
@@ -72,11 +85,17 @@ export default React.memo(
             initialScale={initialTransform.scale}
             initialPositionX={initialTransform.x}
             initialPositionY={initialTransform.y}
-            // centerOnInit={1}
             centerZoomedOut={0}
-            disablePadding={1}
+            // disablePadding={1}
             limitToBounds={0}
+            pinch={{
+              step: 1,
+            }}
+            doubleClick={{
+              step: 0.1,
+            }}
           >
+            <Controls />
             <TransformComponent>
               <ReactFamilyTree
                 nodes={nodes}
@@ -98,8 +117,7 @@ export default React.memo(
               />
             </TransformComponent>
           </TransformWrapper>
-        )
-        }
+        )}
         {rootId !== firstNodeId && (
           <button className={css.reset} onClick={resetRootHandler}>
             Reset
@@ -111,7 +129,7 @@ export default React.memo(
           fullNodeData={fullNodeData}
           selectedNode={selectedNode}
         />
-      </div >
+      </div>
     );
   },
 );
