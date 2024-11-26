@@ -1,18 +1,23 @@
-import React, { useMemo, useState, useCallback, useEffect } from 'react';
+import React, { useMemo, useState, useCallback, useEffect, useRef } from 'react';
 import ReactFamilyTree from 'react-family-tree';
-import { PinchZoomPan } from '../PinchZoomPan/PinchZoomPan';
 import { FamilyNode } from '../FamilyNode/FamilyNode';
 import { NODE_WIDTH, NODE_HEIGHT, DEFAULT_SOURCE } from '../const';
 import { getNodeStyle } from './utils';
 import css from './App.module.css';
 import FamilyNodeModal from '../FamilyNode/FamilyNodeModal';
 
+import {
+  TransformWrapper,
+  TransformComponent,
+  useControls,
+} from "react-zoom-pan-pinch";
+
 export default React.memo(
   function App() {
     const [nodes] = useState(DEFAULT_SOURCE);
     const [isLoading, setIsLoading] = useState(() => !window.drupalSettings?.ftree_nodes);
 
-    const firstNodeId = useMemo(() => nodes[4].id, [nodes]);
+    const firstNodeId = useMemo(() => nodes[0].id, [nodes]);
     const [rootId, setRootId] = useState(firstNodeId);
 
     const [hoverId] = useState<string>();
@@ -22,6 +27,9 @@ export default React.memo(
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedNode, setSelectedNode] = useState<any>();
     const [fullNodeData, setFullNodeData] = useState<any>(null);
+
+    const containerRef = useRef(null);
+    const [initialTransform, setInitialTransform] = useState({ x: -26381, y: 100, scale: 0.3 });
 
     const openModalHandler = useCallback((node: any) => {
       setSelectedNode(node);
@@ -53,29 +61,45 @@ export default React.memo(
     }, [isModalOpen, selectedNode]);
 
     return (
-      <div className={css.root}>
+      <div
+        ref={containerRef}
+        style={{ width: "100%", height: "100%", overflow: "hidden", position: "relative" }}
+      >
         {nodes.length > 0 && (
-          <PinchZoomPan min={0.05} max={1} captureWheel className={css.wrapper}>
-            <ReactFamilyTree
-              nodes={nodes}
-              rootId={rootId}
-              width={NODE_WIDTH}
-              height={NODE_HEIGHT}
-              className={css.tree}
-              renderNode={(node) => (
-                <FamilyNode
-                  key={node.id}
-                  node={node}
-                  isRoot={node.id === rootId}
-                  isHover={node.id === hoverId}
-                  onClick={openModalHandler}
-                  onSubClick={setRootId}
-                  style={getNodeStyle(node)}
-                />
-              )}
-            />
-          </PinchZoomPan>
-        )}
+          <TransformWrapper
+            minScale={0.05}
+            maxScale={1}
+            initialScale={initialTransform.scale}
+            initialPositionX={initialTransform.x}
+            initialPositionY={initialTransform.y}
+            // centerOnInit={1}
+            centerZoomedOut={0}
+            disablePadding={1}
+            limitToBounds={0}
+          >
+            <TransformComponent>
+              <ReactFamilyTree
+                nodes={nodes}
+                rootId={rootId}
+                width={NODE_WIDTH}
+                height={NODE_HEIGHT}
+                className={css.tree}
+                renderNode={(node) => (
+                  <FamilyNode
+                    key={node.id}
+                    node={node}
+                    isRoot={node.id === rootId}
+                    isHover={node.id === hoverId}
+                    onClick={openModalHandler}
+                    onSubClick={setRootId}
+                    style={getNodeStyle(node)}
+                  />
+                )}
+              />
+            </TransformComponent>
+          </TransformWrapper>
+        )
+        }
         {rootId !== firstNodeId && (
           <button className={css.reset} onClick={resetRootHandler}>
             Reset
@@ -87,7 +111,7 @@ export default React.memo(
           fullNodeData={fullNodeData}
           selectedNode={selectedNode}
         />
-      </div>
+      </div >
     );
   },
 );

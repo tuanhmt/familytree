@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@ckeditor/ckeditor5-case-change": "^41.3.1"
+    "@ckeditor/ckeditor5-case-change": "^41.3.1",
+    "react-zoom-pan-pinch": "^3.6.1"
   }
 }

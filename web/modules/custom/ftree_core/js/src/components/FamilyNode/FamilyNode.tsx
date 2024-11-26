@@ -59,15 +59,23 @@ export const FamilyNode = React.memo(
       onSubClick(node.id);
     };
 
+    const classes = classNames(
+      css.inner,
+      css[node.gender],
+      {
+        [css.isRoot]: isRoot,
+      }
+    );
+
+    if (isRoot) {
+      console.log(isRoot);
+      console.log(node.fullname);
+    }
+
     return (
       <div className={css.root} style={style}>
         <div
-          className={classNames(
-            css.inner,
-            css[node.gender],
-            isRoot && css.isRoot,
-            isHover && css.isHover,
-          )}
+          className={classes}
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
           onMouseMove={handleMouseMove}
