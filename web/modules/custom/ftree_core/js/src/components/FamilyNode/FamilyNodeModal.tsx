@@ -12,16 +12,16 @@ interface FamilyNodeModalProps {
 }
 
 const fields = {
-  'full_name': window.Drupal.t('Full Name'),
-  'gender': window.Drupal.t('Gender'),
-  'nick_name': window.Drupal.t('Nick Name'),
-  'saint_name': window.Drupal.t('Saint Name'),
-  'father_name': window.Drupal.t('Father Name'),
-  'mother_name': window.Drupal.t('Mother Name'),
-  'birth_day': window.Drupal.t('Birth Day'),
+  'full_name': window.Drupal?.t('Full Name'),
+  'gender': window.Drupal?.t('Gender'),
+  'nick_name': window.Drupal?.t('Nick Name'),
+  'saint_name': window.Drupal?.t('Saint Name'),
+  'father_name': window.Drupal?.t('Father Name'),
+  'mother_name': window.Drupal?.t('Mother Name'),
+  'birth_day': window.Drupal?.t('Birth Day'),
   // 'death_day': window.Drupal.t('Death Day'),
-  'phone_number': window.Drupal.t('Phone Number'),
-  'email': window.Drupal.t('Email Address'),
+  'phone_number': window.Drupal?.t('Phone Number'),
+  'email': window.Drupal?.t('Email Address'),
   // 'living_address': window.Drupal.t('Living Address')
 };
 
@@ -49,7 +49,7 @@ const FamilyNodeModal: React.FC<FamilyNodeModalProps> = ({ isOpen, onRequestClos
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`btn btn-sm btn-primary rounded-circle ${css.editButton}`}
-                    title={window.Drupal.t('Edit')}
+                    title={window.Drupal?.t('Edit') ?? 'Edit'}
                   >
                     <i className="fa fa-pencil" aria-hidden="true"></i>
                   </a>

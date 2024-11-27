@@ -11,6 +11,7 @@ module.exports = {
     modules: [path.resolve(__dirname, 'node_modules'), 'node_modules'],
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
+  mode: 'development',
   module: {
     rules: [
       {
@@ -22,6 +23,7 @@ module.exports = {
         test: /\.js$/,
         use: ['source-map-loader'],
         enforce: 'pre',
+        include: /src/,
       },
       {
         test: /\.css$/,
@@ -29,6 +31,7 @@ module.exports = {
           // MiniCssExtractPlugin.loader,
           'css-loader',
         ],
+        exclude: /node_modules/
       },
     ],
   },
@@ -36,10 +39,5 @@ module.exports = {
     static: path.join(__dirname, 'dist'),
     port: 3000,
     hot: true,
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: "ftree.bundle.css",
-    }),
-  ],
+  }
 };

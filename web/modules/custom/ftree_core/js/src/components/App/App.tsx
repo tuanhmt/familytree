@@ -12,23 +12,10 @@ import {
   useControls,
 } from "react-zoom-pan-pinch";
 
-const Controls = () => {
-  const { zoomIn, zoomOut, resetTransform, centerView } = useControls();
-
-  return (
-    <div className="tools">
-      <button className='btn btn-primary' onClick={() => zoomIn()}>+</button>
-      <button className='btn btn-primary' onClick={() => zoomOut()}>-</button>
-      <button className='btn btn-primary' onClick={() => resetTransform()}>Reset</button>
-      <button className='btn btn-primary' onClick={() => centerView()}>Center</button>
-    </div>
-  );
-};
-
 export default React.memo(
   function App() {
     const [nodes] = useState(DEFAULT_SOURCE);
-    const [isLoading, setIsLoading] = useState(() => !window.drupalSettings?.ftree_nodes);
+    // const [isLoading, setIsLoading] = useState(() => !window.drupalSettings?.ftree_nodes);
 
     const firstNodeId = useMemo(() => nodes[0].id, [nodes]);
     const [rootId, setRootId] = useState(firstNodeId);
@@ -41,8 +28,7 @@ export default React.memo(
     const [selectedNode, setSelectedNode] = useState<any>();
     const [fullNodeData, setFullNodeData] = useState<any>(null);
 
-    const containerRef = useRef(null);
-    const [initialTransform, setInitialTransform] = useState({ x: -26381, y: 100, scale: 0.3 });
+    const [initialTransform, setInitialTransform] = useState({ x: -48100, y: 10, scale: 0.5 });
 
     const openModalHandler = useCallback((node: any) => {
       setSelectedNode(node);
@@ -73,14 +59,34 @@ export default React.memo(
       }
     }, [isModalOpen, selectedNode]);
 
+    const Controls = () => {
+      const { zoomIn, zoomOut, resetTransform } = useControls();
+
+      return (
+        <div className="tools">
+          <button className='btn btn-primary mx-2' onClick={() => zoomIn(0.1)}>+</button>
+          <button className='btn btn-primary mx-2' onClick={() => zoomOut(0.1)}>-</button>
+          <button className='btn btn-primary mx-2' onClick={() => resetTransform()}>Reset</button>
+          {/* <button className='btn btn-primary mx-2' onClick={() => handleZoomToRoot()}>Zoom to Root</button> */}
+        </div>
+      );
+    };
+
+    const transformRef = useRef(null);
+
+    // const handleZoomToRoot = () => {
+    //   const rootNodeElement = document.getElementById("root-node");
+    //   if (rootNodeElement && transformRef.current) {
+    //     zoomToElement(rootNodeElement, 0.8, 200);
+    //   }
+    // };
+
+
     return (
-      <div
-        ref={containerRef}
-        style={{ width: "100%", height: "100%", overflow: "hidden", position: "relative" }}
-      >
+      <div style={{ width: "100%", height: "100%", overflow: "hidden", position: "relative" }}>
         {nodes.length > 0 && (
           <TransformWrapper
-            minScale={0.05}
+            minScale={0.01}
             maxScale={1}
             initialScale={initialTransform.scale}
             initialPositionX={initialTransform.x}
@@ -88,12 +94,8 @@ export default React.memo(
             centerZoomedOut={0}
             // disablePadding={1}
             limitToBounds={0}
-            pinch={{
-              step: 1,
-            }}
-            doubleClick={{
-              step: 0.1,
-            }}
+            panning={{}}
+            ref={transformRef}
           >
             <Controls />
             <TransformComponent>

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
@@ -18,7 +18,9 @@
     "isolatedModules": true,
     // "noEmit": true,
     "jsx": "react-jsx",
-    "noFallthroughCasesInSwitch": true
+    "sourceMap": true,
+    "outDir": "./dist",
+    "noFallthroughCasesInSwitch": true,
   },
   "include": [
     "src"

@@ -67,13 +67,8 @@ export const FamilyNode = React.memo(
       }
     );
 
-    if (isRoot) {
-      console.log(isRoot);
-      console.log(node.fullname);
-    }
-
     return (
-      <div className={css.root} style={style}>
+      <div className={css.root} style={style} id={node.isRoot ? "root-node" : undefined}>
         <div
           className={classes}
           onMouseDown={handleMouseDown}
