@@ -59,13 +59,13 @@ export default React.memo(
     }, [isModalOpen, selectedNode]);
 
     const Controls = () => {
-      const { zoomIn, zoomOut, resetTransform } = useControls();
+      const { setTransform, resetTransform } = useControls();
 
       return (
         <div className="tools">
-          <button className='btn btn-primary mx-2' onClick={() => zoomIn(0.1)}>+</button>
-          <button className='btn btn-primary mx-2' onClick={() => zoomOut(0.1)}>-</button>
-          <button className='btn btn-primary mx-2' onClick={() => resetTransform()}>Reset</button>
+          {/* <button className='btn btn-primary mx-2' onClick={() => zoomIn(0.1)}>+</button> */}
+          {/* <button className='btn btn-primary mx-2' onClick={() => zoomOut(0.1)}>-</button> */}
+          <button className='btn btn-primary mx-2' onClick={() => resetTransform()}>{window.Drupal.t('Reset')}</button>
           {/* <button className='btn btn-primary mx-2' onClick={() => handleZoomToRoot()}>Zoom to Root</button> */}
         </div>
       );

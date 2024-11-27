@@ -114,9 +114,9 @@
 
 .isRoot {
   /* border-color: rgba(0, 0, 0, .8); */
-  background-color: red !important;
+  /* background-color: red !important; */
 }
 
 .isHover {
-  border-color: red !important;
+  /* border-color: red !important; */
 }
