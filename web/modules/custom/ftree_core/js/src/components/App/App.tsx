@@ -15,7 +15,6 @@ import {
 export default React.memo(
   function App() {
     const [nodes] = useState(DEFAULT_SOURCE);
-    // const [isLoading, setIsLoading] = useState(() => !window.drupalSettings?.ftree_nodes);
 
     const firstNodeId = useMemo(() => nodes[0].id, [nodes]);
     const [rootId, setRootId] = useState(firstNodeId);
@@ -72,16 +71,6 @@ export default React.memo(
       );
     };
 
-    const transformRef = useRef(null);
-
-    // const handleZoomToRoot = () => {
-    //   const rootNodeElement = document.getElementById("root-node");
-    //   if (rootNodeElement && transformRef.current) {
-    //     zoomToElement(rootNodeElement, 0.8, 200);
-    //   }
-    // };
-
-
     return (
       <div style={{ width: "100%", height: "100%", overflow: "hidden", position: "relative" }}>
         {nodes.length > 0 && (
@@ -95,7 +84,6 @@ export default React.memo(
             // disablePadding={1}
             limitToBounds={0}
             panning={{}}
-            ref={transformRef}
           >
             <Controls />
             <TransformComponent>
