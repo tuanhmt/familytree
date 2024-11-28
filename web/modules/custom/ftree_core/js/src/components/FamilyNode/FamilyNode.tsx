@@ -68,9 +68,10 @@ export const FamilyNode = React.memo(
     );
 
     return (
-      <div className={css.root} style={style} id={node.isRoot ? "root-node" : undefined}>
+      <div className={css.root} style={style}>
         <div
           className={classes}
+          id={`node-${node.id}`}
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
           onMouseMove={handleMouseMove}

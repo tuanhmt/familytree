@@ -5,12 +5,7 @@ import { NODE_WIDTH, NODE_HEIGHT, DEFAULT_SOURCE } from '../const';
 import { getNodeStyle } from './utils';
 import css from './App.module.css';
 import FamilyNodeModal from '../FamilyNode/FamilyNodeModal';
-
-import {
-  TransformWrapper,
-  TransformComponent,
-  useControls,
-} from "react-zoom-pan-pinch";
+import { PinchZoomPan } from '../PinchZoomPan/PinchZoomPan';
 
 export default React.memo(
   function App() {
@@ -58,35 +53,10 @@ export default React.memo(
       }
     }, [isModalOpen, selectedNode]);
 
-    const Controls = () => {
-      const { setTransform, resetTransform } = useControls();
-
-      return (
-        <div className="tools">
-          {/* <button className='btn btn-primary mx-2' onClick={() => zoomIn(0.1)}>+</button> */}
-          {/* <button className='btn btn-primary mx-2' onClick={() => zoomOut(0.1)}>-</button> */}
-          <button className='btn btn-primary mx-2' onClick={() => resetTransform()}>{window.Drupal.t('Reset')}</button>
-          {/* <button className='btn btn-primary mx-2' onClick={() => handleZoomToRoot()}>Zoom to Root</button> */}
-        </div>
-      );
-    };
-
     return (
-      <div style={{ width: "100%", height: "100%", overflow: "hidden", position: "relative" }}>
+      <div className={css.root}>
         {nodes.length > 0 && (
-          <TransformWrapper
-            minScale={0.01}
-            maxScale={1}
-            initialScale={initialTransform.scale}
-            initialPositionX={initialTransform.x}
-            initialPositionY={initialTransform.y}
-            centerZoomedOut={0}
-            // disablePadding={1}
-            limitToBounds={0}
-            panning={{}}
-          >
-            <Controls />
-            <TransformComponent>
+          <PinchZoomPan min={0.01} max={1} captureWheel className={css.wrapper}>
               <ReactFamilyTree
                 nodes={nodes}
                 rootId={rootId}
@@ -105,8 +75,7 @@ export default React.memo(
                   />
                 )}
               />
-            </TransformComponent>
-          </TransformWrapper>
+          </PinchZoomPan>
         )}
         {rootId !== firstNodeId && (
           <button className={css.reset} onClick={resetRootHandler}>
