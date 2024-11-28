@@ -56,25 +56,25 @@ export default React.memo(
     return (
       <div className={css.root}>
         {nodes.length > 0 && (
-          <PinchZoomPan min={0.01} max={1} captureWheel className={css.wrapper}>
-              <ReactFamilyTree
-                nodes={nodes}
-                rootId={rootId}
-                width={NODE_WIDTH}
-                height={NODE_HEIGHT}
-                className={css.tree}
-                renderNode={(node) => (
-                  <FamilyNode
-                    key={node.id}
-                    node={node}
-                    isRoot={node.id === rootId}
-                    isHover={node.id === hoverId}
-                    onClick={openModalHandler}
-                    onSubClick={setRootId}
-                    style={getNodeStyle(node)}
-                  />
-                )}
-              />
+          <PinchZoomPan min={0.05} max={1} captureWheel className={css.wrapper}>
+            <ReactFamilyTree
+              nodes={nodes}
+              rootId={rootId}
+              width={NODE_WIDTH}
+              height={NODE_HEIGHT}
+              className={css.tree}
+              renderNode={(node) => (
+                <FamilyNode
+                  key={node.id}
+                  node={node}
+                  isRoot={node.id === rootId}
+                  isHover={node.id === hoverId}
+                  onClick={openModalHandler}
+                  onSubClick={setRootId}
+                  style={getNodeStyle(node)}
+                />
+              )}
+            />
           </PinchZoomPan>
         )}
         {rootId !== firstNodeId && (
