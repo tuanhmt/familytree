@@ -92,22 +92,40 @@ export default React.memo(
           setSelectedFilters(['all']);
         }
       } else {
-        const newFilters = selectedFilters.includes(filter)
-          ? selectedFilters.filter((f) => f !== filter)
-          : [...selectedFilters.filter((f) => f !== 'all'), filter];
+        // const newFilters = selectedFilters.includes(filter)
+        //   ? selectedFilters.filter((f) => f !== filter)
+        //   : [...selectedFilters.filter((f) => f !== 'all'), filter];
 
-        setSelectedFilters(newFilters);
+        setSelectedFilters([filter]);
       }
     };
 
     // Submit filter and rebuild the tree.
     const applyFilterHandler = () => {
-      console.log(selectedFilters)
+
+      console.log(selectedFilters);
+      // Handle all selected.
+      if (selectedFilters.includes('all')) {
+        setNodes(DEFAULT_SOURCE);
+        return;
+      }
+
+      if (selectedFilters.includes('blood')) {
+        setNodes(DEFAULT_SOURCE.filter((node: any) =>
+          (node.id == rootId) || node.parents.some((parent: any) => parent.type === "blood")
+        ))
+      }
+
+      // if (selectedFilters.includes('blood.male')) {
+      //   const newNodes = DEFAULT_SOURCE.filter((node: any) =>
+      //     (node.id == rootId) || ((node.gender == 'male') && node.parents.some((parent: any) => parent.type === "blood"))
+      //   );
+      // }
     }
 
     const filterOptions = [
       { value: 'blood', label: 'Display only blood (Male & Female)' },
-      { value: 'blood.male', label: 'Display only blood (Male)' },
+      // { value: 'blood.male', label: 'Display only blood (Male)' },
     ];
 
     return (
@@ -143,11 +161,12 @@ export default React.memo(
               <li><hr className="dropdown-divider" /></li>
               {filterOptions.map((option) => (
                 <li>
-                  <a className="dropdown-item" href="#" onClick={preventDropdownClose}>
+                  <a className="dropdown-item" onClick={preventDropdownClose}>
                     <div className="form-check">
                     <input
                         className="form-check-input"
-                        type="checkbox"
+                        name="flexRadioDefault"
+                        type="radio"
                         checked={selectedFilters.includes(option.value)}
                         onChange={() => handleFilterChange(option.value)}
                         disabled={selectedFilters.includes('all')}
@@ -159,40 +178,6 @@ export default React.memo(
                   </a>
                 </li>
               ))}
-              {/* <li>
-                <a className="dropdown-item" href="#" onClick={preventDropdownClose}>
-                  <div className="form-check">
-                  <input
-                      className="form-check-input"
-                      type="checkbox"
-                      id="blood"
-                      checked={selectedFilters.includes('blood')}
-                      onChange={() => handleFilterChange('blood')}
-                      disabled={selectedFilters.includes('all')}
-                    />
-                    <label className="form-check-label" htmlFor="flexCheckDefault">
-                      Display only blood (Male & Female)
-                    </label>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#" onClick={preventDropdownClose}>
-                  <div className="form-check">
-                  <input
-                      className="form-check-input"
-                      type="checkbox"
-                      id="blood-male"
-                      checked={selectedFilters.includes('blood.male')}
-                      onChange={() => handleFilterChange('blood.male')}
-                      disabled={selectedFilters.includes('all')}
-                    />
-                    <label className="form-check-label" htmlFor="flexCheckDefault">
-                      Display only blood (Male)
-                    </label>
-                  </div>
-                </a>
-              </li> */}
               <li><hr className="dropdown-divider" /></li>
               <li>
                 <a className="dropdown-item" href="#">
