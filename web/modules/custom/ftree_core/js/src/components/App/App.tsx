@@ -7,17 +7,17 @@ import css from './App.module.css';
 import FamilyNodeModal from '../FamilyNode/FamilyNodeModal';
 import { PinchZoomPan } from '../PinchZoomPan/PinchZoomPan';
 
+
 export default React.memo(
   function App() {
-    const [nodes] = useState(DEFAULT_SOURCE);
+    const [nodes, setNodes] = useState(DEFAULT_SOURCE);
 
     const firstNodeId = useMemo(() => nodes[0].id, [nodes]);
     const [rootId, setRootId] = useState(firstNodeId);
 
-    const [hoverId] = useState<string>();
-
     const resetRootHandler = useCallback(() => setRootId(firstNodeId), [firstNodeId]);
 
+    // Modal handler.
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedNode, setSelectedNode] = useState<any>();
     const [fullNodeData, setFullNodeData] = useState<any>(null);
@@ -51,7 +51,7 @@ export default React.memo(
       }
     }, [isModalOpen, selectedNode]);
 
-    // Add canvas handles
+    // Add canvas zoom handles
     const canvasRef = useRef<any>(null);
     const zoomStep = 0.05;
     const minZoom = 0.01;
@@ -75,6 +75,41 @@ export default React.memo(
       }
     }, []);
 
+    // Filter handler.
+    const [selectedFilters, setSelectedFilters] = useState<string[]>(['all']);
+
+    // Disable default dropdown link handler.
+    const preventDropdownClose = (e: React.MouseEvent) => {
+      e.stopPropagation();
+    };
+
+    // On checkbox change handler.
+    const handleFilterChange = (filter: string) => {
+      if (filter === 'all') {
+        if (selectedFilters.includes('all')) {
+          setSelectedFilters([]);
+        } else {
+          setSelectedFilters(['all']);
+        }
+      } else {
+        const newFilters = selectedFilters.includes(filter)
+          ? selectedFilters.filter((f) => f !== filter)
+          : [...selectedFilters.filter((f) => f !== 'all'), filter];
+
+        setSelectedFilters(newFilters);
+      }
+    };
+
+    // Submit filter and rebuild the tree.
+    const applyFilterHandler = () => {
+      console.log(selectedFilters)
+    }
+
+    const filterOptions = [
+      { value: 'blood', label: 'Display only blood (Male & Female)' },
+      { value: 'blood.male', label: 'Display only blood (Male)' },
+    ];
+
     return (
       <div className={css.root}>
         {/* Move buttons outside of PinchZoomPan */}
@@ -89,8 +124,81 @@ export default React.memo(
               {window.Drupal?.t('Filter') ?? 'Filter'}
             </button>
             <ul className="dropdown-menu bg-white" aria-labelledby="btnGroupDrop1">
-              <li><a className="dropdown-item" href="#">Dropdown link</a></li>
-              <li><a className="dropdown-item" href="#">Dropdown link</a></li>
+              <li>
+                <a className="dropdown-item" href="#" onClick={preventDropdownClose}>
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="all"
+                      checked={selectedFilters.includes('all')}
+                      onChange={() => handleFilterChange('all')}
+                    />
+                    <label className="form-check-label" htmlFor="flexCheckDefault">
+                      All
+                    </label>
+                  </div>
+                </a>
+              </li>
+              <li><hr className="dropdown-divider" /></li>
+              {filterOptions.map((option) => (
+                <li>
+                  <a className="dropdown-item" href="#" onClick={preventDropdownClose}>
+                    <div className="form-check">
+                    <input
+                        className="form-check-input"
+                        type="checkbox"
+                        checked={selectedFilters.includes(option.value)}
+                        onChange={() => handleFilterChange(option.value)}
+                        disabled={selectedFilters.includes('all')}
+                      />
+                      <label className="form-check-label">
+                        {option.label}
+                      </label>
+                    </div>
+                  </a>
+                </li>
+              ))}
+              {/* <li>
+                <a className="dropdown-item" href="#" onClick={preventDropdownClose}>
+                  <div className="form-check">
+                  <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="blood"
+                      checked={selectedFilters.includes('blood')}
+                      onChange={() => handleFilterChange('blood')}
+                      disabled={selectedFilters.includes('all')}
+                    />
+                    <label className="form-check-label" htmlFor="flexCheckDefault">
+                      Display only blood (Male & Female)
+                    </label>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#" onClick={preventDropdownClose}>
+                  <div className="form-check">
+                  <input
+                      className="form-check-input"
+                      type="checkbox"
+                      id="blood-male"
+                      checked={selectedFilters.includes('blood.male')}
+                      onChange={() => handleFilterChange('blood.male')}
+                      disabled={selectedFilters.includes('all')}
+                    />
+                    <label className="form-check-label" htmlFor="flexCheckDefault">
+                      Display only blood (Male)
+                    </label>
+                  </div>
+                </a>
+              </li> */}
+              <li><hr className="dropdown-divider" /></li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  <button className='btn btn-primary btn-sm' onClick={() => applyFilterHandler()}>Apply</button>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -107,7 +215,6 @@ export default React.memo(
                   key={node.id}
                   node={node}
                   isRoot={node.id === rootId}
-                  isHover={node.id === hoverId}
                   onClick={openModalHandler}
                   onSubClick={setRootId}
                   style={getNodeStyle(node)}

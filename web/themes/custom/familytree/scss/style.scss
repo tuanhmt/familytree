@@ -382,10 +382,21 @@ main {
   &.btn-outline-secondary {
     --bs-btn-border-color: #E4E7EC;
     --bs-btn-bg: #fff;
+  }
+}
 
-    &.btn-md {
-      --bs-btn-font-size: 13px;
-    }
+.btn-group-md {
+  .btn {
+    --bs-btn-font-size: 13px;
+    --bs-btn-font-weight: 300;
+  }
+
+  .dropdown-menu {
+    --bs-dropdown-font-size: 13px;
+  }
+
+  .form-check {
+    min-height: unset;
   }
 }
 
