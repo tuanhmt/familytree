@@ -378,6 +378,15 @@ main {
     font-size: 16px;
     border-radius: 50px;
   }
+
+  &.btn-outline-secondary {
+    --bs-btn-border-color: #E4E7EC;
+    --bs-btn-bg: #fff;
+
+    &.btn-md {
+      --bs-btn-font-size: 13px;
+    }
+  }
 }
 
 .horizontal-carousel {

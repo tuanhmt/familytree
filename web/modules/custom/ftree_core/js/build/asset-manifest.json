@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/react-family-tree-example/static/css/main.7082a5ec.css",
-    "main.js": "/react-family-tree-example/static/js/main.da9896ea.js",
+    "main.css": "/react-family-tree-example/static/css/main.22eb37fa.css",
+    "main.js": "/react-family-tree-example/static/js/main.0665eec3.js",
     "index.html": "/react-family-tree-example/index.html",
-    "main.7082a5ec.css.map": "/react-family-tree-example/static/css/main.7082a5ec.css.map",
-    "main.da9896ea.js.map": "/react-family-tree-example/static/js/main.da9896ea.js.map"
+    "main.22eb37fa.css.map": "/react-family-tree-example/static/css/main.22eb37fa.css.map",
+    "main.0665eec3.js.map": "/react-family-tree-example/static/js/main.0665eec3.js.map"
   },
   "entrypoints": [
-    "static/css/main.7082a5ec.css",
-    "static/js/main.da9896ea.js"
+    "static/css/main.22eb37fa.css",
+    "static/js/main.0665eec3.js"
   ]
 }

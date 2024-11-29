@@ -104,3 +104,7 @@
   justify-content: center;
   background: #fff;
 }
+
+.toolbar {
+  top: 58px !important;
+}

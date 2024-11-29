@@ -22,8 +22,6 @@ export default React.memo(
     const [selectedNode, setSelectedNode] = useState<any>();
     const [fullNodeData, setFullNodeData] = useState<any>(null);
 
-    const [initialTransform, setInitialTransform] = useState({ x: -48100, y: 10, scale: 0.5 });
-
     const openModalHandler = useCallback((node: any) => {
       setSelectedNode(node);
       setIsModalOpen(true);
@@ -53,10 +51,51 @@ export default React.memo(
       }
     }, [isModalOpen, selectedNode]);
 
+    // Add canvas handles
+    const canvasRef = useRef<any>(null);
+    const zoomStep = 0.05;
+    const minZoom = 0.01;
+    const maxZoom = 1;
+
+    const zoomIn = useCallback(() => {
+      if (canvasRef.current) {
+        canvasRef.current.update((prev: any) => ({ z: Math.min(prev.z + zoomStep, maxZoom || 1) }));
+      }
+    }, []);
+
+    const zoomOut = useCallback(() => {
+      if (canvasRef.current) {
+        canvasRef.current.update((prev: any) => ({ z: Math.max(prev.z - zoomStep, minZoom || 0.05) }));
+      }
+    }, []);
+
+    const resetZoom = useCallback(() => {
+      if (canvasRef.current) {
+        canvasRef.current.update({ x: 0, y: 250, z: 0.1 });
+      }
+    }, []);
+
     return (
       <div className={css.root}>
+        {/* Move buttons outside of PinchZoomPan */}
+        <div className={`btn-toolbar mb-3 sticky-top z-3 ${css.toolbar}`} role="toolbar" aria-label="Family tree button groups">
+          <div className="btn-group btn-group-md me-2" role="group" aria-label="Zoom group">
+            <button className='btn btn-outline-secondary' onClick={zoomIn}><i className='fa fa-plus'></i></button>
+            <button className='btn btn-outline-secondary' onClick={zoomOut}><i className='fa fa-minus'></i></button>
+            <button className='btn btn-outline-secondary' onClick={resetZoom}>{window.Drupal?.t('Reset') ?? 'Reset'}</button>
+          </div>
+          <div className="btn-group btn-group-md" role="group">
+            <button id="btnGroupDrop1" type="button" className="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              {window.Drupal?.t('Filter') ?? 'Filter'}
+            </button>
+            <ul className="dropdown-menu bg-white" aria-labelledby="btnGroupDrop1">
+              <li><a className="dropdown-item" href="#">Dropdown link</a></li>
+              <li><a className="dropdown-item" href="#">Dropdown link</a></li>
+            </ul>
+          </div>
+        </div>
         {nodes.length > 0 && (
-          <PinchZoomPan min={0.05} max={1} captureWheel className={css.wrapper}>
+          <PinchZoomPan min={minZoom} max={maxZoom} captureWheel className={css.wrapper} canvasRef={canvasRef}>
             <ReactFamilyTree
               nodes={nodes}
               rootId={rootId}
