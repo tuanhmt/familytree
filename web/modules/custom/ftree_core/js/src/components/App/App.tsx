@@ -262,7 +262,6 @@ export default React.memo(
                       {option.value === 'generation' && (
                         <input
                           type="number"
-                          defaultValue={1}
                           className="form-control form-control-sm"
                           placeholder={window.Drupal?.t("Enter generation")}
                           onChange={(e) => handleFilterChange(option.value + '_' + e.target.value)}
