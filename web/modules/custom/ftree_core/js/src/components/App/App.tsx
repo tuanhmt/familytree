@@ -100,10 +100,48 @@ export default React.memo(
       }
     };
 
+
     // Submit filter and rebuild the tree.
     const applyFilterHandler = () => {
 
       console.log(selectedFilters);
+
+      const cleanReferences = (filteredNodes: [],) => {
+        // Step 2: Create a set of IDs of the filtered nodes
+        const filteredNodeIds = new Set(filteredNodes.map((node: any) => node.id));
+
+        // Step 3: Update the references in the remaining nodes
+        const newNodes = filteredNodes.map((node: any) => {
+          if (node.parents) {
+            node.parents = node.parents.filter((parent: any) => filteredNodeIds.has(parent.id));
+          }
+          if (node.children) {
+            node.children = node.children.filter((child: any) => filteredNodeIds.has(child.id));
+          }
+          if (node.spouses) {
+            node.spouses = node.spouses.filter((spouse: any) => filteredNodeIds.has(spouse.id));
+          }
+          if (node.siblings) {
+            node.siblings = node.siblings.filter((sibling: any) => filteredNodeIds.has(sibling.id));
+          }
+
+          if (!node.parents) {
+            node.parents = [];
+          }
+          if (!node.children) {
+            node.children = [];
+          }
+          if (!node.spouses) {
+            node.spouses = [];
+          }
+          if (!node.siblings) {
+            node.siblings = [];
+          }
+          return node;
+        });
+
+        return newNodes;
+      }
       // Handle all selected.
       if (selectedFilters.includes('all')) {
         setNodes(DEFAULT_SOURCE);
@@ -111,21 +149,64 @@ export default React.memo(
       }
 
       if (selectedFilters.includes('blood')) {
-        setNodes(DEFAULT_SOURCE.filter((node: any) =>
+        const newNodes = DEFAULT_SOURCE.filter((node: any) =>
           (node.id == rootId) || node.parents.some((parent: any) => parent.type === "blood")
-        ))
+        );
+        setNodes(newNodes);
       }
 
-      // if (selectedFilters.includes('blood.male')) {
-      //   const newNodes = DEFAULT_SOURCE.filter((node: any) =>
-      //     (node.id == rootId) || ((node.gender == 'male') && node.parents.some((parent: any) => parent.type === "blood"))
-      //   );
-      // }
+      if (selectedFilters.includes('blood.male')) {
+        // Step 1: Filter the nodes based on your criteria
+        const filteredNodes = DEFAULT_SOURCE.filter((node: any) =>
+          (node.id == rootId) || ((node.gender == 'male') && node.parents.some((parent: any) => parent.type === "blood"))
+        );
+
+        const newNodes = cleanReferences(filteredNodes);
+        setNodes(newNodes);
+      }
+
+      if (selectedFilters.includes('blood.male')) {
+        // Step 1: Filter the nodes based on your criteria
+        const filteredNodes = DEFAULT_SOURCE.filter((node: any) =>
+          (node.id == rootId) || ((node.gender == 'male') && node.parents.some((parent: any) => parent.type === "blood"))
+        );
+
+        const newNodes = cleanReferences(filteredNodes);
+        setNodes(newNodes);
+      }
+
+      // Check if selectedFilters has an item start with generation_
+      if (selectedFilters.some((item) => item.startsWith('generation'))) {
+        const generation = selectedFilters.find((item) => item.startsWith('generation'))?.split('_')[1];
+        if (generation) {
+          const filteredNodes = DEFAULT_SOURCE.filter((node: any) =>
+            (node.id == rootId) || (node.generation == parseInt(generation))
+          );
+
+          const newNodes = cleanReferences(filteredNodes);
+
+          // Set rootnode as parents of all nodes and set rootnode.chilren as all nodes.
+          const rootNode = newNodes.find((node: any) => node.id == rootId);
+          newNodes.forEach((node: any) => {
+            if (node.id !== rootId) {
+              node.parents = [rootNode];
+              node.order = '';
+              rootNode.children.push(node);
+            } else {
+              node.fullname = window.Drupal?.t("Generation") + ' ' + generation;
+              // disable click event on this.
+              node.onClick = () => {};
+            }
+          });
+          setNodes(newNodes);
+        }
+      }
     }
 
     const filterOptions = [
       { value: 'blood', label: 'Display only blood (Male & Female)' },
-      // { value: 'blood.male', label: 'Display only blood (Male)' },
+      { value: 'blood.male', label: 'Display only blood (Male)' },
+      { value: 'generation', label: 'Display by generation' },
     ];
 
     return (
@@ -163,7 +244,7 @@ export default React.memo(
                 <li>
                   <a className="dropdown-item" onClick={preventDropdownClose}>
                     <div className="form-check">
-                    <input
+                      <input
                         className="form-check-input"
                         name="flexRadioDefault"
                         type="radio"
@@ -171,9 +252,22 @@ export default React.memo(
                         onChange={() => handleFilterChange(option.value)}
                         disabled={selectedFilters.includes('all')}
                       />
-                      <label className="form-check-label">
-                        {option.label}
-                      </label>
+                      {option.value !== 'generation' && (
+                        <>
+                          <label className="form-check-label">
+                            {option.label}
+                          </label>
+                        </>
+                      )}
+                      {option.value === 'generation' && (
+                        <input
+                          type="number"
+                          defaultValue={1}
+                          className="form-control form-control-sm"
+                          placeholder={window.Drupal?.t("Enter generation")}
+                          onChange={(e) => handleFilterChange(option.value + '_' + e.target.value)}
+                        />
+                      )}
                     </div>
                   </a>
                 </li>

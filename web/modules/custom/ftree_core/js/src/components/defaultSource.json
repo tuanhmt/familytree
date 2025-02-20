@@ -25,19 +25,10 @@
         "order": "",
         "spouses": [],
         "siblings": [],
+        "children": [],
         "parents": [
             {
                 "id": "8",
-                "type": "blood"
-            }
-        ],
-        "children": [
-            {
-                "id": "10",
-                "type": "blood"
-            },
-            {
-                "id": "11",
                 "type": "blood"
             }
         ]

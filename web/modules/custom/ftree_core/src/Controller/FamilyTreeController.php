@@ -85,6 +85,7 @@ final class FamilyTreeController extends ControllerBase {
         "birth_year" => $family_node->get('birth_year')?->value ?? '',
         "death_year" => $family_node->get('death_year')?->value ?? '',
         "order" => $family_node->get('order')?->value ?? '',
+        "generation" => $family_node->get('generation')?->value ?? '',
       ];
       foreach ($relation_types as $type) {
         $node_data[$type] = [];
