@@ -145,7 +145,8 @@ export default React.memo(
       // Handle all selected.
       if (selectedFilters.includes('all')) {
         setNodes(DEFAULT_SOURCE);
-        return;
+        console.log(DEFAULT_SOURCE)
+        // return;
       }
 
       if (selectedFilters.includes('blood')) {
@@ -156,16 +157,7 @@ export default React.memo(
       }
 
       if (selectedFilters.includes('blood.male')) {
-        // Step 1: Filter the nodes based on your criteria
-        const filteredNodes = DEFAULT_SOURCE.filter((node: any) =>
-          (node.id == rootId) || ((node.gender == 'male') && node.parents.some((parent: any) => parent.type === "blood"))
-        );
-
-        const newNodes = cleanReferences(filteredNodes);
-        setNodes(newNodes);
-      }
-
-      if (selectedFilters.includes('blood.male')) {
+        console.log(DEFAULT_SOURCE)
         // Step 1: Filter the nodes based on your criteria
         const filteredNodes = DEFAULT_SOURCE.filter((node: any) =>
           (node.id == rootId) || ((node.gender == 'male') && node.parents.some((parent: any) => parent.type === "blood"))
@@ -177,6 +169,7 @@ export default React.memo(
 
       // Check if selectedFilters has an item start with generation_
       if (selectedFilters.some((item) => item.startsWith('generation'))) {
+        console.log(DEFAULT_SOURCE)
         const generation = selectedFilters.find((item) => item.startsWith('generation'))?.split('_')[1];
         if (generation) {
           const filteredNodes = DEFAULT_SOURCE.filter((node: any) =>
@@ -193,7 +186,7 @@ export default React.memo(
               node.order = '';
               rootNode.children.push(node);
             } else {
-              node.fullname = window.Drupal?.t("Generation") + ' ' + generation;
+              node.fullname = window.Drupal.t("Generation") + ' ' + generation;
               // disable click event on this.
               node.onClick = () => {};
             }
@@ -204,9 +197,9 @@ export default React.memo(
     }
 
     const filterOptions = [
-      { value: 'blood', label: 'Display only blood (Male & Female)' },
-      { value: 'blood.male', label: 'Display only blood (Male)' },
-      { value: 'generation', label: 'Display by generation' },
+      { value: 'blood', label: window.Drupal.t('Display only blood (Male & Female)') },
+      { value: 'blood.male', label: window.Drupal.t('Display only blood (Male)') },
+      { value: 'generation', label: window.Drupal.t('Display by generation') },
     ];
 
     return (
@@ -216,11 +209,11 @@ export default React.memo(
           <div className="btn-group btn-group-md me-2" role="group" aria-label="Zoom group">
             <button className='btn btn-outline-secondary' onClick={zoomIn}><i className='fa fa-plus'></i></button>
             <button className='btn btn-outline-secondary' onClick={zoomOut}><i className='fa fa-minus'></i></button>
-            <button className='btn btn-outline-secondary' onClick={resetZoom}>{window.Drupal?.t('Reset') ?? 'Reset'}</button>
+            <button className='btn btn-outline-secondary' onClick={resetZoom}>{window.Drupal.t('Reset')}</button>
           </div>
           <div className="btn-group btn-group-md" role="group">
             <button id="btnGroupDrop1" type="button" className="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              {window.Drupal?.t('Filter') ?? 'Filter'}
+              {window.Drupal.t('Filter')}
             </button>
             <ul className="dropdown-menu bg-white" aria-labelledby="btnGroupDrop1">
               <li>
@@ -234,7 +227,7 @@ export default React.memo(
                       onChange={() => handleFilterChange('all')}
                     />
                     <label className="form-check-label" htmlFor="flexCheckDefault">
-                      All
+                      {window.Drupal.t('All')}
                     </label>
                   </div>
                 </a>
@@ -263,7 +256,7 @@ export default React.memo(
                         <input
                           type="number"
                           className="form-control form-control-sm"
-                          placeholder={window.Drupal?.t("Enter generation")}
+                          placeholder={window.Drupal.t("Enter generation")}
                           onChange={(e) => handleFilterChange(option.value + '_' + e.target.value)}
                         />
                       )}
@@ -274,7 +267,7 @@ export default React.memo(
               <li><hr className="dropdown-divider" /></li>
               <li>
                 <a className="dropdown-item" href="#">
-                  <button className='btn btn-primary btn-sm' onClick={() => applyFilterHandler()}>Apply</button>
+                  <button className='btn btn-primary btn-sm' onClick={() => applyFilterHandler()}>{window.Drupal.t("Apply")}</button>
                 </a>
               </li>
             </ul>
