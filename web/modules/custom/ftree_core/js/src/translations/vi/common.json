@@ -1,13 +1,13 @@
 {
 	"components": {
 		"fnd-component": {
-			"birth_day": "Sinh nhật",
+			"birth_day": "Ngày sinh",
 			"email": "Thư điện tử",
-			"father_name": "Tên Cha",
+			"father_name": "Tên cha",
 			"full_name": "Tên đầy đủ",
 			"gender": "Giới tính",
 			"mother_name": "Tên mẹ",
-			"nick_name": "Tên thường gọi",
+			"nick_name": "Danh hiệu",
 			"phone_number": "Số điện thoại",
 			"saint_name": "Tên thánh"
 		}

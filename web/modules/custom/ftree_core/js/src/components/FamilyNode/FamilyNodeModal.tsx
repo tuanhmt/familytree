@@ -22,7 +22,7 @@ interface FamilyNodeModalProps {
 export const FamilyNodeModal: React.FC<FamilyNodeModalProps> = ({ isOpen, onRequestClose, node, selectedNode }) => {
   const {t} = useTranslation();
 
-  const fields = {
+  const visibleFields = {
     'full_name': t('common:components.fnd-component.full_name'),
     'gender': t('common:components.fnd-component.gender'),
     'nick_name': t('common:components.fnd-component.nick_name'),
@@ -73,7 +73,7 @@ export const FamilyNodeModal: React.FC<FamilyNodeModalProps> = ({ isOpen, onRequ
             </div>
             <div className="col-lg-8">
               <form className="px-2">
-                {Object.entries(fields).map(([key, value], index) => (
+                {Object.entries(visibleFields).map(([key, value], index) => (
                   <div className="form-group row mb-2" key={index}>
                     <div className="col-lg-6">{value}</div>
                     <div className="col-lg-6">
