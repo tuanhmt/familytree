@@ -302,7 +302,7 @@ export default React.memo(
         <FamilyNodeModal
           isOpen={isModalOpen}
           onRequestClose={closeModalHandler}
-          fullNodeData={fullNodeData}
+          node={fullNodeData}
           selectedNode={selectedNode}
         />
       </div>

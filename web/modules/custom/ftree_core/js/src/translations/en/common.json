@@ -1,0 +1,15 @@
+{
+	"components": {
+		"fnd-component": {
+			"birth_day": "Birthday",
+			"email": "Email",
+			"father_name": "Father",
+			"full_name": "Full name",
+			"gender": "Gender",
+			"mother_name": "Mother",
+			"nick_name": "Nick name",
+			"phone_number": "Phone",
+			"saint_name": "Saint Name"
+		}
+	}
+}

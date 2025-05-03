@@ -1,31 +1,39 @@
 import React from 'react';
 import Modal from 'react-modal';
 import ReactImageFallback from 'react-image-fallback';
+import type { Node } from 'relatives-tree/lib/types';
 import { PuffLoader } from 'react-spinners';
 import css from './FamilyNodeModal.module.css';
+import {useTranslation} from "react-i18next";
 
 interface FamilyNodeModalProps {
   isOpen: boolean;
   onRequestClose: () => void;
-  fullNodeData: any;
+  node: Readonly<Node> & {
+    fullname?: string;
+    birth_year?: string;
+    death_year?: string;
+    order?: string;
+    avatar?: string;
+  };
   selectedNode: any;
 }
 
-const fields = {
-  'full_name': window.Drupal?.t('Full Name'),
-  'gender': window.Drupal?.t('Gender'),
-  'nick_name': window.Drupal?.t('Nick Name'),
-  'saint_name': window.Drupal?.t('Saint Name'),
-  'father_name': window.Drupal?.t('Father Name'),
-  'mother_name': window.Drupal?.t('Mother Name'),
-  'birth_day': window.Drupal?.t('Birth Day'),
-  // 'death_day': window.Drupal.t('Death Day'),
-  'phone_number': window.Drupal?.t('Phone Number'),
-  'email': window.Drupal?.t('Email Address'),
-  // 'living_address': window.Drupal.t('Living Address')
-};
+export const FamilyNodeModal: React.FC<FamilyNodeModalProps> = ({ isOpen, onRequestClose, node, selectedNode }) => {
+  const {t} = useTranslation();
 
-const FamilyNodeModal: React.FC<FamilyNodeModalProps> = ({ isOpen, onRequestClose, fullNodeData, selectedNode }) => {
+  const fields = {
+    'full_name': t('common:components.fnd-component.full_name'),
+    'gender': t('common:components.fnd-component.gender'),
+    'nick_name': t('common:components.fnd-component.nick_name'),
+    'saint_name': t('common:components.fnd-component.saint_name'),
+    'father_name': t('common:components.fnd-component.father_name'),
+    'mother_name': t('common:components.fnd-component.mother_name'),
+    'birth_day': t('common:components.fnd-component.birth_day'),
+    'phone_number': t('common:components.fnd-component.phone_number'),
+    'email': t('common:components.fnd-component.email'),
+  };
+
   return (
     <Modal
       isOpen={isOpen}
@@ -33,7 +41,7 @@ const FamilyNodeModal: React.FC<FamilyNodeModalProps> = ({ isOpen, onRequestClos
       className={css.modal}
       overlayClassName={css.overlay}
     >
-      {fullNodeData ? (
+      {node ? (
         <div>
           <button type="button" className={`btn btn-link p-0 ${css.modalCloseBtn}`} onClick={onRequestClose}>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -45,7 +53,7 @@ const FamilyNodeModal: React.FC<FamilyNodeModalProps> = ({ isOpen, onRequestClos
               <div className={css.avatar}>
                 {window.drupalSettings?.ftree_user?.currentUserPermissions?.includes('administer family_node') && (
                   <a
-                    href={`/family-node/${fullNodeData.id}/edit`}
+                    href={`/family-node/${node.id}/edit`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`btn btn-sm btn-primary rounded-circle ${css.editButton}`}
@@ -57,8 +65,8 @@ const FamilyNodeModal: React.FC<FamilyNodeModalProps> = ({ isOpen, onRequestClos
                 <ReactImageFallback
                   fallbackImage="/themes/custom/familytree/images/default_avatar.jpg"
                   className={css.avatarPlaceholder}
-                  alt={fullNodeData.fullname}
-                  src={fullNodeData.avatar}
+                  alt={node.fullname}
+                  src={node.avatar}
                   draggable="false"
                 />
               </div>
@@ -69,7 +77,7 @@ const FamilyNodeModal: React.FC<FamilyNodeModalProps> = ({ isOpen, onRequestClos
                   <div className="form-group row mb-2" key={index}>
                     <div className="col-lg-6">{value}</div>
                     <div className="col-lg-6">
-                      {fullNodeData[key]}
+                      {String(node[key as keyof Node] ?? '')}
                     </div>
                   </div>
                 ))}
