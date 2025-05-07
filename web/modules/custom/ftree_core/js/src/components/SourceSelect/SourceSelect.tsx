@@ -22,6 +22,7 @@ export const SourceSelect = memo(
       }
 
       if (filter === 'blood') {
+        rootId = DEFAULT_NODES[0].id;
         return DEFAULT_NODES.filter((node: any) =>
           (node.id == rootId) || node.parents.some((parent: any) => parent.type === "blood")
         );
@@ -31,7 +32,8 @@ export const SourceSelect = memo(
         let newNodes = DEFAULT_NODES.filter((node: any) =>
           (node.id == rootId)
           || (node.gender === "male" && node.parents.some((parent: any) => parent.type === "blood"))
-        ).map((node: any) => ({
+        ).map((node: any) => structuredClone(node));
+        newNodes = newNodes.map((node: any) => ({
           ...node,
           spouses: []
         }));
@@ -67,8 +69,6 @@ export const SourceSelect = memo(
           }
         });
 
-        console.log(newNodes);
-
         return newNodes;
       }
 
@@ -83,21 +83,21 @@ export const SourceSelect = memo(
           .filter((node: any) => (node.id == rootId) || node.spouses.length > 0 || node.generation >= generation)
           .map((node: any) => structuredClone(node));
       if (!newRootNode) return;
-      console.log(newNodes);
       newNodes = fixFamilyTree(newNodes);
       return newNodes;
     };
 
     const handleFilterChange = (selectedOption: { value: string; label: string; } | null) => {
       setSelectedOption(selectedOption);
+      setSelectedBranch(null);
       if (!selectedOption) return;
-      onChange(selectedOption.value, getNodesByFilter(selectedOption.value), rootId);
+      onChange(selectedOption.value, getNodesByFilter(selectedOption.value), DEFAULT_NODES[0].id);
     };
 
     const handleBranchChange = (selectedBranch: { value: string; label: string; } | null) => {
       setSelectedBranch(selectedBranch);
       if (!selectedBranch || !selectedBranch.value) return;
-      onChange(selectedBranch.value, getNodesByBranch(selectedBranch.value), rootId);
+      onChange(selectedOption?.value || 'branch', getNodesByBranch(selectedBranch.value), rootId);
     };
 
     // Fix the family tree to ensure that the parents, children, spouses, and siblings are valid
