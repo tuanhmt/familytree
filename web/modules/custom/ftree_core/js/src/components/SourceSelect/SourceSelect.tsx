@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 interface SourceSelectProps {
   value: string;
   items: Record<string, string>;
-  rootId: number;
+  rootId: string;
   onChange: (value: string, nodes: readonly Readonly<Node>[]) => void;
 }
 
@@ -37,7 +37,38 @@ export const SourceSelect = memo(
         }));
 
         newNodes = fixFamilyTree(newNodes);
-        console.log(validateFamilyTree(newNodes));
+        return newNodes;
+      }
+
+      if (filter === 'generation') {
+        // Promt a modal to select the generation number.
+        const generation = prompt(t('common:components.filters.generation_prompt'));
+        if (!generation || isNaN(parseInt(generation))) return [];
+        let newNodes = DEFAULT_NODES.filter((node: any) =>
+          (node.id == rootId) || node.generation === generation
+        );
+
+        const rootChildren = newNodes.filter((node: any) => node.id !== rootId).map((node: any) => ({
+          id: node.id,
+          type: 'blood',
+        }));
+
+        newNodes.forEach((node: any) => {
+          node.spouses = [];
+          node.parents = [];
+          node.children = [];
+          node.siblings = [];
+
+          if (node.id !== rootId) {
+            node.parents.push({ id: rootId, type: 'blood' });
+          } else {
+            node.children = rootChildren;
+            node.fullname = t('common:components.filters.ancestors');
+          }
+        });
+
+        console.log(newNodes);
+
         return newNodes;
       }
 
@@ -50,6 +81,7 @@ export const SourceSelect = memo(
       onChange(selectedOption.value, getNodesByFilter(selectedOption.value));
     };
 
+    // Validate the family tree to ensure that the parents, children, spouses, and siblings are valid
     const validateFamilyTree = (nodes: any) => {
       const errors: any[] = [];
       const nodeMap = new Map();
@@ -113,7 +145,8 @@ export const SourceSelect = memo(
       return errors;
     }
 
-    function fixFamilyTree(currentNodes: Node[]): Node[] {
+    // Fix the family tree to ensure that the parents, children, spouses, and siblings are valid
+    const fixFamilyTree = (currentNodes: Node[]): Node[] => {
       let newNodes = [];
       const nodeMap = new Map<string, Node>();
       currentNodes.forEach(node => nodeMap.set(node.id, node));
@@ -145,7 +178,6 @@ export const SourceSelect = memo(
       }
       return newNodes;
     }
-
 
     const options = Object.keys(items).map((item) => ({
       value: item,

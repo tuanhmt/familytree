@@ -16,7 +16,9 @@
 			"generation": "Thế hệ",
 			"blood": "Huyết thống",
 			"blood_male": "Huyết thống chi có nam",
-			"select_placeholder": "Hiển thị theo"
+			"select_placeholder": "Hiển thị theo",
+			"generation_prompt": "Vui lòng nhập thế hệ muốn hiển thị?",
+			"ancestors": "Tổ tiên"
 		}
 	}
 }

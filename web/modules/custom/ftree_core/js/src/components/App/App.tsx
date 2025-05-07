@@ -37,7 +37,6 @@ export default React.memo(
         setRootId(nodes[0].id);
         setNodes(nodes);
         setFilter(value);
-        console.log(value, nodes);
       },
       [],
     );
