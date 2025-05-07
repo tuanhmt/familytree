@@ -75,9 +75,13 @@ export const SourceSelect = memo(
       return [];
     };
 
+    const getRootNodeByBranch = (generation: string, order: string) => {
+      return DEFAULT_NODES.find((node: any) => node.generation === generation && node.order === order);
+    };
+
     const getNodesByBranch = (branch: string) => {
       const [generation, order] = branch.split('.').map(String);
-      const newRootNode = DEFAULT_NODES.find((node: any) => node.generation === generation && node.order === order);
+      const newRootNode = getRootNodeByBranch(generation, order);
       rootId = newRootNode?.id;
       let newNodes = DEFAULT_NODES
           .filter((node: any) => (node.id == rootId) || node.spouses.length > 0 || node.generation >= generation)
@@ -87,9 +91,26 @@ export const SourceSelect = memo(
       return newNodes;
     };
 
+    const getNodesBySubBranch = (subBranch: string) => {
+      const [generation, order] = selectedBranch?.value.split('.').map(String) || [];
+      const branchNode = getRootNodeByBranch(generation, order);
+
+      const [sub_generation, sub_order] = subBranch.split('.').map(String);
+      const newRootNode = DEFAULT_NODES.find((node: any) => node.generation === sub_generation && node.order === sub_order && node.parents.some((parent: any) => parent.id === branchNode?.id));
+      newRootNode.parents = [];
+      rootId = newRootNode?.id;
+      let newNodes = DEFAULT_NODES
+        .filter((node: any) => (node.id == rootId) || node.spouses.length > 0 || node.generation >= generation)
+        .map((node: any) => structuredClone(node));
+      if (!newRootNode) return;
+      newNodes = fixFamilyTree(newNodes);
+      return newNodes;
+    };
+
     const handleFilterChange = (selectedOption: { value: string; label: string; } | null) => {
       setSelectedOption(selectedOption);
       setSelectedBranch(null);
+      setSelectedSubBranch(null);
       if (!selectedOption) return;
       onChange(selectedOption.value, getNodesByFilter(selectedOption.value), DEFAULT_NODES[0].id);
     };
@@ -103,7 +124,7 @@ export const SourceSelect = memo(
     const handleSubBranchChange = (selectedSubBranch: { value: string; label: string; } | null) => {
       setSelectedSubBranch(selectedSubBranch);
       if (!selectedSubBranch || !selectedSubBranch.value) return;
-      onChange(selectedOption?.value || 'branch', getNodesByBranch(selectedSubBranch.value), rootId);
+      onChange(selectedOption?.value || 'branch', getNodesBySubBranch(selectedSubBranch.value), rootId);
     };
 
     // Fix the family tree to ensure that the parents, children, spouses, and siblings are valid
