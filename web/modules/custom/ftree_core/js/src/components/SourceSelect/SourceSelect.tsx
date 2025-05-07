@@ -1,7 +1,7 @@
 import { memo, useState } from 'react';
 import type { Node, Relation } from 'relatives-tree/lib/types';
 import Select from 'react-select';
-import { DEFAULT_NODES, FILTERS } from '../const';
+import { DEFAULT_NODES, FILTERS, HIERARCHY_FILTERS } from '../const';
 import { useTranslation } from 'react-i18next';
 interface SourceSelectProps {
   value: string;
@@ -14,10 +14,10 @@ export const SourceSelect = memo(
   function SourceSelect({ value, items, rootId, onChange }: SourceSelectProps) {
     const { t } = useTranslation();
     const [selectedOption, setSelectedOption] = useState<{ value: string; label: string; } | null>({ value: value, label: t('common:components.filters.' + value) });
-
+    const [selectedHierarchy, setSelectedHierarchy] = useState<{ value: string; label: string; } | null>(null);
 
     const getNodesByFilter = (filter: string) => {
-      if (filter === 'all') {
+      if (filter === 'all' || filter === 'branch') {
         return DEFAULT_NODES;
       }
 
@@ -81,69 +81,12 @@ export const SourceSelect = memo(
       onChange(selectedOption.value, getNodesByFilter(selectedOption.value));
     };
 
-    // Validate the family tree to ensure that the parents, children, spouses, and siblings are valid
-    const validateFamilyTree = (nodes: any) => {
-      const errors: any[] = [];
-      const nodeMap = new Map();
-
-      nodes.forEach((node: any) => nodeMap.set(node.id, node));
-
-      nodes.forEach((node: any) => {
-        const { id, spouses, parents, children, siblings } = node;
-
-        // Check parents <-> children
-        parents.forEach((p: any) => {
-          const parent = nodeMap.get(p.id);
-          if (!parent) {
-            errors.push(`Parent with id ${p.id} of node ${id} does not exist.`);
-            return;
-          }
-          const found = parent.children.some((c: any) => c.id === id && c.type === p.type);
-          if (!found) {
-            errors.push(`Missing reciprocal child reference from parent ${p.id} to child ${id}.`);
-          }
-        });
-
-        // Check children <-> parents
-        children.forEach((c: any) => {
-          const child = nodeMap.get(c.id);
-          if (!child) {
-            errors.push(`Child with id ${c.id} of node ${id} does not exist.`);
-            return;
-          }
-          const found = child.parents.some((p: any) => p.id === id && p.type === c.type);
-          if (!found) {
-            errors.push(`Missing reciprocal parent reference from child ${c.id} to parent ${id}.`);
-          }
-        });
-
-        // Check spouses <-> spouses
-        spouses.forEach((spouseId: any) => {
-          const spouse = nodeMap.get(spouseId);
-          if (!spouse) {
-            errors.push(`Spouse with id ${spouseId} of node ${id} does not exist.`);
-            return;
-          }
-          if (!spouse.spouses.includes(id)) {
-            errors.push(`Missing reciprocal spouse reference from ${spouseId} to ${id}.`);
-          }
-        });
-
-        // Check siblings <-> siblings
-        siblings.forEach((siblingId: any) => {
-          const sibling = nodeMap.get(siblingId);
-          if (!sibling) {
-            errors.push(`Sibling with id ${siblingId} of node ${id} does not exist.`);
-            return;
-          }
-          if (!sibling.siblings.includes(id)) {
-            errors.push(`Missing reciprocal sibling reference from ${siblingId} to ${id}.`);
-          }
-        });
-      });
-
-      return errors;
-    }
+    const handleHierarchyChange = (selectedOption: { value: string; label: string; } | null) => {
+      setSelectedHierarchy(selectedOption);
+      if (!selectedOption) return;
+      // TODO: Implement branch filtering logic here
+      onChange('branch', DEFAULT_NODES);
+    };
 
     // Fix the family tree to ensure that the parents, children, spouses, and siblings are valid
     const fixFamilyTree = (currentNodes: Node[]): Node[] => {
@@ -184,37 +127,76 @@ export const SourceSelect = memo(
       label: t('common:components.filters.' + item),
     }));
 
+    const hierarchyOptions = Object.entries(HIERARCHY_FILTERS).map(([key, value]) => ({
+      value: key,
+      label: t('common:components.filters.branch' + key.replace(/\./g, '_')),
+    }));
+
     return (
-      <Select
-        defaultValue={selectedOption}
-        placeholder={t('common:components.filters.select_placeholder')}
-        options={options}
-        onChange={handleChange}
-        isSearchable={true}
-        isClearable={true}
-        isMulti={false}
-        styles={{
-          control: (baseStyles, state) => ({
-            ...baseStyles,
-            borderColor: state.isFocused ? '#E4E7EC' : '#E4E7EC',
-            borderRadius: 'var(--bs-border-radius)',
-            boxShadow: 'none',
-            minWidth: '300px',
-            fontSize: '13px',
-            color: '#6c757d',
-          }),
-          placeholder: (baseStyles, state) => ({
-            ...baseStyles,
-            fontSize: '13px',
-            color: '#6c757d',
-          }),
-          menu: (baseStyles, state) => ({
-            ...baseStyles,
-            fontSize: '13px',
-            color: '#6c757d',
-          }),
-        }}
-      />
+      <div style={{ display: 'flex', gap: '10px' }}>
+        <Select
+          defaultValue={selectedOption}
+          placeholder={t('common:components.filters.select_placeholder')}
+          options={options}
+          onChange={handleChange}
+          isSearchable={true}
+          isClearable={true}
+          isMulti={false}
+          styles={{
+            control: (baseStyles, state) => ({
+              ...baseStyles,
+              borderColor: state.isFocused ? '#E4E7EC' : '#E4E7EC',
+              borderRadius: 'var(--bs-border-radius)',
+              boxShadow: 'none',
+              minWidth: '300px',
+              fontSize: '13px',
+              color: '#6c757d',
+            }),
+            placeholder: (baseStyles, state) => ({
+              ...baseStyles,
+              fontSize: '13px',
+              color: '#6c757d',
+            }),
+            menu: (baseStyles, state) => ({
+              ...baseStyles,
+              fontSize: '13px',
+              color: '#6c757d',
+            }),
+          }}
+        />
+        {selectedOption?.value === 'branch' && (
+          <Select
+            value={selectedHierarchy}
+            placeholder={t('common:components.filters.select_branch')}
+            options={hierarchyOptions}
+            onChange={handleHierarchyChange}
+            isSearchable={true}
+            isClearable={true}
+            isMulti={false}
+            styles={{
+              control: (baseStyles, state) => ({
+                ...baseStyles,
+                borderColor: state.isFocused ? '#E4E7EC' : '#E4E7EC',
+                borderRadius: 'var(--bs-border-radius)',
+                boxShadow: 'none',
+                minWidth: '300px',
+                fontSize: '13px',
+                color: '#6c757d',
+              }),
+              placeholder: (baseStyles, state) => ({
+                ...baseStyles,
+                fontSize: '13px',
+                color: '#6c757d',
+              }),
+              menu: (baseStyles, state) => ({
+                ...baseStyles,
+                fontSize: '13px',
+                color: '#6c757d',
+              }),
+            }}
+          />
+        )}
+      </div>
     );
   },
 );

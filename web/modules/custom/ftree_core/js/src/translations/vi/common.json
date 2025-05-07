@@ -12,13 +12,17 @@
 			"saint_name": "Tên thánh"
 		},
 		"filters": {
-			"all": "Tất cả",
-			"generation": "Thế hệ",
-			"blood": "Huyết thống",
-			"blood_male": "Huyết thống chi có nam",
-			"select_placeholder": "Hiển thị theo",
+			"all": "Hiển thị tất cả",
+			"generation": "Hiển thị theo thế hệ (generation)",
+			"blood": "Hiển thị huyết thống (con ruột, nam và nữ)",
+			"blood_male": "Hiển thị huyết thống (con ruột, chỉ có nam)",
+			"select_placeholder": "Bộ lọc...",
+			"select_branch": "Chọn nhánh...",
 			"generation_prompt": "Vui lòng nhập thế hệ muốn hiển thị?",
-			"ancestors": "Tổ tiên"
+			"ancestors": "Tổ tiên",
+			"branch": "Hiển thị theo nhánh",
+			"branch3_1": "Vương Đình Liệu",
+			"branch3_2": "Vương Đình Đào"
 		}
 	}
 }
