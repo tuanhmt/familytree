@@ -44,9 +44,9 @@ export const SourceSelect = memo(
         // Promt a modal to select the generation number.
         const generation = prompt(t('common:components.filters.generation_prompt'));
         if (!generation || isNaN(parseInt(generation))) return [];
-        let newNodes = DEFAULT_NODES.filter((node: any) =>
-          (node.id == rootId) || node.generation === generation
-        );
+        let newNodes = DEFAULT_NODES
+          .filter((node: any) => (node.id == rootId) || node.generation === generation)
+          .map((node: any) => structuredClone(node));
 
         const rootChildren = newNodes.filter((node: any) => node.id !== rootId).map((node: any) => ({
           id: node.id,
