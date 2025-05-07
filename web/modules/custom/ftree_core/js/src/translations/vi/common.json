@@ -18,11 +18,20 @@
 			"blood_male": "Hiển thị huyết thống (con ruột, chỉ có nam)",
 			"select_placeholder": "Bộ lọc...",
 			"select_branch": "Chọn nhánh...",
+			"select_sub_branch": "Chọn nhánh con...",
 			"generation_prompt": "Vui lòng nhập thế hệ muốn hiển thị?",
 			"ancestors": "Tổ tiên",
 			"branch": "Hiển thị theo nhánh",
 			"branch3_1": "Vương Đình Liệu",
-			"branch3_2": "Vương Đình Đào"
+			"branch3_2": "Vương Đình Đào",
+			"branch3_1_4_1": "Vương Thị Hai",
+			"branch3_1_4_2": "Vương Đình Mai",
+			"branch3_1_4_3": "Vương Đình Hòe",
+			"branch3_1_4_10": "Vương Thị Xinh",
+			"branch3_2_4_1": "Vương Đình Bá",
+			"branch3_2_4_2": "Vương Thị Hai",
+			"branch3_2_4_3": "Vương Thị Tam",
+			"branch3_2_4_4": "Vương Đình Trinh"
 		}
 	}
 }

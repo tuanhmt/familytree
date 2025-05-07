@@ -15,7 +15,7 @@ export const SourceSelect = memo(
     const { t } = useTranslation();
     const [selectedOption, setSelectedOption] = useState<{ value: string; label: string; } | null>({ value: value, label: t('common:components.filters.' + value) });
     const [selectedBranch, setSelectedBranch] = useState<{ value: string; label: string; } | null>(null);
-
+    const [selectedSubBranch, setSelectedSubBranch] = useState<{ value: string; label: string; } | null>(null);
     const getNodesByFilter = (filter: string) => {
       if (filter === 'all' || filter === 'branch') {
         return DEFAULT_NODES;
@@ -100,6 +100,12 @@ export const SourceSelect = memo(
       onChange(selectedOption?.value || 'branch', getNodesByBranch(selectedBranch.value), rootId);
     };
 
+    const handleSubBranchChange = (selectedSubBranch: { value: string; label: string; } | null) => {
+      setSelectedSubBranch(selectedSubBranch);
+      if (!selectedSubBranch || !selectedSubBranch.value) return;
+      onChange(selectedOption?.value || 'branch', getNodesByBranch(selectedSubBranch.value), rootId);
+    };
+
     // Fix the family tree to ensure that the parents, children, spouses, and siblings are valid
     const fixFamilyTree = (currentNodes: Node[]): Node[] => {
       let newNodes = [];
@@ -143,6 +149,12 @@ export const SourceSelect = memo(
       value: branch.id,
       label: t('common:components.filters.branch' + branch.id.replace(/\./g, '_')),
     }));
+
+    const subBranchOptions = BRANCHES.find((branch) => branch.id == selectedBranch?.value)
+      ?.sub_branches.map((subBranch) => ({
+        value: subBranch.id,
+        label: t('common:components.filters.branch' + selectedBranch?.value.replace(/\./g, '_') + '_' + subBranch.id.replace(/\./g, '_')),
+      }));
 
     return (
       <div style={{ display: 'flex', gap: '10px' }}>
@@ -207,6 +219,38 @@ export const SourceSelect = memo(
               }),
             }}
           />
+        )}
+        {selectedBranch && subBranchOptions && (
+          <Select
+          value={selectedSubBranch}
+          placeholder={t('common:components.filters.select_sub_branch')}
+          options={subBranchOptions}
+          onChange={handleSubBranchChange}
+          isSearchable={true}
+          isClearable={true}
+          isMulti={false}
+          styles={{
+            control: (baseStyles, state) => ({
+              ...baseStyles,
+              borderColor: state.isFocused ? '#E4E7EC' : '#E4E7EC',
+              borderRadius: 'var(--bs-border-radius)',
+              boxShadow: 'none',
+              minWidth: '100px',
+              fontSize: '13px',
+              color: '#6c757d',
+            }),
+            placeholder: (baseStyles, state) => ({
+              ...baseStyles,
+              fontSize: '13px',
+              color: '#6c757d',
+            }),
+            menu: (baseStyles, state) => ({
+              ...baseStyles,
+              fontSize: '13px',
+              color: '#6c757d',
+            }),
+          }}
+        />
         )}
       </div>
     );
