@@ -35,7 +35,7 @@
   },
   "scripts": {
     "start": "webpack serve --mode development",
-    "build": "react-scripts build && mv build/static/js/main*.js dist/ftree.bundle.min.js && mv build/static/css/main*.css dist/ftree.bundle.css",
+    "build": "react-scripts build --source-map && mv build/static/js/main*.js dist/ftree.bundle.min.js && mv build/static/js/main*.js.map dist/ && mv build/static/css/main*.css dist/ftree.bundle.css",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },

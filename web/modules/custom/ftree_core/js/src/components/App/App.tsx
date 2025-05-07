@@ -2,7 +2,15 @@ import React, { useMemo, useState, useCallback, useEffect, useRef } from 'react'
 import ReactFamilyTree from 'react-family-tree';
 import { FamilyNode } from '../FamilyNode/FamilyNode';
 import type { Node, ExtNode } from 'relatives-tree/lib/types';
-import { NODE_WIDTH, NODE_HEIGHT, SOURCES, DEFAULT_SOURCE, MIN_ZOOM, MAX_ZOOM, ZOOM_STEP } from '../const';
+import { NODE_WIDTH,
+  NODE_HEIGHT,
+  DEFAULT_FILTER,
+  MIN_ZOOM,
+  MAX_ZOOM,
+  ZOOM_STEP,
+  DEFAULT_NODES,
+  FILTERS
+} from '../const';
 import { getNodeStyle } from './utils';
 import css from './App.module.css';
 import FamilyNodeModal from '../FamilyNode/FamilyNodeModal';
@@ -12,8 +20,8 @@ import { SourceSelect } from '../SourceSelect/SourceSelect';
 
 export default React.memo(
   function App() {
-    const [source, setSource] = useState(DEFAULT_SOURCE);
-    const [nodes, setNodes] = useState(SOURCES[source]);
+    const [filter, setFilter] = useState(DEFAULT_FILTER);
+    const [nodes, setNodes] = useState(DEFAULT_NODES);
 
     const firstNodeId = useMemo(() => nodes[0].id, [nodes]);
     const [rootId, setRootId] = useState(firstNodeId);
@@ -24,11 +32,12 @@ export default React.memo(
     const [selectedNode, setSelectedNode] = useState<any>();
     const [fullNodeData, setFullNodeData] = useState<any>(null);
 
-    const changeSourceHandler = useCallback(
+    const changeFilterHandler = useCallback(
       (value: string, nodes: readonly Readonly<Node>[]) => {
         setRootId(nodes[0].id);
         setNodes(nodes);
-        setSource(value);
+        setFilter(value);
+        console.log(value, nodes);
       },
       [],
     );
@@ -93,7 +102,7 @@ export default React.memo(
               <button className='btn btn-outline-secondary' onClick={resetZoom}>{window.Drupal.t('Reset')}</button>
             </div>
             <div className='btn-group btn-group-md me-2'>
-              <SourceSelect value={source} items={SOURCES} onChange={changeSourceHandler} />
+              <SourceSelect value={filter} items={FILTERS} rootId={rootId} onChange={changeFilterHandler} />
             </div>
           </div>
         </header>

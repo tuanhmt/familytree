@@ -10,6 +10,12 @@
 			"nick_name": "Danh hiệu",
 			"phone_number": "Số điện thoại",
 			"saint_name": "Tên thánh"
+		},
+		"filters": {
+			"all": "Tất cả",
+			"generation": "Thế hệ",
+			"blood": "Huyết thống",
+			"blood_male": "Huyết thống chi có nam"
 		}
 	}
 }

@@ -14,3 +14,9 @@ services:
     class: Drupal\ftree_api\Normalizer\FamilyNodeDTONormalizer
     tags:
       - { name: normalizer, priority: 10 }
+
+  ftree_api.family_nodes_filter_resource:
+    class: Drupal\ftree_api\Plugin\rest\resource\FamilyNodesResource
+    arguments: ['@logger.factory', '@entity_type.manager', '@request_stack', '@file_url_generator']
+    tags:
+      - { name: rest_resource }
