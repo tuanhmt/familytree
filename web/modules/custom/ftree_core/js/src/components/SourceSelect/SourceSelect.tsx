@@ -1,5 +1,5 @@
 import { memo, useState } from 'react';
-import type { Node } from 'relatives-tree/lib/types';
+import type { Node, Relation } from 'relatives-tree/lib/types';
 import Select from 'react-select';
 import { DEFAULT_NODES, FILTERS } from '../const';
 import { useTranslation } from 'react-i18next';
@@ -12,7 +12,7 @@ interface SourceSelectProps {
 
 export const SourceSelect = memo(
   function SourceSelect({ value, items, rootId, onChange }: SourceSelectProps) {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     const [selectedOption, setSelectedOption] = useState<{ value: string; label: string; } | null>({ value: value, label: t('common:components.filters.' + value) });
 
 
@@ -28,24 +28,124 @@ export const SourceSelect = memo(
       }
 
       if (filter === 'blood_male') {
-        return DEFAULT_NODES.filter((node: any) =>
+        let newNodes = DEFAULT_NODES.filter((node: any) =>
           (node.id == rootId)
           || (node.gender === "male" && node.parents.some((parent: any) => parent.type === "blood"))
         ).map((node: any) => ({
           ...node,
           spouses: []
         }));
+
+        newNodes = fixFamilyTree(newNodes);
+        console.log(validateFamilyTree(newNodes));
+        return newNodes;
       }
 
       return [];
     };
 
     const handleChange = (selectedOption: { value: string; label: string; } | null) => {
-      alert(selectedOption?.value);
       setSelectedOption(selectedOption);
       if (!selectedOption) return;
       onChange(selectedOption.value, getNodesByFilter(selectedOption.value));
     };
+
+    const validateFamilyTree = (nodes: any) => {
+      const errors: any[] = [];
+      const nodeMap = new Map();
+
+      nodes.forEach((node: any) => nodeMap.set(node.id, node));
+
+      nodes.forEach((node: any) => {
+        const { id, spouses, parents, children, siblings } = node;
+
+        // Check parents <-> children
+        parents.forEach((p: any) => {
+          const parent = nodeMap.get(p.id);
+          if (!parent) {
+            errors.push(`Parent with id ${p.id} of node ${id} does not exist.`);
+            return;
+          }
+          const found = parent.children.some((c: any) => c.id === id && c.type === p.type);
+          if (!found) {
+            errors.push(`Missing reciprocal child reference from parent ${p.id} to child ${id}.`);
+          }
+        });
+
+        // Check children <-> parents
+        children.forEach((c: any) => {
+          const child = nodeMap.get(c.id);
+          if (!child) {
+            errors.push(`Child with id ${c.id} of node ${id} does not exist.`);
+            return;
+          }
+          const found = child.parents.some((p: any) => p.id === id && p.type === c.type);
+          if (!found) {
+            errors.push(`Missing reciprocal parent reference from child ${c.id} to parent ${id}.`);
+          }
+        });
+
+        // Check spouses <-> spouses
+        spouses.forEach((spouseId: any) => {
+          const spouse = nodeMap.get(spouseId);
+          if (!spouse) {
+            errors.push(`Spouse with id ${spouseId} of node ${id} does not exist.`);
+            return;
+          }
+          if (!spouse.spouses.includes(id)) {
+            errors.push(`Missing reciprocal spouse reference from ${spouseId} to ${id}.`);
+          }
+        });
+
+        // Check siblings <-> siblings
+        siblings.forEach((siblingId: any) => {
+          const sibling = nodeMap.get(siblingId);
+          if (!sibling) {
+            errors.push(`Sibling with id ${siblingId} of node ${id} does not exist.`);
+            return;
+          }
+          if (!sibling.siblings.includes(id)) {
+            errors.push(`Missing reciprocal sibling reference from ${siblingId} to ${id}.`);
+          }
+        });
+      });
+
+      return errors;
+    }
+
+    function fixFamilyTree(currentNodes: Node[]): Node[] {
+      let newNodes = [];
+      const nodeMap = new Map<string, Node>();
+      currentNodes.forEach(node => nodeMap.set(node.id, node));
+
+      for (const node of currentNodes) {
+        let validParents: Relation[] = [];
+        let validChildren: Relation[] = [];
+        let validSpouses: Relation[] = [];
+        let validSiblings: Relation[] = [];
+        if (node.parents.length !== 0) {
+          validParents = node.parents.filter(parent => nodeMap.has(parent.id));
+        }
+        if (node.children.length !== 0) {
+          validChildren = node.children.filter(child => nodeMap.has(child.id));
+        }
+        if (node.spouses.length !== 0) {
+          validSpouses = node.spouses.filter(spouse => nodeMap.has(spouse.id));
+        }
+        if (node.siblings.length !== 0) {
+          validSiblings = node.siblings.filter(sibling => nodeMap.has(sibling.id));
+        }
+        newNodes.push({
+          ...node,
+          parents: validParents,
+          children: validChildren,
+          spouses: validSpouses,
+          siblings: validSiblings
+        });
+      }
+      return newNodes;
+    }
+
 
     const options = Object.keys(items).map((item) => ({
       value: item,
@@ -55,6 +155,7 @@ export const SourceSelect = memo(
     return (
       <Select
         defaultValue={selectedOption}
+        placeholder={t('common:components.filters.select_placeholder')}
         options={options}
         onChange={handleChange}
         isSearchable={true}
@@ -81,7 +182,7 @@ export const SourceSelect = memo(
             color: '#6c757d',
           }),
         }}
-        />
+      />
     );
   },
 );

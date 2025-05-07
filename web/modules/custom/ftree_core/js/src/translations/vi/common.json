@@ -15,7 +15,8 @@
 			"all": "Tất cả",
 			"generation": "Thế hệ",
 			"blood": "Huyết thống",
-			"blood_male": "Huyết thống chi có nam"
+			"blood_male": "Huyết thống chi có nam",
+			"select_placeholder": "Hiển thị theo"
 		}
 	}
 }
