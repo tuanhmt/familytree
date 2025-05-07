@@ -33,8 +33,8 @@ export default React.memo(
     const [fullNodeData, setFullNodeData] = useState<any>(null);
 
     const changeFilterHandler = useCallback(
-      (value: string, nodes: readonly Readonly<Node>[]) => {
-        setRootId(nodes[0].id);
+      (value: string, nodes: readonly Readonly<Node>[], rootId: string) => {
+        setRootId(rootId);
         setNodes(nodes);
         setFilter(value);
       },

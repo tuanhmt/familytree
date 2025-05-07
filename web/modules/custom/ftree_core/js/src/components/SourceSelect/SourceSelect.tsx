@@ -1,20 +1,20 @@
 import { memo, useState } from 'react';
 import type { Node, Relation } from 'relatives-tree/lib/types';
 import Select from 'react-select';
-import { DEFAULT_NODES, FILTERS, HIERARCHY_FILTERS } from '../const';
+import { DEFAULT_NODES, FILTERS, BRANCHES } from '../const';
 import { useTranslation } from 'react-i18next';
 interface SourceSelectProps {
   value: string;
   items: Record<string, string>;
   rootId: string;
-  onChange: (value: string, nodes: readonly Readonly<Node>[]) => void;
+  onChange: (value: string, nodes: readonly Readonly<Node>[], rootId: string) => void;
 }
 
 export const SourceSelect = memo(
   function SourceSelect({ value, items, rootId, onChange }: SourceSelectProps) {
     const { t } = useTranslation();
     const [selectedOption, setSelectedOption] = useState<{ value: string; label: string; } | null>({ value: value, label: t('common:components.filters.' + value) });
-    const [selectedHierarchy, setSelectedHierarchy] = useState<{ value: string; label: string; } | null>(null);
+    const [selectedBranch, setSelectedBranch] = useState<{ value: string; label: string; } | null>(null);
 
     const getNodesByFilter = (filter: string) => {
       if (filter === 'all' || filter === 'branch') {
@@ -75,17 +75,29 @@ export const SourceSelect = memo(
       return [];
     };
 
-    const handleChange = (selectedOption: { value: string; label: string; } | null) => {
-      setSelectedOption(selectedOption);
-      if (!selectedOption) return;
-      onChange(selectedOption.value, getNodesByFilter(selectedOption.value));
+    const getNodesByBranch = (branch: string) => {
+      const [generation, order] = branch.split('.').map(String);
+      const newRootNode = DEFAULT_NODES.find((node: any) => node.generation === generation && node.order === order);
+      rootId = newRootNode?.id;
+      let newNodes = DEFAULT_NODES
+          .filter((node: any) => (node.id == rootId) || node.spouses.length > 0 || node.generation >= generation)
+          .map((node: any) => structuredClone(node));
+      if (!newRootNode) return;
+      console.log(newNodes);
+      newNodes = fixFamilyTree(newNodes);
+      return newNodes;
     };
 
-    const handleHierarchyChange = (selectedOption: { value: string; label: string; } | null) => {
-      setSelectedHierarchy(selectedOption);
+    const handleFilterChange = (selectedOption: { value: string; label: string; } | null) => {
+      setSelectedOption(selectedOption);
       if (!selectedOption) return;
-      // TODO: Implement branch filtering logic here
-      onChange('branch', DEFAULT_NODES);
+      onChange(selectedOption.value, getNodesByFilter(selectedOption.value), rootId);
+    };
+
+    const handleBranchChange = (selectedBranch: { value: string; label: string; } | null) => {
+      setSelectedBranch(selectedBranch);
+      if (!selectedBranch || !selectedBranch.value) return;
+      onChange(selectedBranch.value, getNodesByBranch(selectedBranch.value), rootId);
     };
 
     // Fix the family tree to ensure that the parents, children, spouses, and siblings are valid
@@ -122,14 +134,14 @@ export const SourceSelect = memo(
       return newNodes;
     }
 
-    const options = Object.keys(items).map((item) => ({
+    const filterOptions = Object.keys(items).map((item) => ({
       value: item,
       label: t('common:components.filters.' + item),
     }));
 
-    const hierarchyOptions = Object.entries(HIERARCHY_FILTERS).map(([key, value]) => ({
-      value: key,
-      label: t('common:components.filters.branch' + key.replace(/\./g, '_')),
+    const branchOptions = BRANCHES.map((branch) => ({
+      value: branch.id,
+      label: t('common:components.filters.branch' + branch.id.replace(/\./g, '_')),
     }));
 
     return (
@@ -137,8 +149,8 @@ export const SourceSelect = memo(
         <Select
           defaultValue={selectedOption}
           placeholder={t('common:components.filters.select_placeholder')}
-          options={options}
-          onChange={handleChange}
+          options={filterOptions}
+          onChange={handleFilterChange}
           isSearchable={true}
           isClearable={true}
           isMulti={false}
@@ -166,10 +178,10 @@ export const SourceSelect = memo(
         />
         {selectedOption?.value === 'branch' && (
           <Select
-            value={selectedHierarchy}
+            value={selectedBranch}
             placeholder={t('common:components.filters.select_branch')}
-            options={hierarchyOptions}
-            onChange={handleHierarchyChange}
+            options={branchOptions}
+            onChange={handleBranchChange}
             isSearchable={true}
             isClearable={true}
             isMulti={false}
@@ -179,7 +191,7 @@ export const SourceSelect = memo(
                 borderColor: state.isFocused ? '#E4E7EC' : '#E4E7EC',
                 borderRadius: 'var(--bs-border-radius)',
                 boxShadow: 'none',
-                minWidth: '300px',
+                minWidth: '100px',
                 fontSize: '13px',
                 color: '#6c757d',
               }),

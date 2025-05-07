@@ -18,26 +18,52 @@ export const FILTERS = {
   'branch': 'Branch',
 } as Readonly<{ [key: string]: string }>;
 
-export const HIERARCHY_FILTERS = {
-  '3.1': {
+export const BRANCHES = [
+  {
+    id: '3.1',
     label: 'Vương Đình Liệu',
-    sub_branches: {
-      '4.1': 'Vương Thị Hai',
-      '4.2': 'Vương Đình Mai',
-      '4.3': 'Vương Đình Hòe',
-      '4.10': 'Vương Thị Xinh'
-    }
+    sub_branches: [
+      {
+        id: '4.1',
+        label: 'Vương Đình Liệu',
+      },
+      {
+        id: '4.2',
+        label: 'Vương Đình Mai',
+      },
+      {
+        id: '4.3',
+        label: 'Vương Đình Hòe',
+      },
+      {
+        id: '4.10',
+        label: 'Vương Thị Xinh',
+      }
+    ]
   },
-  '3.2': {
+  {
+    id: '3.2',
     label: 'Vương Đình Đào',
-    sub_branches: {
-      '4.1': 'Vương Đình Bá',
-      '4.2': 'Vương Thị Hai',
-      '4.3': 'Vương Thị Tam',
-      '4.4': 'Vương Đình Trinh'
-    }
+    sub_branches: [
+      {
+        id: '4.1',
+        label: 'Vương Đình Bá',
+      },
+      {
+        id: '4.2',
+        label: 'Vương Thị Hai',
+      },
+      {
+        id: '4.3',
+        label: 'Vương Thị Tam',
+      },
+      {
+        id: '4.4',
+        label: 'Vương Đình Trinh',
+      }
+    ]
   }
-} as Readonly<{ [key: string]: { label: string; sub_branches: { [key: string]: string } } }>;
+] as Readonly<{ id: string; label: string; sub_branches: { id: string; label: string }[] }[]>;
 
 export const DEFAULT_FILTER = Object.keys(FILTERS)[0];
 
