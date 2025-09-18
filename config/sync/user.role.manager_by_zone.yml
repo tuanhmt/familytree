@@ -1,4 +1,4 @@
-uuid: b8fef19d-0934-4d4a-90a0-b621bf64bdfe
+uuid: 0fc189db-25aa-4837-92bc-149c76065c68
 langcode: vi
 status: true
 dependencies:
@@ -7,7 +7,6 @@ dependencies:
     - media.type.file
     - media.type.image
     - node.type.article
-    - rest.resource.family_node_resource
     - taxonomy.vocabulary.family_branch
   module:
     - administerusersbyrole
@@ -19,13 +18,12 @@ dependencies:
     - node
     - override_node_options
     - path
-    - rest
     - system
     - taxonomy
     - toolbar
-id: manager
-label: 'Quản lý'
-weight: -9
+id: manager_by_zone
+label: 'Quản lý vùng'
+weight: -5
 is_admin: null
 permissions:
   - 'access administration pages'
@@ -36,9 +34,8 @@ permissions:
   - 'access user profiles'
   - 'access users overview'
   - 'administer family_node'
-  - 'administer users in all zone'
+  - 'administer users in own zone'
   - 'cancel users by role'
-  - 'cancel users with role manager_by_zone'
   - 'create album media'
   - 'create article content'
   - 'create file media'
@@ -61,17 +58,13 @@ permissions:
   - 'edit any image media'
   - 'edit terms in family_branch'
   - 'edit users by role'
-  - 'edit users with role manager_by_zone'
   - 'override article authored by option'
   - 'override article authored on option'
   - 'override article promote to front page option'
-  - 'restful get family_node_resource'
   - 'role-assign users by role'
-  - 'role-assign users with role manager_by_zone'
   - 'use ckeditor5 embedded content'
   - 'view any album media revisions'
   - 'view any file media revisions'
   - 'view any image media revisions'
   - 'view the administration theme'
   - 'view users by role'
-  - 'view users with role manager_by_zone'

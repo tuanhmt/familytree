@@ -135,6 +135,7 @@
         "drupal/taxonomy_menu": "^3.6",
         "drupal/twig_tweak": "^3.3",
         "drupal/video_embed_media": "^2.5",
+        "drupal/views_entity_access_check": "^0.0.4",
         "drush/drush": "*",
         "enyo/dropzone": "^5.9",
         "owlcarousel2/owlcarousel2": "^2.3",

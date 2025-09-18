@@ -1,0 +1,14 @@
+uuid: f26b91aa-56ed-4026-bcce-208343c9aad9
+langcode: vi
+status: true
+dependencies:
+  config:
+    - user.role.manager_by_zone
+  module:
+    - user
+id: user_add_role_action.manager_by_zone
+label: 'Thêm vai trò Manager by Zone cho người dùng được chọn'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: manager_by_zone

@@ -20,7 +20,7 @@ dependencies:
     - system
     - toolbar
 id: editor
-label: Editor
+label: 'Biên tập'
 weight: -8
 is_admin: null
 permissions:

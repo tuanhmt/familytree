@@ -1,0 +1,20 @@
+uuid: 98e89177-f15a-41de-a7f8-a4b3faa341aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+    - user
+id: user.zone
+field_name: zone
+entity_type: user
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

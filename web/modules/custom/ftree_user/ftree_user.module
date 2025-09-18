@@ -1,5 +1,11 @@
 <?php
 
+use Drupal\user\Entity\User;
+use Drupal\views\ViewExecutable;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\ftree_user\AccessControlHandler\UserZoneAccessControlHandler;
+
 /**
  * @file
  * Provide functions for user.
@@ -12,5 +18,29 @@ function ftree_user_page_attachments(array &$attachments) {
   $current_user = \Drupal::currentUser();
   if ($current_user->getAccount()->hasPermission('administer family_node')) {
     $attachments['#attached']['drupalSettings']['ftree_user']['currentUserPermissions'] = ['administer family_node'];
+  }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function ftree_user_entity_type_alter(array &$entity_types) {
+  $entity_types['user']->setHandlerClass('access', UserZoneAccessControlHandler::class);
+}
+
+/**
+ * Implements hook_entity_form_alter().
+ */
+function ftree_user_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'user_form' || $form_id == 'user_register_form') {
+    $current_user = \Drupal::currentUser();
+    $form['admin_zone']['#access'] = $current_user->hasPermission('administer users in all zone');
+    $form['admin_zone']['#states'] = [
+      'visible' => [
+        ':input[name="roles[manager_by_zone]"]' => ['checked' => TRUE],
+      ],
+    ];
+
+    $form["account"]["notify"]["#access"] = FALSE;
   }
 }

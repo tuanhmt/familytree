@@ -1,0 +1,14 @@
+uuid: b6f8a57e-27dd-4c79-9ac4-d3281d16b012
+langcode: vi
+status: true
+dependencies:
+  config:
+    - user.role.manager_by_zone
+  module:
+    - user
+id: user_remove_role_action.manager_by_zone
+label: 'Gỡ vai trò Manager by Zone khỏi người dùng được chọn'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: manager_by_zone

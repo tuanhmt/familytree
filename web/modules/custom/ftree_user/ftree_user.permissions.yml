@@ -1,0 +1,9 @@
+administer users in own zone:
+  title: 'Manage users in own zone'
+  description: 'Allows managers to view and edit users in their own admin_zone only.'
+  restrict access: TRUE
+
+administer users in all zone:
+  title: 'Manage users in all zone'
+  description: 'Allows managers to view and edit users in all zones.'
+  restrict access: TRUE

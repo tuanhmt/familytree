@@ -4,3 +4,4 @@ langcode: vi
 roles:
   manager: unsafe
   editor: safe
+  manager_by_zone: perm

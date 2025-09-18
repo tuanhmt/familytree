@@ -1,0 +1,30 @@
+uuid: 3d7fa2b2-74e8-4f0f-b008-ceb53dbe872d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.admin_zone
+    - taxonomy.vocabulary.zone
+  module:
+    - user
+id: user.user.admin_zone
+field_name: admin_zone
+entity_type: user
+bundle: user
+label: 'Vùng quản lý'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      zone: zone
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

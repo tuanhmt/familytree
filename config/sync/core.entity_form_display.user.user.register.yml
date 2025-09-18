@@ -1,8 +1,9 @@
-uuid: d41f7985-43d1-43f4-978a-06dc0170b854
+uuid: 0d53b548-49be-4f6d-b4df-b1aa6474701a
 langcode: vi
 status: true
 dependencies:
   config:
+    - core.entity_form_mode.user.register
     - field.field.user.user.admin_zone
     - field.field.user.user.field_address
     - field.field.user.user.field_birthday
@@ -20,10 +21,10 @@ dependencies:
   module:
     - cshs
     - user
-id: user.user.default
+id: user.user.register
 targetEntityType: user
 bundle: user
-mode: default
+mode: register
 content:
   account:
     weight: 0

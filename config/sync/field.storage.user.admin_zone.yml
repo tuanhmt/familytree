@@ -1,0 +1,20 @@
+uuid: b072bd10-0b50-44a7-a867-97693caad00d
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+    - user
+id: user.admin_zone
+field_name: admin_zone
+entity_type: user
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
